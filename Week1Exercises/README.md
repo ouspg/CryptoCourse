@@ -2,7 +2,7 @@
 
 This week’s exercises focus on classical ciphers and randomness.
 
-Theory of the exercises are based on the book [Serious Cryptography](https://nostarch.com/seriouscrypto)
+Theory of the exercises are based mainly on the book [Serious Cryptography](https://nostarch.com/seriouscrypto)
 
 Pages 1-38 are relevant for this exercise and might good to read beforehand.
 
@@ -19,22 +19,22 @@ Recall that the one-time pad provides perfect secrecy i.e., there is nothing an 
 
 However, the perfect cipher provides no other guarantees and does not provide authentication.
 
-You are given the following encryption of an ASCII encoded message “Hi Kimmo”. Each row in the table represents one character in binary and hexadecimal format.
+You are given the following encryption of an ASCII encoded message "Hi Kimmo". Each row in the table represents one character in binary and hexadecimal format.
 
 Binary | Hex
 --|--
-01101001 | 69
-00010101 | 15
-01011111 | 5F
-01001110 | 4E
-00100000 | 20
-00011100 | 1C
-10101101 | AD
-01100001 | 61
+0b01101001 | 0x69
+0b00010101 | 0x15
+0b01011111 | 0x5F
+0b01001110 | 0x4E
+0b00100000 | 0x20
+0b00011100 | 0x1C
+0b10101101 | 0xAD
+0b01100001 | 0x61
 
 ### Task 1.1 
 
-Produce a ciphertext that will decode into “No Rauli” under the same secret one-time pad as the original ciphertext was produced.
+Produce a ciphertext that will decode into "No Rauli" under the same secret one-time pad as the original ciphertext was produced.
 
 ### Task 1.2
 
@@ -43,3 +43,4 @@ Produce a ciphertext that will decode into a 7 character ASCII string of your ch
 ### Task 1.3
 
 What is the secret one-time pad in binary?
+
