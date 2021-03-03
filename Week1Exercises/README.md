@@ -4,20 +4,22 @@ This week’s exercises focus on classical ciphers and randomness.
 
 Theory of the exercises are based mainly on the book [Serious Cryptography](https://nostarch.com/seriouscrypto)
 
-Pages 1-38 are relevant for this exercise and might good to read beforehand.
+Pages *1-38* are relevant for this exercise and might good to read beforehand.
 
 ## Environment
 
-You should have access into Linux environment to be able to complete task 2.
+You should have access into Linux environment to be able to complete task 3.
 Course virtual machine is suitable.
 
 ## Grading
 
+You are eligible for following points from the exercise. Previous task(s) should be completed before going further.
+
 Task #|Grade|Description|
 -----|:---:|-----------|
 Task 1 | 2 | Fooling a perfect cipher
-Task 2 | 3-4 | Generating randomness and testing randomness
-Task 3 | 5 | Vigenere cipher
+Task 2 | 3 | Vigenere cipher
+Task 3 | 4-5 | Generating randomness and testing randomness
 
 
 ## Task 1: Fooling a perfect cipher
@@ -39,36 +41,30 @@ Binary | Hex
 0b10101101 | 0xAD
 0b01100001 | 0x61
 
-### Task 1.1 
 
-Produce a ciphertext that will decode into "No Rauli" under the same secret one-time pad as the original ciphertext was produced.
+**Task 1.1** Produce a ciphertext that will decode into "No Rauli" under the same secret one-time pad as the original ciphertext was produced.
 
-### Task 1.2
+**Task 1.2** Produce a ciphertext that will decode into a 8 character ASCII string of your choice.
 
-Produce a ciphertext that will decode into a 8 character ASCII string of your choice.
+**Task 1.3** What is the secret one-time pad in binary?
 
-### Task 1.3
+> You should return possible source code for how you solved the secret and produced the new ciphertexts. You should also explain shortly the idea of of your method.
 
-What is the secret one-time pad in binary?
+## Task 2: Vigenere cipher
 
-**You should return possible source code for how you solved the problem and produced new ciphertexts. You should also explain shortly the idea of how did you got the original secret.**
-
-## Task 2: Generating randomness
-
-Generate randomness to different files using different tools that you have access to or manually. Analyse those files with [dieharder](https://linux.die.net/man/1/dieharder) . Report your findings.
-
-
-## Task 3: Vigenere cipher
-
-The following text is an English text that has been encrypted by using an unknown key with a Vigenere cipher. All punctuation and whitespaces have been removed from the text before encryption
+The following text is an English text that has been encrypted by using an unknown key with a Vigenere cipher. All punctuation and whitespaces have been removed from the text before encryption.
 
 ```
 TRLSHAXRNSVKIENUFMEGRVDANEELHOFNSLUGIEFZVATAAGCIYAGIFADWUDHFYIFPOWVSPUMBKOTUOBYYNQWZYEEHBFCYCRZUKIPDZFFOYDBPZTPRBRVRFRBFYESLSXUAALBFIIAVWORLYBAAIAYGWYVNFLCZKHRVBANDRQFQMEYDHUFNFPCFZVNWSMIENVGQJSZHBFFFGKSBFLVWWORLNQRYFRNODAJIGLCZZNTRTOIYCWCSIACKMFYELOSMUOAHHARSXLTALRVQONZLVWMFFESISOKIIHZKRDQUSEJMNVGELRIHWXCAAFSOFNFWWFLTRVORRIYXFQFFBXFRZEYGWNVLVHJQKHNWWFUORVWORLYICDRCBPAGEIGBKUUERITAITGRRQMEYRDYFRRHTRVCGLJQDENQGFFRRVWEKMNVGELRIHWXCAAFSUGLRDRRFRNUSUEVRQHUFNBICGIDVVQUGLVQODPCHOHGIEGROFKEAGBAKOAOMFFPHCNXVSNQRYRTUEIFRLFRHAKHRVCOZEGDZUDPYLQMKIBQGAWOHUKAIK
 ```
 
-### Task 3.1
+**Task 2.1** Decrypt the text. What is the secret key?
 
-Decrypt the text. Show your work (code etc.). What is the secret key?
+**Task 2.2** Where is the text from? Who wrote it? If you find the source, read the whole text/article/newsitem/book...
 
-### Task 3.2
-Where is the text from? Who wrote it? If you find the source, read the whole text/article/newsitem/book...
+
+> Show your work (code and reasoning; how did you decrypt this?). You should not use existing tools which can solve this quite quickly. However, if you did, mentions these tools **and** make step-by-step report **why** Vigenere cipher was decryptable. 
+
+## Task 3: Generating randomness
+
+Generate randomness to different files using different tools that you have access to or manually. Analyse those files with [dieharder](https://linux.die.net/man/1/dieharder) . Report your findings.
