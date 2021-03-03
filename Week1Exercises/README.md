@@ -51,13 +51,13 @@ Binary | Hex
 
 > You should return possible source code for how you solved the secret and produced the new ciphertexts. Answer the questions and **also** explain shortly the idea of of your method.
 
-You can verify that your key is correct, by combining single hexadecimal string from binary values, and calculating sha256 hash for them, for example
+You can verify that your key is correct, by combining single hexadecimal string from binary values, and calculating sha256 hash for final string, for example
 
 ```shell
  echo "0xfffffffffffff" | sha256sum
 ```
 
-Correct hash is `c6152a61293092b308ef1a818309b692372b51a5360d44431ffdcb75c8ab0349`
+Note `0x` prefix in string. Correct hash is `c6152a61293092b308ef1a818309b692372b51a5360d44431ffdcb75c8ab0349`
 
 ## Task 2: Vigenere cipher
 
