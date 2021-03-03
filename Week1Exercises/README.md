@@ -6,6 +6,13 @@ Theory of the exercises are based mainly on the book [Serious Cryptography](http
 
 Pages 1-38 are relevant for this exercise and might good to read beforehand.
 
+## Environment
+
+You should have access into Linux environment to be able to complete task 2.
+Course virtual machine is suitable.
+
+## Grading
+
 Task #|Grade|Description|
 -----|:---:|-----------|
 Task 1 | 2 | Fooling a perfect cipher
@@ -38,9 +45,30 @@ Produce a ciphertext that will decode into "No Rauli" under the same secret one-
 
 ### Task 1.2
 
-Produce a ciphertext that will decode into a 7 character ASCII string of your choice.
+Produce a ciphertext that will decode into a 8 character ASCII string of your choice.
 
 ### Task 1.3
 
 What is the secret one-time pad in binary?
 
+**You should return possible source code for how you solved the problem and produced new ciphertexts. You should also explain shortly the idea of how did you got the original secret.**
+
+## Task 2: Generating randomness
+
+Generate randomness to different files using different tools that you have access to or manually. Analyse those files with [dieharder](https://linux.die.net/man/1/dieharder) . Report your findings.
+
+
+## Task 3: Vigenere cipher
+
+The following text is an English text that has been encrypted by using an unknown key with a Vigenere cipher. All punctuation and whitespaces have been removed from the text before encryption
+
+```
+TRLSHAXRNSVKIENUFMEGRVDANEELHOFNSLUGIEFZVATAAGCIYAGIFADWUDHFYIFPOWVSPUMBKOTUOBYYNQWZYEEHBFCYCRZUKIPDZFFOYDBPZTPRBRVRFRBFYESLSXUAALBFIIAVWORLYBAAIAYGWYVNFLCZKHRVBANDRQFQMEYDHUFNFPCFZVNWSMIENVGQJSZHBFFFGKSBFLVWWORLNQRYFRNODAJIGLCZZNTRTOIYCWCSIACKMFYELOSMUOAHHARSXLTALRVQONZLVWMFFESISOKIIHZKRDQUSEJMNVGELRIHWXCAAFSOFNFWWFLTRVORRIYXFQFFBXFRZEYGWNVLVHJQKHNWWFUORVWORLYICDRCBPAGEIGBKUUERITAITGRRQMEYRDYFRRHTRVCGLJQDENQGFFRRVWEKMNVGELRIHWXCAAFSUGLRDRRFRNUSUEVRQHUFNBICGIDVVQUGLVQODPCHOHGIEGROFKEAGBAKOAOMFFPHCNXVSNQRYRTUEIFRLFRHAKHRVCOZEGDZUDPYLQMKIBQGAWOHUKAIK
+```
+
+### Task 3.1
+
+Decrypt the text. Show your work (code etc.). What is the secret key?
+
+### Task 3.2
+Where is the text from? Who wrote it? If you find the source, read the whole text/article/newsitem/book...
