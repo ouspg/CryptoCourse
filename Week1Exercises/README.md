@@ -8,8 +8,9 @@ Pages *1-38* are relevant for this exercise and might good to read beforehand.
 
 ## Environment
 
-You should have access into Linux environment to be able to complete task 3.
-Course virtual machine is suitable.
+You should have access into Linux/Unix environment to be able to complete Task 3.
+
+The course virtual machine is suitable.
 
 ## Grading
 
@@ -28,7 +29,7 @@ Recall that the one-time pad provides perfect secrecy i.e., there is nothing an 
 
 However, the perfect cipher provides no other guarantees and does not provide authentication.
 
-You are given the following encryption of an ASCII encoded message "Hi Kimmo". Each row in the table represents one character in binary and hexadecimal format.
+You are given the following encryption of an ASCII encoded message "Hi Kimmo". Each row in the table represents one character in binary and hexadecimal format. This task expects that original form of the one-time pad has been used with bitwise exclusive OR.
 
 Binary | Hex
 --|--
@@ -44,11 +45,19 @@ Binary | Hex
 
 **Task 1.1** Produce a ciphertext that will decode into "No Rauli" under the same secret one-time pad as the original ciphertext was produced.
 
-**Task 1.2** Produce a ciphertext that will decode into a 8 character ASCII string of your choice.
+**Task 1.2** Produce a ciphertext that will decode into a 8 character ASCII string of your choice. Can you produce longer ciphertexts than 8 characters? Why/why not?
 
-**Task 1.3** What is the secret one-time pad in binary?
+**Task 1.3** What is the secret one-time pad in binary format?
 
-> You should return possible source code for how you solved the secret and produced the new ciphertexts. You should also explain shortly the idea of of your method.
+> You should return possible source code for how you solved the secret and produced the new ciphertexts. Answer the questions and **also** explain shortly the idea of of your method.
+
+You can verify that your key is correct, by combining single hexadecimal string from binary values, and calculating sha256 hash for them, for example
+
+```shell
+ echo "0xfffffffffffff" | sha256sum
+```
+
+Correct hash is `c6152a61293092b308ef1a818309b692372b51a5360d44431ffdcb75c8ab0349`
 
 ## Task 2: Vigenere cipher
 
@@ -58,12 +67,12 @@ The following text is an English text that has been encrypted by using an unknow
 TRLSHAXRNSVKIENUFMEGRVDANEELHOFNSLUGIEFZVATAAGCIYAGIFADWUDHFYIFPOWVSPUMBKOTUOBYYNQWZYEEHBFCYCRZUKIPDZFFOYDBPZTPRBRVRFRBFYESLSXUAALBFIIAVWORLYBAAIAYGWYVNFLCZKHRVBANDRQFQMEYDHUFNFPCFZVNWSMIENVGQJSZHBFFFGKSBFLVWWORLNQRYFRNODAJIGLCZZNTRTOIYCWCSIACKMFYELOSMUOAHHARSXLTALRVQONZLVWMFFESISOKIIHZKRDQUSEJMNVGELRIHWXCAAFSOFNFWWFLTRVORRIYXFQFFBXFRZEYGWNVLVHJQKHNWWFUORVWORLYICDRCBPAGEIGBKUUERITAITGRRQMEYRDYFRRHTRVCGLJQDENQGFFRRVWEKMNVGELRIHWXCAAFSUGLRDRRFRNUSUEVRQHUFNBICGIDVVQUGLVQODPCHOHGIEGROFKEAGBAKOAOMFFPHCNXVSNQRYRTUEIFRLFRHAKHRVCOZEGDZUDPYLQMKIBQGAWOHUKAIK
 ```
 
-**Task 2.1** Decrypt the text. What is the secret key?
+**Task 2.1** Decrypt the text. What is the secret key? How many permutations were used?
 
 **Task 2.2** Where is the text from? Who wrote it? If you find the source, read the whole text/article/newsitem/book...
 
 
-> Show your work (code and reasoning; how did you decrypt this?). You should not use existing tools which can solve this quite quickly. However, if you did, mentions these tools **and** make step-by-step report **why** Vigenere cipher was decryptable. 
+> Show your work (code and reasoning; how did you decrypt this?) and answer the questions. You should not use existing tools which can solve this quite quickly. However, if you did, mention these tools, used commands **and** make step-by-step report **why Vigenere cipher was decryptable**. 
 
 ## Task 3: Generating randomness
 
