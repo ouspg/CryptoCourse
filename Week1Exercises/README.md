@@ -2,7 +2,7 @@
 
 This week’s exercises focus on classical ciphers and randomness.
 
-Theory of the exercises are based on the book [Serious Cryptography](https://nostarch.com/seriouscryptc)
+Theory of the exercises are based on the book [Serious Cryptography](https://nostarch.com/seriouscrypto)
 
 Pages 1-38 are relevant for this exercise and might good to read beforehand.
 
