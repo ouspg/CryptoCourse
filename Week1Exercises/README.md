@@ -100,7 +100,7 @@ Some available software methods which **might or might not be** cryptographicall
 
 **Task 3.2** Generate randomness into different files using different methods that you have access to or manually (dice, smashing keyboard maybe?) You are not limited into given list. **Use at least four** different methods. For software based methods, generate at least 1 megabyte of randomness.
 
-**Task 3.3** Analyse those files with [dieharder](https://linux.die.net/man/1/dieharder). Report your findings. What is the meaning of p-value and null hypothesis in this context? Can you describe why tests are passed/not passed? Which methods seems to provide randomness with high entropy?
+**Task 3.3** Analyse those files with [dieharder](https://linux.die.net/man/1/dieharder). Report your findings. What is the meaning of p-value and null hypothesis in this context? Can you describe why tests are passed/not passed? Which methods seems to provide randomness with high entropy? If you have been using generic software libraries, results might be not be good and can be very similar. What could be the reason?
 
 For Debian based Linux, you can install it as :
 ```shell
