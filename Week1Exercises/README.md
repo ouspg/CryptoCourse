@@ -98,9 +98,16 @@ Some available software methods which **might or might not be** cryptographicall
 
 **Task 3.1** What is the difference between `/dev/urandom` and `/dev/random` devices?
 
-**Task 3.2** Generate randomness into different files using different methods that you have access to or manually (dice, maybe?) You are not limited into given list. Use at least four different methods.
+**Task 3.2** Generate randomness into different files using different methods that you have access to or manually (dice, maybe?) You are not limited into given list. **Use at least four** different methods. For software based methods, generate at least 1 megabyte of randomness.
 
-**Task 3.3** Analyse those files with [dieharder](https://linux.die.net/man/1/dieharder). Report your findings. 
+**Task 3.3** Analyse those files with [dieharder](https://linux.die.net/man/1/dieharder). What is the meaning of p-value and null hypothesis in this context? Report your findings. Can you describe why tests are passed/not passed?
+
+For Debian based Linux, you can install it as :
+```shell
+apt-get update && apt-get install dieharder
+```
 
 *It should be noted that it is possible to design a cryptographically
 weak PRNG that will fool any statistical test, therefore it cannot be fully trusted as measurement of security.*
+
+> Include all commands and possible source code(s) in your report. Answer the questions and clarify your findings.
