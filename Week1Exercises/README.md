@@ -77,19 +77,23 @@ TRLSHAXRNSVKIENUFMEGRVDANEELHOFNSLUGIEFZVATAAGCIYAGIFADWUDHFYIFPOWVSPUMBKOTUOBYY
 ## Task 3: Generating randomness
 
 <p align="right">
-<img src="https://imgs.xkcd.com/comics/random_number.png" alt="Random number. Source: XKCD="100px" align="right"/>
+<img src="img/random.png" alt="Random number. Source: XKCD="100px" align="right"/>
 </p>
 
-Randomness has critical role in the most of the cases to achieve *semantic security.* However, there is difference between randomness and predictability as seen from the XKCD picture on the right; both should be noted.
+Randomness has critical role in most of the cases to achieve *semantic security.* However, there is difference between randomness and predictability as seen from the XKCD picture on the right; both should be noted.
 
 There are many available tools and methods to generate randomness, but are they truly cryptographically unpredictable?
 
-Some available software methods:
+Some available software methods which **might or might not be** cryptographically unpredictable:
 
   * Python's programming language `random` library
   * C language's `rand` and `drand48`
   * `Math.random()` in JavaScript
   * Devices `/dev/urandom` and `/dev/random` on *nix systems
+  * Bash function `$RANDOM`
+  * [BCryptGenRandom](https://docs.microsoft.com/en-us/windows/win32/api/bcrypt/nf-bcrypt-bcryptgenrandom) on Windows. (legacy CryptGenRandom is **deprecated.**)
+  * System.Security.Cryptography.RandomNumberGenerator on [C# .NET](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator?view=net-5.0) on Windows
+  * [Get-Random](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7.1) on PowerShell
 
 Task 3.1 What is the difference between `/dev/urandom` and `/dev/random` devices?
 
