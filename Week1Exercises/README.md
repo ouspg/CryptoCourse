@@ -2,9 +2,9 @@
 
 This week’s exercises focus on classical ciphers and randomness.
 
-Theory of the exercises are based mainly on the book [Serious Cryptography](https://nostarch.com/seriouscrypto)
+Theory of the exercises are based mainly on the book [Serious Cryptography](https://nostarch.com/seriouscrypto). It is available in the library of the University of Oulu in digital format.
 
-Pages *1-38* are relevant for this exercise and might good to read beforehand.
+*Pages 1-38* are relevant for this exercise and might be good to read beforehand.
 
 ## Environment
 
@@ -35,11 +35,11 @@ Binary | Hex
 --|--
 0b01101001 | 0x69
 0b00010101 | 0x15
-0b01011111 | 0x5F
-0b01001110 | 0x4E
+0b01011111 | 0x5f
+0b01001110 | 0x4e
 0b00100000 | 0x20
-0b00011100 | 0x1C
-0b10101101 | 0xAD
+0b00011100 | 0x1c
+0b10101101 | 0xad
 0b01100001 | 0x61
 
 
@@ -47,17 +47,17 @@ Binary | Hex
 
 **Task 1.2** Produce a ciphertext that will decode into a 8 character ASCII string of your choice. Can you produce longer ciphertexts than 8 characters? Why/why not?
 
-**Task 1.3** What is the secret one-time pad in binary format?
+**Task 1.3** What is the secret one-time pad in binary format? How malleability applies on one-time pad?
 
 > You should return possible source code for how you solved the secret and produced the new ciphertexts. Answer the questions and **also** explain shortly the idea of of your method.
 
-You can verify that your key is correct, by combining single hexadecimal string from binary values, and calculating sha256 hash for final string, for example
+You can verify that your key is correct, by combining single hexadecimal string from binary values, and calculating sha256 hash for final string, for example if we combine given encrypted message:
 
 ```shell
- echo "0xfffffffffffff" | sha256sum
+ echo "0x69155f4e201cad61" | sha256sum
 ```
 
-Note `0x` prefix in string. Correct hash is `c6152a61293092b308ef1a818309b692372b51a5360d44431ffdcb75c8ab0349`
+Note `0x` prefix in string and lowercase. Correct hash for the key is `c6152a61293092b308ef1a818309b692372b51a5360d44431ffdcb75c8ab0349`
 
 ## Task 2: Vigenere cipher
 
@@ -72,8 +72,25 @@ TRLSHAXRNSVKIENUFMEGRVDANEELHOFNSLUGIEFZVATAAGCIYAGIFADWUDHFYIFPOWVSPUMBKOTUOBYY
 **Task 2.2** Where is the text from? Who wrote it? If you find the source, read the whole text/article/newsitem/book...
 
 
-> Show your work (code and reasoning; how did you decrypt this?) and answer the questions. You should not use existing tools which can solve this quite quickly. However, if you did, mention these tools, used commands **and** make step-by-step report **why Vigenere cipher was decryptable**. 
+> Show your work (code and reasoning; how did you decrypt this?) and answer the questions. You should not use existing tools which can solve this quite quickly. However, if you did, mention these tools, the commands you used **and** make step-by-step report **why Vigenere cipher was decryptable**. 
 
 ## Task 3: Generating randomness
 
-Generate randomness to different files using different tools that you have access to or manually. Analyse those files with [dieharder](https://linux.die.net/man/1/dieharder) . Report your findings.
+<p align="right">
+<img src="https://imgs.xkcd.com/comics/random_number.png" alt="Random number. Source: XKCD="100px" align="right"/>
+</p>
+
+Randomness has critical role in the most of the cases to achieve *semantic security.* However, there is difference between randomness and predictability as seen from the XKCD picture on the right; both should be noted.
+
+There are many available tools and methods to generate randomness, but are they truly cryptographically unpredictable?
+
+Some available software methods:
+
+  * Python's programming language `random` library
+  * C language's `rand` and `drand48`
+  * `Math.random()` in JavaScript
+  * Devices `/dev/urandom` and `/dev/random` on *nix systems
+
+Task 3.1 What is the difference between `/dev/urandom` and `/dev/random` devices?
+
+Task 3.2 Generate randomness to different files using different methods that you have access to or manually. Analyse those files with [dieharder](https://linux.die.net/man/1/dieharder) . Report your findings.
