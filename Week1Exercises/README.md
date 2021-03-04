@@ -96,7 +96,7 @@ Some available software methods which **might or might not be** cryptographicall
   * [Get-Random](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7.1) on PowerShell
   * `openssl rand` method
 
-**Task 3.1** What is the difference between `/dev/urandom` and `/dev/random` devices?
+**Task 3.1** What is the difference between `/dev/urandom` and `/dev/random` devices? Not also the [recent change on Kernel.](https://www.phoronix.com/scan.php?page=news_item&px=Linux-5.6-Random-Rework)
 
 **Task 3.2** Generate randomness into different files using different methods that you have access to or manually (dice, smashing keyboard maybe?) You are not limited into given list. **Use at least four** different methods. For software based methods, generate at least 1 megabyte of randomness.
 
