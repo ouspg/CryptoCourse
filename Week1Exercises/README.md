@@ -94,7 +94,13 @@ Some available software methods which **might or might not be** cryptographicall
   * [BCryptGenRandom](https://docs.microsoft.com/en-us/windows/win32/api/bcrypt/nf-bcrypt-bcryptgenrandom) on Windows. (legacy CryptGenRandom is **deprecated.**)
   * System.Security.Cryptography.RandomNumberGenerator on [C# .NET](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator?view=net-5.0) on Windows
   * [Get-Random](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7.1) on PowerShell
+  * `openssl rand` method
 
-Task 3.1 What is the difference between `/dev/urandom` and `/dev/random` devices?
+**Task 3.1** What is the difference between `/dev/urandom` and `/dev/random` devices?
 
-Task 3.2 Generate randomness to different files using different methods that you have access to or manually. Analyse those files with [dieharder](https://linux.die.net/man/1/dieharder) . Report your findings.
+**Task 3.2** Generate randomness into different files using different methods that you have access to or manually (dice, maybe?) You are not limited into given list. Use at least four different methods.
+
+**Task 3.3** Analyse those files with [dieharder](https://linux.die.net/man/1/dieharder). Report your findings. 
+
+*It should be noted that it is possible to design a cryptographically
+weak PRNG that will fool any statistical test, therefore it cannot be fully trusted as measurement of security.*
