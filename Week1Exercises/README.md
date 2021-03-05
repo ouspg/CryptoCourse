@@ -89,6 +89,7 @@ Some available software methods which **might or might not be** cryptographicall
   * Python's programming language `random` library
   * C language's `rand` and `drand48`
   * `Math.random()` in JavaScript
+  * `java.util.Random` in Java
   * Devices `/dev/urandom` and `/dev/random` on *nix systems
   * Bash function `$RANDOM`
   * [BCryptGenRandom](https://docs.microsoft.com/en-us/windows/win32/api/bcrypt/nf-bcrypt-bcryptgenrandom) on Windows. (legacy CryptGenRandom is **deprecated.**)
@@ -107,7 +108,9 @@ For Debian based Linux, you can install it as :
 apt-get update && apt-get install dieharder
 ```
 
+**Task 3.4** Which methods from the given list are considered as cryptographically unpredictable? Why?
+
 *It should be noted that it is possible to design a cryptographically
-weak PRNG that will fool any statistical test, therefore it cannot be fully trusted as measurement of security.*
+weak PRNG that will fool any statistical test e.g. dieharder, therefore it cannot be fully trusted as measurement of security.*
 
 > Include all commands and possible source code(s) in your report. Answer the questions and clarify your findings.
