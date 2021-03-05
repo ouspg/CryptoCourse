@@ -29,7 +29,7 @@ Recall that the one-time pad provides perfect secrecy i.e., there is nothing an 
 
 However, the perfect cipher provides no other guarantees and does not provide authentication.
 
-You are given the following encryption of an ASCII encoded message "Hi Kimmo". Each row in the table represents one character in binary and hexadecimal format. This task expects that original form of the one-time pad has been used with bitwise exclusive OR.
+You are given the following encryption of an ASCII encoded message "Hi Kimmo". Each row in the table represents one character in binary and hexadecimal format. This task expects that the original form of the one-time pad has been used with bitwise exclusive OR.
 
 Binary | Hex
 --|--
@@ -47,9 +47,9 @@ Binary | Hex
 
 **Task 1.2** Produce a ciphertext that will decode into a 8 character ASCII string of your choice. Can you produce longer ciphertexts than 8 characters? Why/why not?
 
-**Task 1.3** What is the secret one-time pad in binary format? How malleability applies on one-time pad?
+**Task 1.3** What is the secret one-time pad in binary format? How malleability applies on a one-time pad?
 
-> You should return possible source code for how you solved the secret and produced the new ciphertexts. Answer the questions and **also** explain shortly the idea of of your method.
+> You should return possible source code for how you solved the secret and produced the new ciphertexts. Answer the questions and **also** explain shortly the idea of your method.
 
 You can verify that your key is correct, by combining single hexadecimal string from binary values, and calculating sha256 hash for final string, for example if we combine given encrypted message:
 
@@ -72,7 +72,7 @@ TRLSHAXRNSVKIENUFMEGRVDANEELHOFNSLUGIEFZVATAAGCIYAGIFADWUDHFYIFPOWVSPUMBKOTUOBYY
 **Task 2.2** Where is the text from? Who wrote it? If you find the source, read the whole text/article/newsitem/book...
 
 
-> Show your work (code and reasoning; how did you decrypt this?) and answer the questions. You should not use existing tools which can solve this quite quickly. However, if you did, mention these tools, the commands you used **and** make step-by-step report **why Vigenere cipher was decryptable**. 
+> Show your work (code and reasoning; how did you decrypt this?) and answer the questions. You should not use existing tools which can solve this quite quickly. However, if you did, mention these tools, the commands you used **and** make a step-by-step report **why Vigenere cipher was decryptable**. 
 
 ## Task 3: Generating randomness
 
@@ -80,7 +80,7 @@ TRLSHAXRNSVKIENUFMEGRVDANEELHOFNSLUGIEFZVATAAGCIYAGIFADWUDHFYIFPOWVSPUMBKOTUOBYY
 <img src="img/random.png" alt="Random number. Source: XKCD="100px" align="right"/>
 </p>
 
-Randomness has critical role in most of the cases to achieve *semantic security.* However, there is difference between randomness and predictability as seen from the XKCD picture on the right; both should be noted.
+Randomness has a critical role in most of the cases to achieve *semantic security.* However, there is a difference between randomness and predictability as seen from the XKCD picture on the right; both should be noted.
 
 There are many available tools and methods to generate randomness, but are they truly cryptographically unpredictable?
 
@@ -98,9 +98,9 @@ Some available software methods which **might or might not be** cryptographicall
 
 **Task 3.1** What is the difference between `/dev/urandom` and `/dev/random` devices? Note also the [recent change on Kernel.](https://www.phoronix.com/scan.php?page=news_item&px=Linux-5.6-Random-Rework)
 
-**Task 3.2** Generate randomness into different files using different methods that you have access to or manually (dice, smashing keyboard maybe?) You are not limited into given list. **Use at least four** different methods. For software based methods, generate at least 1 megabyte of randomness.
+**Task 3.2** Generate randomness into different files using different methods that you have access to or manually (dice, smashing keyboard maybe?) You are not limited to a given list. **Use at least four** different methods. For non-manual methods, generate at least 1 megabyte of randomness.
 
-**Task 3.3** Analyse those files with [dieharder](https://linux.die.net/man/1/dieharder). Report your findings. What is the meaning of p-value and null hypothesis in this context? Can you describe why tests are passed/not passed? Which methods seems to provide randomness with high entropy? If you have been using generic software libraries, results might be not be good and can be very similar. What could be the reason?
+**Task 3.3** Analyse those files with [dieharder](https://linux.die.net/man/1/dieharder). Report your findings. What is the meaning of p-value and null hypothesis in this context? Can you describe why tests are passed/not passed? Which methods seem to provide randomness with high entropy? If you have been using generic software libraries, results might not be good and can be very similar. What could be the reason?
 
 For Debian based Linux, you can install it as :
 ```shell
