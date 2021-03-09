@@ -47,17 +47,19 @@ Binary | Hex
 
 **Task 1.2** Produce a ciphertext that will decode into a 8 character ASCII string of your choice. Can you produce longer ciphertexts than 8 characters? Why/why not?
 
-**Task 1.3** What is the secret one-time pad in binary format? How malleability applies on a one-time pad?
+**Task 1.3** What is the secret one-time pad in binary format (8 x 8 bit)? How malleability applies on a one-time pad?
 
 > You should return possible source code for how you solved the secret and produced the new ciphertexts. Answer the questions and **also** explain shortly the idea of your method.
 
-You can verify that your key is correct, by combining single hexadecimal string from binary values, and calculating sha256 hash for final string, for example if we combine given encrypted message:
+You can verify that your key is correct, by combining single hexadecimal string from binary values, and calculating sha256 hash for the final string with `openssl` on Linux, for example if we combine given encrypted message:
 
 ```shell
- echo "0x69155f4e201cad61" | sha256sum
+ echo -n "0x69155f4e201cad61" | openssl dgst -sha256
 ```
 
-Note `0x` prefix in string and lowercase. Correct hash for the key is `c6152a61293092b308ef1a818309b692372b51a5360d44431ffdcb75c8ab0349`
+Note `0x` prefix in string and lowercase. `-n` flag prevents appending new line in the end. Possible leading zeros in hex values are included.
+
+Correct hash for the key is `0de7672884e0d76c02387ef14360770ec923fd34f87d3303d082ec2da7a8741e`
 
 ## Task 2: Vigenere cipher
 
