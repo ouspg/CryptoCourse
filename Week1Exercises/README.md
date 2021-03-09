@@ -2,7 +2,7 @@
 
 This week’s exercises focus on classical ciphers and randomness.
 
-Theory of the exercises are based mainly on the book [Serious Cryptography](https://nostarch.com/seriouscrypto). It is available in the library of the University of Oulu in digital format.
+Theory of the exercises are based mainly on the book [Serious Cryptography](https://nostarch.com/seriouscrypto). It is available in the library of the University of Oulu in [digital format](https://oula.finna.fi/Record/oy_electronic_oy.9917612964306252).
 
 *Pages 1-38* are relevant for this exercise and might be good to read beforehand.
 
