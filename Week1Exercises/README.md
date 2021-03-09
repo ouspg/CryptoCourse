@@ -57,7 +57,7 @@ You can verify that your key is correct, by combining single hexadecimal string 
  echo -n "0x69155f4e201cad61" | openssl dgst -sha256
 ```
 
-Note `0x` prefix in string and lowercase. `-n` flag prevents appending new line in the end. Possible leading zeros in hex values are included.
+Note `0x` prefix in the string and lowercase format. `-n` flag prevents appending new line in the end. Possible leading zeros in hex values are included. UTF-8 encoding has been used. Everything matters!
 
 Correct hash for the key is `0de7672884e0d76c02387ef14360770ec923fd34f87d3303d082ec2da7a8741e`
 
