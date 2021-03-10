@@ -25,6 +25,7 @@ Required software:
   * `openssl` version 1.1.1f (31 Mar 2020). Examples from the OpenSSL Cookbook are based on this version, lower versions might be different and not bringing expected results.
   * [dieharder](https://webhome.phy.duke.edu/~rgb/General/dieharder.php) tool for random number generator (rng) testing
   * Code editor of your choice, `VSCodium` and `vim` are pre-installed.
+  * Git for assignment management. Web GUI usage is also allowed.
   * Different programming languages, depending on your choice
 
 Some additional software requirements might appear during the course.
@@ -48,13 +49,15 @@ In case you have problems on getting it working, contact course assistants.
 
 The work will be done on the GitHub repository during the course.
 
-You need to create private GitHub repository **from the url in Moodle page.**
+You need to create private GitHub repository **from the url in the Moodle page.**
 
 Repository will be place for your work, and commit changes on there for corresponding folders.
 
-Every week you need to return only URL for your repository, unless otherwise stated.
+Every week you need to return only URL of your repository for the assignment return box, unless otherwise stated.
 
-Check [cheat sheet](https://training.github.com/downloads/github-git-cheat-sheet.pdf) if you need a refresher on how to use Git. Some basic commands below
+ **Deadline is always before the next instructed exercise session!**
+
+Check [cheat sheet](https://training.github.com/downloads/github-git-cheat-sheet.pdf) if you need a refresher on how to use Git. Some basic commands can be found below.
 
 ```
 git add </path/filename>
