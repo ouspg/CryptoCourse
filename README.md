@@ -35,9 +35,10 @@ Download urls for pre-configured virtual machine with Ubuntu 20 LTS can be found
 
 There are two different versions; for VMware and Virtualbox. Download suitable for your needs. If you don't know which one, use VMware one which might bring better performance.
 
-You can download VMware player from [here.](https://my.vmware.com/en/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_workstation_player/16_0)
+You can download VMware Player from [here.](https://my.vmware.com/en/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_workstation_player/16_0)
 
 Following credentials are used for virtual machine:
+
   * Username: `crypto`
   * Password: `crypto`
 
