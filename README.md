@@ -21,7 +21,7 @@ Some of the exercises are requiring access for Linux environment. macOS might be
 Required software:
 
   * Python 3
-    * [pycryptodome](https://github.com/Legrandin/pycryptodome) library for cryptographic operations 
+    * [PyCryptodome](https://github.com/Legrandin/pycryptodome) library for cryptographic operations 
   * `openssl` version 1.1.1f (31 Mar 2020). Examples from the OpenSSL Cookbook are based on this version, lower versions might be different and not bringing expected results.
   * [dieharder](https://webhome.phy.duke.edu/~rgb/General/dieharder.php) tool for random number generator (rng) testing
   * Code editor of your choice, `VSCodium` and `vim` are pre-installed.
