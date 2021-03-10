@@ -22,6 +22,7 @@ Required software:
   * Code editor of your choice, `VSCodium` and `vim` are pre-installed.
   * Different programming languages, depending on your choice
 
+Some additional software requirements might appear during the course.
 
 ### Provided virtual machine
 
