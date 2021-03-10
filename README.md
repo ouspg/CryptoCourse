@@ -1,7 +1,7 @@
 # CryptoCourse
 Exercises for the course Cryptographic systems and their weaknessess 521149S
 
-You can find the course from the [Moodle.]()
+You can find the course from the [Moodle.](https://moodle.oulu.fi/course/view.php?id=7315)
 
 ## Exercise requirements
 
