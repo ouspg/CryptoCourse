@@ -55,7 +55,7 @@ Repository will be place for your work, and commit changes on there for correspo
 
 *If you lost your repository, you can find it under organization [CryptoCourse-2021](https://github.com/CryptoCourse-2021) once logged in.*
 
-Every week you need to return only URL of your repository for the assignment return box, unless otherwise stated.
+Every week you need to return only URL of your repository for the assignment return box, unless otherwise stated. Remember that there are also mandatory questionnaires.
 
  **Deadline is always before the next supported exercise session!**
 
