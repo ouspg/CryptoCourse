@@ -1,5 +1,10 @@
-# CryptoCourse
-Exercises for the course Cryptographic systems and their weaknessess 521149S
+# Cryptographic systems and their weaknesses 521149S
+
+Exercises for the course Cryptographic systems and their weaknesses 521149S
+
+## Contents
+
+Course wil go thorough basic concepts of cryptography, definitions and concepts of cryptographic security and testing these through programming. Showing different cryptographic weaknesses and demonstrating different implementations of these through programming. Basics of quantum computing and post-quantum cryptography.
 
 You can find the course from the [Moodle.](https://moodle.oulu.fi/course/view.php?id=7315)
 
@@ -7,7 +12,7 @@ You can find the course from the [Moodle.](https://moodle.oulu.fi/course/view.ph
 
 Theory of the exercises are mainly based on the book [Serious Cryptography](https://nostarch.com/seriouscrypto). It is available in the library of the University of Oulu in [digital format](https://oula.finna.fi/Record/oy_electronic_oy.9917612964306252).
 
-We will be also using the OpenSSL Cookbook which is available free on [here.](https://www.feistyduck.com/books/openssl-cookbook/)
+We will be also using the OpenSSL Cookbook which is available free on [here.](https://www.feistyduck.com/books/openssl-cookbook/) You can use HTML version without registration.
 
 Programming and command-line usage skills are expected.
 
