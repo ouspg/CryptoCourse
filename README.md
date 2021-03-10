@@ -49,13 +49,13 @@ In case you have problems on getting it working, contact course assistants.
 
 The work will be done on the GitHub repository during the course.
 
-You need to create private GitHub repository **from the url in the Moodle page.**
+You need to create private GitHub repository **from the url in the Moodle page.** This will require GitHub account.
 
 Repository will be place for your work, and commit changes on there for corresponding folders.
 
 Every week you need to return only URL of your repository for the assignment return box, unless otherwise stated.
 
- **Deadline is always before the next instructed exercise session!**
+ **Deadline is always before the next supported exercise session!**
 
 Check [cheat sheet](https://training.github.com/downloads/github-git-cheat-sheet.pdf) if you need a refresher on how to use Git. Some basic commands can be found below.
 
