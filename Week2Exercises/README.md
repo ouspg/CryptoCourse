@@ -30,7 +30,7 @@ OpenSSL can be used to generate different kind of asymmetric key-pairs. In this 
 
 Use both legacy commands (`genrsa` & `dsaparam/gendsa`) and newer commands (`genpkey`) and finally compare the results and the time it takes to generate the keys. It is recommended to try relatively high key length to notice difference (RSA).
 
-You might need to use some more commands, to generate the public keys only.
+You might need to use some commands more, to generate the public keys only.
 
 On Linux, you can measure time with `time` command. To see explanation of produced output, you can reference [here.](https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1/556411#556411)
 
@@ -45,7 +45,7 @@ On Linux, you can measure time with `time` command. To see explanation of produc
 
 Generate a certificate signing request (CSR) for one or more of the keys that you have generated in Task 1.
 
-Double-check the certificate creation by printing it in text format.
+Double-check the certificate request by printing it in text format.
 
 > Return the CSR(s) as a mark of completion of this task.
 
