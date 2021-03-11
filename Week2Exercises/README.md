@@ -2,7 +2,7 @@
 
 This week’s exercises focus on key generation, brute forcing and security assumptions.
 
-First two tasks are heavily using OpenSSL from  thecommand-line, and the book [OpenSSL Cookbook 3ed Online](https://www.feistyduck.com/library/openssl-cookbook/online/) could be very useful.
+First two tasks are heavily using OpenSSL from the command-line, and the book [OpenSSL Cookbook 3ed Online](https://www.feistyduck.com/library/openssl-cookbook/online/) could be very useful.
 
 ## Environment
 
@@ -23,7 +23,9 @@ Task 4 | 5 | Security level analysis of your favorite application
 
 ## Task 1 
 
-Generate RSA and ECDSA public keys of different lengths with OpenSSL. Use both legacy commands (genrsa & dsaparam/gendsa) and newer commands (genpkey) and compare the results and the time it takes to generate the keys.
+Generate RSA and ECDSA public keys of different lengths with OpenSSL. 
+
+Use both legacy commands (genrsa & dsaparam/gendsa) and newer commands (genpkey) and compare the results and the time it takes to generate the keys.
 
 ## Task 2
 
@@ -40,7 +42,7 @@ Encrypt some data with the key, delete the key from memory and try to brute forc
  * You can run the tests several times (10-1000) and compute the average time it takes to brute force the key.
  * You can work in pairs / small groups and provide the encrypted data as a challenge to your fellow students. What information do you need to give in addition to the encrypted data to make brute forcing possible?
 
-> Document your results in a table, answer the questions and provide the source code. You can also add some screenshots of your work.
+> Document your process and add results in a table, answer the questions and provide the source code. You can also add some screenshots of your work.
 
 
 ## Task 4
@@ -67,3 +69,5 @@ An example structure for this type of document could be
     * (optional) How could the security of the cryptography be improved?
 4. References
     * Give a list of all the reference material that you have used. Please reference these also in the text so that we can see, where each bit of information has been collected.
+
+> You can also make a separate PDF document, and upload it here, if you want. Remember to reference for it.
