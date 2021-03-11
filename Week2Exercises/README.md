@@ -6,7 +6,7 @@ First two tasks are heavily using OpenSSL from the command-line, and the book [O
 
 ## Environment
 
-You should have access into Linux/Unix environment to be able to complete Tasks 1-2.
+You should have access into `openssl` toolkit, with recommended version of 1.1.1 at minimum to be able to complete Tasks 1-2. In general this is only available from the Linux/Unix based systems.
 
 The course virtual machine is suitable.
 
@@ -23,17 +23,31 @@ Task 4 | 5 | Security level analysis of your favorite application
 
 ## Task 1 
 
-Generate RSA and ECDSA public keys of different lengths with OpenSSL. 
+[OpenSSL](https://www.openssl.org/) can be used to generate different kind of asymmetric key-pairs. In this task, we will try out RSA and ECDSA algorithms.
 
-Use both legacy commands (genrsa & dsaparam/gendsa) and newer commands (genpkey) and compare the results and the time it takes to generate the keys.
+Generate RSA and ECDSA public keys of *different lengths* with OpenSSL.
+
+Use both legacy commands (`genrsa` & `dsaparam/gendsa`) and newer commands (`genpkey`) and finally compare the results and the time it takes to generate the keys. It is recommended to try relatively high key length to notice difference.
+
+Different commands might be using different Public-Key Cryptography Standards (PKCS) output format. Which ones have been used?
+
+You might need to use some more commands, to separate the public key only.
+
+On Linux, you can measure time with `time` command. To see explanation of produced output, you can reference [here.](https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1/556411#556411)
+
+> Include all commands you used to generate keys. Return your public keys (and public keys only!) as a mark of completion of this task.
+
 
 ## Task 2
 
 Generate a certificate signing request (CSR) for one or more of the keys that you have generated in Task 1. Return the CSR(s) as a mark of completion of this task.
 
+Note, that leaving a field blank, requires using dot `.` rather than just
+hitting Return button.
+
 ## Task 3
 
-Pick a programming language and a cryptographic library. The course virtual machine includes Python 3 and PyCryptodome. Feel free to use any other languages you are more familiar with.
+Pick a programming language and a cryptographic library. The course virtual machine includes Python 3 and PyCryptodome. Feel free to use any other languages you are more familiar with. However, the course virtual machine does not have everything and you might need to install more by yourself.
 
 Pick a symmetric encryption algorithm (e.g. AES) and generate keys with limited randomness (10, 20 and 30 bits (or 1-4 bytes)  at least, you can go up from that if you want). 
 
@@ -43,6 +57,8 @@ Encrypt some data with the key, delete the key from memory and try to brute forc
  * You can work in pairs / small groups and provide the encrypted data as a challenge to your fellow students. What information do you need to give in addition to the encrypted data to make brute forcing possible?
 
 > Document your process and add results in a table, answer the questions and provide the source code. You can also add some screenshots of your work.
+
+> Remember to mention the members of your group, in case one was formed.
 
 
 ## Task 4
