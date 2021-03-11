@@ -25,25 +25,27 @@ Task 4 | 5 | Security level analysis of your favorite application
 
 [OpenSSL](https://www.openssl.org/) can be used to generate different kind of asymmetric key-pairs. In this task, we will try out RSA and ECDSA algorithms.
 
-Generate RSA and ECDSA public keys of *different lengths* with OpenSSL.
 
-Use both legacy commands (`genrsa` & `dsaparam/gendsa`) and newer commands (`genpkey`) and finally compare the results and the time it takes to generate the keys. It is recommended to try relatively high key length to notice difference.
+**Task 1.1.** Generate RSA and ECDSA public keys of *different lengths* with OpenSSL.
 
-Different commands might be using different Public-Key Cryptography Standards (PKCS) output format. Which ones have been used?
+Use both legacy commands (`genrsa` & `dsaparam/gendsa`) and newer commands (`genpkey`) and finally compare the results and the time it takes to generate the keys. It is recommended to try relatively high key length to notice difference (RSA).
 
-You might need to use some more commands, to separate the public key only.
+You might need to use some more commands, to generate the public keys only.
 
 On Linux, you can measure time with `time` command. To see explanation of produced output, you can reference [here.](https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1/556411#556411)
 
-> Include all commands you used to generate keys. Return your public keys (and public keys only!) as a mark of completion of this task.
+**Task 1.2.** Different commands (legacy vs. new) might be using different Public-Key Cryptography Standards (PKCS) output format. Which ones have been used? What binary format is the newer one representing?
+
+**Task 1.3.** What command can you use to read generated private keys in text format?
+
+> Answer the questions and include all possible commands you used on your answers. Return your public keys (and public keys only!) as a mark of completion of this task.
 
 
 ## Task 2
 
 Generate a certificate signing request (CSR) for one or more of the keys that you have generated in Task 1. Return the CSR(s) as a mark of completion of this task.
 
-Note, that leaving a field blank, requires using dot `.` rather than just
-hitting Return button.
+Double-check the certificate creation by printing it in text format.
 
 ## Task 3
 
@@ -86,4 +88,4 @@ An example structure for this type of document could be
 4. References
     * Give a list of all the reference material that you have used. Please reference these also in the text so that we can see, where each bit of information has been collected.
 
-> You can also make a separate PDF document, and upload it here, if you want. Remember to reference for it.
+> You can also make a separate PDF document, and upload it into your repository, if you want. Remember to reference for it.
