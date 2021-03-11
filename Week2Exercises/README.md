@@ -2,7 +2,7 @@
 
 This week’s exercises focus on key generation, brute forcing and security assumptions.
 
-First two tasks are heavily using OpenSSL from the command-line, and the book [OpenSSL Cookbook 3ed Online](https://www.feistyduck.com/library/openssl-cookbook/online/) could be very useful.
+First two tasks are heavily using [OpenSSL](https://www.openssl.org/) from the command-line, and the book [OpenSSL Cookbook 3ed Online](https://www.feistyduck.com/library/openssl-cookbook/online/) could be very useful.
 
 ## Environment
 
@@ -23,7 +23,7 @@ Task 4 | 5 | Security level analysis of your favorite application
 
 ## Task 1 
 
-[OpenSSL](https://www.openssl.org/) can be used to generate different kind of asymmetric key-pairs. In this task, we will try out RSA and ECDSA algorithms.
+OpenSSL can be used to generate different kind of asymmetric key-pairs. In this task, we will try out RSA and ECDSA algorithms.
 
 
 **Task 1.1.** Generate RSA and ECDSA public keys of *different lengths* with OpenSSL.
