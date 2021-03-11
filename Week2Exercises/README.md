@@ -43,9 +43,11 @@ On Linux, you can measure time with `time` command. To see explanation of produc
 
 ## Task 2
 
-Generate a certificate signing request (CSR) for one or more of the keys that you have generated in Task 1. Return the CSR(s) as a mark of completion of this task.
+Generate a certificate signing request (CSR) for one or more of the keys that you have generated in Task 1.
 
 Double-check the certificate creation by printing it in text format.
+
+> Return the CSR(s) as a mark of completion of this task.
 
 ## Task 3
 
