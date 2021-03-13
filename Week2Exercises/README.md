@@ -21,7 +21,7 @@ Task 2 | 3 | Generating certificate signing requests with OpenSSL
 Task 3 | 4 | Generating symmetric keys with limited randomness and brute forcing the key.
 Task 4 | 5 | Security level analysis of your favorite application
 
-## Task 1 
+## Task 1: Generating public keys with OpenSSL
 
 OpenSSL can be used to generate different kind of asymmetric key-pairs. In this task, we will try out RSA and ECDSA algorithms.
 
@@ -41,7 +41,7 @@ On Linux, you can measure time with `time` command. To see explanation of produc
 > Answer the questions and include all possible commands you used on your answers. Return your public keys (and public keys only!) as a mark of completion of this task.
 
 
-## Task 2
+## Task 2: Generating certificate signing requests with OpenSSL
 
 Generate a certificate signing request (CSR) for one or more of the keys that you have generated in Task 1.
 
@@ -49,7 +49,7 @@ Double-check the certificate request by printing it in text format.
 
 > Return the CSR(s) as a mark of completion of this task.
 
-## Task 3
+## Task 3: Generating symmetric keys with limited randomness and brute forcing the key.
 
 Pick a programming language and a cryptographic library. The course virtual machine includes Python 3 and PyCryptodome. Feel free to use any other languages you are more familiar with. However, the course virtual machine does not have everything and you might need to install more by yourself.
 
@@ -65,7 +65,7 @@ Encrypt some data with the key, delete the key from memory and try to brute forc
 > Remember to mention the members of your group, in case one was formed.
 
 
-## Task 4
+## Task 4: Security level analysis of your favorite application
 
 Pick an application (such as a secure messaging application, VPN system etc.) and identify its crypto schemes, key length, and respective security levels. Your analysis can be based on marketing material, blog posts, websites, research papers or code analysis (if the application has open source code).
 
