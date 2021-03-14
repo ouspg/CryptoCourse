@@ -44,7 +44,7 @@ You are given ciphertext and binary which is demonstrating the interface for pos
 
 Provided binary is using `AES-128` encryption with `PKCS#7` padding. Initialization vector is in the ciphertext as prefix.
 
-Binary is named as `decryptor` in files folder. Ciphertext is in raw binary format in same folder.
+Binary is named as `decryptor` in [files](files) folder. Ciphertext is in raw binary format in same folder.
 
 > Return source code and the decrypted text. Describe shortly, how you could avoid this attack by using different methods.
 
