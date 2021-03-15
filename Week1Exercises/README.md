@@ -51,7 +51,7 @@ Binary | Hex
 
 > You should return possible source code for how you solved the secret and produced the new ciphertexts. Answer the questions and **also** explain shortly the idea of your method.
 
-You can verify that your key is correct, by combining single hexadecimal string from binary values, and calculating sha256 hash for the final string with `openssl` on Linux, for example if we combine given encrypted message:
+Obviously we are not going to give you correct key to check your answer, but here is bit more cryptographic way. This might be applied on the future as well. You can verify that your key is correct, by combining single hexadecimal string from binary values, and calculating sha256 hash for the final string with `openssl` on Linux, for example if we combine given encrypted message:
 
 ```shell
  echo -n "0x69155f4e201cad61" | openssl dgst -sha256
