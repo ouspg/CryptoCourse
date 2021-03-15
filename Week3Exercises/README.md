@@ -36,15 +36,15 @@ Encrypt this message using three different modes of operation ECB, CBC and CTR. 
 
 ## Task 4: Padding oracle
 
-Failed CBC encryption implementation could lead for catastrophic consequences. Implementation fail could be as little as telling when decryption of given ciphertext is successful or not, by checking whether decryption provides plaintext with valid padding.
+Failed CBC encryption implementation could lead for catastrophic consequences. Implementation fail could be as little as telling when decryption of given ciphertext is successful or not, by checking on if decryption provides plaintext with valid padding.
 
 Take a look for padding oracle attack in the course book, on the page 74.
 
-You are given ciphertext and binary which is demonstrating the interface for possible bigger software implementation. Make a padding oracle attack and decrypt the given ciphertext. 
+You are given a ciphertext and binary as a command-line application which is demonstrating the interface for possible bigger software implementation. Make a padding oracle attack and decrypt the given ciphertext. 
 
 Provided binary is using `AES-128` encryption with `PKCS#7` padding. Initialization vector is in the ciphertext as prefix.
 
-Binary is named as `decryptor` in [files](files) folder. Ciphertext is in raw binary format in same folder.
+Binary is named as `decryptor` in the [files](files) folder. Ciphertext is in raw binary format in the same folder.
 
 > Return source code and the decrypted text. Describe shortly, how you could avoid this attack by using different methods.
 
