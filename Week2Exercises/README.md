@@ -53,7 +53,7 @@ Double-check the certificate request by printing it in text format.
 
 Pick a programming language and a cryptographic library. The course virtual machine includes Python 3 and PyCryptodome. Feel free to use any other languages you are more familiar with. However, the course virtual machine does not have everything and you might need to install more by yourself.
 
-Pick a symmetric encryption algorithm (e.g. AES) and generate keys with limited randomness (10, 20 and 30 bits (or 1-4 bytes)  at least, you can go up from that if you want). 
+Pick a symmetric encryption algorithm (e.g. AES) and generate keys with limited randomness (10, 20 and 30 bits (or 1-4 bytes)  at least, you can go up from that if you want). Remember that you need to still fullfil the required key length for selected encryption algorithm.
 
 Encrypt some data with the key, delete the key from memory and try to brute force the key to open the data. 
 
