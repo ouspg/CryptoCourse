@@ -6,7 +6,7 @@ First two tasks are heavily using [OpenSSL](https://www.openssl.org/) from the c
 
 ## Environment
 
-You should have access into `openssl` toolkit, with recommended version of 1.1.1 at minimum to be able to complete Tasks 1-2. In general this is only available from the Linux/Unix based systems.
+You should have access into `openssl` toolkit, with recommended version of 1.1.1 at minimum to be able to complete tasks 1-2. In general, it is only available from the Linux/Unix based systems.
 
 The course virtual machine is suitable.
 
@@ -30,7 +30,7 @@ OpenSSL can be used to generate different kind of asymmetric key-pairs. In this 
 
 Use both legacy commands (`genrsa` & `dsaparam/gendsa`) and newer commands (`genpkey`) and finally compare the results and the time it takes to generate the keys. It is recommended to try relatively high key length to notice difference (RSA).
 
-You might need to use some commands more, to generate the public keys only.
+You might need to use some additional commands, to generate the public keys only.
 
 On Linux, you can measure time with `time` command. To see explanation of produced output, you can reference [here.](https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1/556411#556411)
 
@@ -43,7 +43,7 @@ On Linux, you can measure time with `time` command. To see explanation of produc
 
 ## Task 2: Generating certificate signing requests with OpenSSL
 
-Generate a certificate signing request (CSR) for one or more of the keys that you have generated in Task 1.
+Generate a certificate signing request (CSR) for one or more of the keys that you have generated in the Task 1.
 
 Double-check the certificate request by printing it in text format.
 
