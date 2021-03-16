@@ -116,3 +116,5 @@ apt-get update && apt-get install dieharder
 weak PRNG that will fool any statistical test e.g. dieharder, therefore it cannot be fully trusted as measurement of security.*
 
 > Include all commands and possible source code(s) in your report. Answer the questions and clarify your findings.
+
+> To acquire full points from this task, you are expected to deeply reflect on things; are we even able to review this task equally, since there is randomness included? Note also, that we are analysing files instead of generators.
