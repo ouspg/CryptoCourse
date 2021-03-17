@@ -98,6 +98,7 @@ Some available software methods which **might or might not be** cryptographicall
   * System.Security.Cryptography.RandomNumberGenerator on [C# .NET](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator?view=net-5.0) on Windows
   * [Get-Random](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7.1) on PowerShell
   * `openssl rand` method
+  * Kernel syscall [getrandom](https://github.com/torvalds/linux/blob/1df27313f50a57497c1faeb6a6ae4ca939c85a7d/include/linux/syscalls.h#L1001)
 
 **Task 3.1** What is the difference between `/dev/urandom` and `/dev/random` devices? Note also the [recent change on Kernel.](https://lore.kernel.org/lkml/20200131204924.GA455123@mit.edu/)
 
