@@ -42,7 +42,7 @@ Encrypt your message using three different modes of operation ECB, CBC and CTR w
 ## Task 2: Wrong model type of attack
 
 <p align="right">
-<img src="img/encryptic.png" alt="Random number. Source: XKCD" height="300px" align="right"/>
+<img src="img/encryptic.png" alt="Random number. Source: XKCD" height="400px" align="right"/>
 </p>
 
 
