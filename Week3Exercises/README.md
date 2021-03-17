@@ -23,7 +23,7 @@ Task 4 | 5 | Padding oracle
 
 ## Task 1: Modes of operation
 
-Let's have a practical look for different modes of operations.
+Let's have a practical look at different modes of operations.
 
 **Task 1.1.** Pick a programming language and a crypto library that supports AES.
 
@@ -72,11 +72,11 @@ Familiarize yourself with the Adobe password attack from 2013 [for example from 
 
 Failed CBC encryption implementation could lead for catastrophic consequences. Implementation fail could be as little as telling when decryption of given ciphertext is successful or not, by checking on if decryption provides plaintext with valid padding.
 
-Take a look for padding oracle attack in the course book, on the page 74.
+Take a look at the padding oracle attack in the course book, on the page 74.
 
-You are given a ciphertext and binary as a command-line application which is demonstrating the interface for possible bigger software implementation. Make a padding oracle attack and decrypt the given ciphertext. 
+You are given a ciphertext and an executable binary as a command-line application which is demonstrating the interface for possible bigger software implementation. Make a padding oracle attack and decrypt the given ciphertext. 
 
-Provided binary is using `AES-128` encryption with `PKCS#7` padding. Initialization vector is in the ciphertext as prefix.
+Provided binary uses `AES-128` encryption with `PKCS#7` padding. Initialization vector is in the ciphertext as a prefix.
 
 Binary is named as `decryptor` in the [files](files) folder. Ciphertext is in raw binary format in the same folder.
 
