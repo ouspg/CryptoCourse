@@ -68,6 +68,22 @@ Familiarize yourself with the Adobe password attack from 2013 [for example from 
 
 ## Task 3: Forged cipher
 
+In this task you will do a similar attack as in Week 1 Task 1, but against a real world secure encryption scheme. The message below is encrypted with AES (a secure standard for symmetric encryption) using a provably secure mode of operation. Yet, you should be able to modify the message according to the task below.
+
+You have managed to intercept the following encrypted message:
+
+`cipher here`
+
+You have intelligence that tells you it is the unauthenticated encryption of the message: 
+
+`Move the tables to the patio as soon as possible!`
+
+The intelligence also tells you that the encryption is done using AES encryption in Counter (CTR) mode with a 128 bit key and an unknown (but fixed) initialization vector (IV). They also use plain ASCII encoding of their text before encryption.
+Your challenge is to provide a ciphertext that decrypts to:
+
+`Move the chairs to the patio as soon as possible!`
+
+
 ## Task 4: Padding oracle
 
 Failed CBC encryption implementation could lead for catastrophic consequences. Implementation fail could be as little as telling when decryption of given ciphertext is successful or not, by checking on if decryption provides plaintext with valid padding.
