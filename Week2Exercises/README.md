@@ -23,12 +23,15 @@ Task 4 | 5 | Security level analysis of your favorite application
 
 ## Task 1: Generating public keys with OpenSSL
 
-OpenSSL can be used to generate different kind of asymmetric key-pairs. In this task, we will try out RSA and ECDSA algorithms.
+OpenSSL can be used to generate different kind of asymmetric key-pairs. In this task, we will try out RSA,ECDSA and *legacy* DSA algorithm.
 
-
-**Task 1.1.** Generate RSA and ECDSA public keys of *different lengths* with OpenSSL.
+**Task 1.1.** Generate RSA and ECDSA/DSA keys of *different lengths* with OpenSSL. Private keys are required for time measurement.
 
 Use both legacy commands (`genrsa` & `dsaparam/gendsa`) and newer commands (`genpkey`) and finally compare the results and the time it takes to generate the keys. It is recommended to try relatively high key length to notice difference (RSA).
+
+Note, that with legacy commands you are expected to generate RSA and DSA keys. With newer commands you should generate RSA and ECDSA keys.
+
+ We are mainly interested on the differences and practical use of OpenSSL on here - DSA/ECDSA can be considered as weak algorithms in these days, they are very dependent on the [PRNG of the operating system when signing messages](https://en.wikipedia.org/wiki/Digital_Signature_Algorithm#Sensitivity), while DSA being already officially deprecated by OpenSSL because of the low key length requirements.
 
 You might need to use some additional commands, to generate the public keys only.
 
