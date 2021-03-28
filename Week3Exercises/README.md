@@ -72,17 +72,27 @@ In this task you will do a similar attack as in Week 1 Task 1, but against a rea
 
 You have managed to intercept the following encrypted message:
 
-`cipher here`
+`a7896ad1b2f7da8d40b33d1438e04a839a88b5c9a97625fe5017a5e1fb542072595d804d5ad1a3af11ea7244a39d76cde1`
 
-You have intelligence that tells you it is the unauthenticated encryption of the message: 
+You have information that tells you it is the unauthenticated encryption of the following message: 
 
 `Move the tables to the patio as soon as possible!`
 
-The intelligence also tells you that the encryption is done using AES encryption in Counter (CTR) mode with a 128 bit key and an unknown (but fixed) initialization vector (IV). They also use plain ASCII encoding of their text before encryption.
-Your challenge is to provide a ciphertext that decrypts to:
+The intelligence also tells you that the encryption is done using AES encryption in Counter mode with a 128 bit key and an unknown (but fixed) initialization vector (IV). They also use plain ASCII encoding of their text before the actual encryption.
 
-`Move the chairs to the patio as soon as possible!`
+**Task 3.1.** Your challenge is to provide a ciphertext that decrypts to:
 
+`Move the chairs to the house as soon as possible!`
+
+Ciphertext should be in similar format than the original one. You can check that you have produced the correct one, comparing it to following sha256 hash:
+
+> `102f853f3e0f38fa7ba7448e6933acaaec5c1bd975c93fc65bff4faa94d2ca34`
+
+**Task 3.2.** What was the flaw here? Are we actually using block cipher here?
+
+**Task 3.3.** What limitations you have on modifying the ciphertext?
+
+> Include possible source code for producing the ciphertext and answer the questions.
 
 ## Task 4: Padding oracle
 
