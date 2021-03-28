@@ -104,7 +104,7 @@ You are given a ciphertext and an executable binary as a command-line applicatio
 
 Provided binary uses `AES-128` encryption with `PKCS#7` padding. Initialization vector is in the ciphertext as a prefix.
 
-Binary is named as `decryptor` in the [files](files) folder. Ciphertext is in raw binary format in the same folder.
+Binary is named as `decryptor` in the [files](files) folder. It is expected to be executed on glibc enabled Linux environment. Ciphertext is in raw binary format in the same folder.
 
 > Return source code and the decrypted text. Describe shortly, how you could avoid this attack by using different methods.
 
