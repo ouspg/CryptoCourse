@@ -33,7 +33,7 @@ Select a stream cipher and encrypt some text with the generated keystream by XOR
 
 ### Preface
 
-Bob has been busy. He has been working on his side project; a web app where he is testing "new" method for maintaining user authentication with HTTP cookies on the website. He is using `sha256` hashes as message authentication codes ([MAC](https://en.wikipedia.org/wiki/Message_authentication_code)s) of the cookie content with included random prefix key, as secure method to be sure, that only his backend server can bee the origin of them. 
+Bob has been busy. He has been working on his side project; a web app where he is testing "new" method for maintaining user authentication with HTTP cookies on the website. He is using `sha256` hashes as message authentication codes ([MAC](https://en.wikipedia.org/wiki/Message_authentication_code)s) of the cookie content with included random prefix key, as secure method to be sure, that only his backend server can be the origin of them. 
 Once he is satisfied on his work from the login part, he asks his friend, Alice who is much more experienced on this matter, to check on his work. He is going to open-source his work.
 
 You can find the source code from the [app](app) directory.
@@ -50,7 +50,7 @@ At first, badly selected hashing algorithm did not sound **that** bad, there is 
 
 Can you access route `/admin/top-secret` just by modifying the cookie of the guest user?
 
-In this case, we have access for hashed password of the admin user, which should be normally still unusable for authentication.
+In this case, we have access for hashed password (or secret) of the admin user, which still should be normally unusable for authentication, but now it is because of the selected hashing algorithm.
 
 > You should return source code and shortly explain what you did. You can use existing tools for calculating new signatures.
 
