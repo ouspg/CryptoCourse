@@ -50,9 +50,9 @@ At first, badly selected hashing algorithm did not sound **that** bad, there is 
 
 Can you access route `/admin/top-secret` just by modifying the cookie of the guest user?
 
-In this case, we have access for hashed password (or secret) of the admin user, which still should be normally unusable for authentication, but now it is because of the selected hashing algorithm.
+In this case, we have access for hashed password (or secret) of the admin user, which still should be normally unusable for authentication, but now it is, because of the selected hashing algorithm (and overall implementation).
 
-> You should return source code and shortly explain what you did. You can use existing tools for calculating new signatures.
+> You should return source code and shortly explain main mechanic on here; what you did. You can use existing tools for calculating new signatures.
 
 
 **Disclaimer:** don't use app as example for many cases. For password hashing, proper algorithm such as [Argon2](https://en.wikipedia.org/wiki/Argon2) with salting should be used, which resists brute forcing.
