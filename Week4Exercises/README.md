@@ -27,13 +27,13 @@ Select a stream cipher and encrypt some text with the generated keystream by XOR
 
 ## Task 2:
 
-## Task 4:
+## Task 4: MACs gone wrong
 
 > This task might be extremely challenging, depending on your technical background. However, we try to focus on the cryptographic part here, while still bringing the example of whole partial system.
 
 ### Preface
 
-Bob has been busy. He has been working on his side project; a web app where he is testing "new" method for maintaining user authentication with HTTP cookies on website. He is using `sha256` hashes as message authentication codes ([MAC](https://en.wikipedia.org/wiki/Message_authentication_code)s) of the cookie content with included random prefix key, as secure method to be sure, that only his backend server has been the origin them. 
+Bob has been busy. He has been working on his side project; a web app where he is testing "new" method for maintaining user authentication with HTTP cookies on the website. He is using `sha256` hashes as message authentication codes ([MAC](https://en.wikipedia.org/wiki/Message_authentication_code)s) of the cookie content with included random prefix key, as secure method to be sure, that only his backend server can bee the origin of them. 
 Once he is satisfied on his work from the login part, he asks his friend, Alice who is much more experienced on this matter, to check on his work. He is going to open-source his work.
 
 You can find the source code from the [app](app) directory.
@@ -42,3 +42,25 @@ Alice quickly notices that there are few implementation problems on the code. On
 
 Pages 124-133 from the course book are related on this matter.
 
+### The actual task
+
+At first, badly selected hashing algorithm did not sound **that** bad, there is another flaw on the source code (see `security.py`) on `parse_session` method: it might not be perfect on parsing the cookie, and with combination of bad hashing algorithm for this case, it can lead for unexpected things. 
+
+**The task here** is to implement length extension attack on the web application. 
+
+Can you access route `/admin/top-secret` just by modifying the cookie of the guest user?
+
+In this case, we have access for hashed password of the admin user, which should be normally still unusable for authentication.
+
+> You should return source code and shortly explain what you did. You can use existing tools for calculating new signatures.
+
+
+**Disclaimer:** don't use app as example for many cases. For password hashing, proper algorithm such as [Argon2](https://en.wikipedia.org/wiki/Argon2) with salting should be used, which resists brute forcing.
+
+### Some general tips for the task
+
+To set application running on your local machine, there is available `Docker` image:
+
+Docker has been installed on the provided virtual machine.
+
+If you are working on Python code, see [`requests`](https://docs.python-requests.org/en/master/) library for handling HTTP requests. [Session objects](https://docs.python-requests.org/en/master/user/advanced/#session-objects) could be useful on handling and accessing cookies.
