@@ -1,0 +1,35 @@
+{% include 'head.html' %}
+
+<body>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            {% if user %}
+                <h3> But Hello
+                    <emph>{{ user.username }}!</emph>
+                </h3>
+                <p><br>
+                    Sadly there is nothing more to see.
+                </p>
+            {% if user.username == "admin" %}
+                <p><br>
+                    ... unless you are the Admin and can go <a href="/admin" style="color:blue;">the Admin panel.</a>
+                </p>
+            {% endif %}
+                <br><br>
+                <a href="/logout">
+                <button id="logout" class="login100-form-btn">
+                    Log out...
+                </button></a>
+            {% else %}
+                <p>Hello !<br>
+                    You can login with the username and password <b>cryptouser</b>.<br>
+                </p>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+<div id="dropDownSelect1"></div>
+
+{% include 'footer.html' %}

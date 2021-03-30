@@ -1,0 +1,26 @@
+{% include 'head.html' %}
+
+<body>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            {% if user == "admin" %}
+                <h3> Welcome to the Admin panel
+                </h3>
+                <p><br>
+                    You can see the most secret stuff on <a href="/admin/top-secret" style="color:blue;">here.</a>
+                </p>
+                <br><br>
+                <a href="/logout">
+                    <button id="logout" class="login100-form-btn">
+                        Log out...
+                    </button>
+                </a>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+<div id="dropDownSelect1"></div>
+
+{% include 'footer.html' %}
