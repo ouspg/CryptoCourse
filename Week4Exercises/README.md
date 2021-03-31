@@ -9,7 +9,7 @@ You are eligible for following points from the exercise. Previous task(s) should
 Task #|Grade|Description|
 -----|:---:|-----------|
 Task 1 | 2 | Stream cipher usage
-Task 2 | 3 | Partial collision of hash functions
+Task 2 | 3 | Partial collisions and preimages of hash functions
 Task 3 | 4 | Nonce reuse
 Task 4 | 5 | MACs gone wrong
 
@@ -26,6 +26,16 @@ Select a stream cipher and encrypt some text with the generated keystream by XOR
 > Return possible source code and answer the questions.
 
 ## Task 2:
+
+This task focuses on collision and preimage attacks on hash functions. 
+
+**2.1** Implement a partial collision search for different hash functions (MD5, SHA-1, SHA-3 etc.). Find partially colliding messages for 2-4 first bytes of the hash value. Report the colliding messages and the time it took to find a collision.
+**2.2** Implement a partial preimage search for some hash function (MD5, SHA-1…). Find preimages for hash values starting with 1-3 zero bytes. Report the preimages along with the time it took to find them.
+**2.3** Compare the computation and memory requirements of your implementations.
+
+> Return possible source code and answer the questions.
+
+Note that for example Bitcoin proof-of-work algortihm is based on a partial preimage search of a hash function.
 
 ## Task 4: MACs gone wrong
 
