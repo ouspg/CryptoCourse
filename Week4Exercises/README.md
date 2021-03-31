@@ -35,7 +35,7 @@ This task focuses on collision and preimage attacks on hash functions.
 
 > Return possible source code and answer the questions.
 
-Note that for example Bitcoin proof-of-work algortihm is based on a partial preimage search of a hash function.
+Note that for example the Bitcoin proof-of-work algorithm is based on a partial preimage search of a hash function.
 
 ## Task 4: MACs gone wrong
 
