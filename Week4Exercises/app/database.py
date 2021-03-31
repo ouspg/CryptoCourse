@@ -83,8 +83,6 @@ class DB:
         res = self._get_role(username, secret)
         if res:
             self.logger.info(f"User {username} found.")
-            print(res)
-            print(res[0])
             user = User(username, res[0])
             return user
         return None
