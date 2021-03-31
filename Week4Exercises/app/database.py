@@ -89,7 +89,6 @@ class DB:
 
     def is_admin(self, request) -> bool:
         session = get_session(request)
-        print(session)
         if not session:
             return None
         if "username" not in session or "secret" not in session:
