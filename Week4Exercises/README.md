@@ -50,19 +50,19 @@ Once he is satisfied on his work from the login part, he asks his friend, Alice 
 
 You can find the source code from the [app](app) directory.
 
-Alice quickly notices that there are few implementation problems on the code. One is, that *security assumption of `sha256` hashes as secure signature on authentication on this case is wrong,* even thought it is one of the most used hashing algorithms. Hash algorithms in *Merkle–Damgård* family are vulnerable on [length extension attack.](https://en.wikipedia.org/wiki/Length_extension_attack) One could add more data on top of existing data, and calculate new valid signature, as long as the content length of the existing data is known, regardless if old data is unknown. The implementation fails here, when random prefix data is simply included with the actual data. However, it could be secure, when implemented correctly. See reference for [HMAC](https://docs.python-requests.org/en/master/user/advanced/#session-objects).
+Alice quickly notices that there are few implementation problems on the code. One is, that *security assumption of `sha256` hashes as secure signature on authentication on this case is wrong,* even thought it is one of the most used hashing algorithms. Hash algorithms in *Merkle–Damgård* family are vulnerable on [length extension attack.](https://en.wikipedia.org/wiki/Length_extension_attack) One could add more data on top of existing data, and calculate new valid signature, as long as the content length of the existing data is known, regardless if old data is unknown. The implementation fails here, when random prefix data is simply included with the actual data, before calculating the hash. However, it could be secure, when implemented correctly. See reference for [HMAC](https://docs.python-requests.org/en/master/user/advanced/#session-objects).
 
 Pages 124-133 from the course book are related on this matter.
 
-### The actual task
+### Length extension attack
 
-At first, badly selected hashing algorithm did not sound **that** bad, there is another flaw on the source code (see `security.py`) on `parse_session` method: it might not be perfect on parsing the cookie, and with combination of bad hashing algorithm for this case, it can lead for unexpected things. 
+At first, badly selected hashing algorithm did not sound **that** bad, there is another flaw on the source code (see `security.py`) on `parse_session` method: it might not be perfect on parsing the cookie, and with combination of bad security assumptions for this case, it can lead for unexpected things. 
 
 **The task here** is to implement length extension attack on the web application. 
 
 Can you access route `/admin/top-secret` just by modifying the cookie of the guest user?
 
-In this case, we have access for hashed password (or secret) of the admin user, which still should be normally unusable for authentication, but now it is, because of the selected hashing algorithm (and overall implementation).
+In this case, we have access for hashed password (or secret) of the admin user, which still should be normally unusable for authentication because of the signature checks.
 
 > You should return source code and shortly explain main mechanic on here; what you did. You can use existing tools for calculating new signatures.
 
@@ -71,7 +71,12 @@ In this case, we have access for hashed password (or secret) of the admin user, 
 
 ### Some general tips for the task
 
-To set application running on your local machine, there is available `Docker` image:
+To set application running on your local machine, there is available `Docker` image. To simply start the application, run:
+```console
+docker run --rm -p 127.0.0.1:5000:5000 ghcr.io/ouspg/crypto-length-extension-atc
+```
+
+Then it is available on the url `localhost:5000`.
 
 Docker has been installed on the provided virtual machine.
 
