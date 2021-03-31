@@ -50,7 +50,8 @@ class DB:
                 self.cursor.execute(c_insert_user, (ADMIN_USER, 1, ADMIN_SECRET))
 
     def __del__(self):
-        self.cursor.close()
+        if self.cursor:
+            self.cursor.close()
 
     def query_db(self, query, args=(), one=False) -> Union[sqlite3.Row, List[sqlite3.Row]]:
         self.cursor.execute(query, args)
