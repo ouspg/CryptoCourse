@@ -54,7 +54,7 @@ Alice quickly notices that there are few implementation problems on the code. On
 
 However, it could be secure, when implemented correctly. See reference for [HMAC](https://docs.python-requests.org/en/master/user/advanced/#session-objects):
 
-![HMAC](https://latex.codecogs.com/svg.latex?\begin{align}%20%20\operatorname{HMAC}(K,%20m)%20&=%20\operatorname{H}\Bigl(\bigl(K%27%20\oplus%20opad\bigr)%20\parallel%20\operatorname{H}%20\bigl(\left(K%27%20\oplus%20ipad\right)%20\parallel%20m\bigr)\Bigr)%20\\\\%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20K%27%20&=%20\begin{cases}%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20\operatorname{H}\left(K\right)%20&%20K\text{%20is%20larger%20than%20block%20size}%20\\\\%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20K%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&%20\text{otherwise}%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20\end{cases}\end{align})
+![HMAC](img/eq1.png)
 
 Pages 124-133 from the course book are related on this matter.
 
