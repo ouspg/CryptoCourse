@@ -2,6 +2,8 @@
 
 This week’s exercises focus on stream ciphers and hash functions. We briefly touch the topic of MACs on the final task, which is the main theme of the following week.
 
+Stream ciphers and hashes are in the course book on the pages 77-126. 
+
 ## Grading
 
 You are eligible for following points from the exercise. Previous task(s) should be completed before going further.
