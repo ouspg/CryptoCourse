@@ -1,6 +1,6 @@
 # Week 4 Exercises
 
-This week’s exercises focus on stream ciphers and hash functions.
+This week’s exercises focus on stream ciphers and hash functions. We briefly touch the topic of MACs on the final task, which is the main theme of the following week.
 
 ## Grading
 
@@ -50,13 +50,13 @@ Once he is satisfied on his work from the login part, he asks his friend, Alice 
 
 You can find the source code from the [app](app) directory.
 
-Alice quickly notices that there are few implementation problems on the code. One is, that *security assumption of `sha256` hashes as secure signature on authentication on this case is wrong,* even thought it is one of the most used hashing algorithms. Hash algorithms in *Merkle–Damgård* family are vulnerable on [length extension attack.](https://en.wikipedia.org/wiki/Length_extension_attack) One could add more data on top of existing data, and calculate new valid signature, as long as the content length of the existing data is known, regardless if old data is unknown. The implementation fails here, when random prefix data is simply included with the actual data, before calculating the hash.
+Alice quickly notices that there are few implementation problems on the code. One is, that *security assumption of `sha256` hashes as secure signature on authentication on this case is wrong,* even thought it is one of the most used hashing algorithms. Hash algorithms in *Merkle–Damgård* family are vulnerable on [length extension attack.](https://en.wikipedia.org/wiki/Length_extension_attack) One could add more data on top of existing data, and calculate new valid hash, as long as the content length of the existing data and old hash is known, regardless if the content old data is unknown. The implementation fails here, when random prefix data is simply included with the actual data, before calculating the hash.
 
 However, it could be secure, when implemented correctly. See reference for [HMAC](https://docs.python-requests.org/en/master/user/advanced/#session-objects):
 
 ![HMAC](img/eq1.png)
 
-Pages 124-133 from the course book are related on this matter.
+Pages 124-133 from the course book are related on this matter. There will be more about MACs in the following week.
 
 ### Length extension attack
 
