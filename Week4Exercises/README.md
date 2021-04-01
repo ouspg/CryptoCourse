@@ -52,7 +52,7 @@ Once he is satisfied on his work from the login part, he asks his friend, Alice 
 
 You can find the source code from the [app](app) directory.
 
-Alice quickly notices that there are few implementation problems on the code. One is, that *security assumption of `sha256` hashes as secure signature on authentication on this case is wrong,* even thought it is one of the most used hashing algorithms. Hash algorithms in *Merkle–Damgård* family are vulnerable on [length extension attack.](https://en.wikipedia.org/wiki/Length_extension_attack) One could add more data on top of existing data, and calculate new valid hash, as long as the content length of the existing data and old hash is known, regardless if the content old data is unknown. The implementation fails here, when random prefix data is simply included with the actual data, before calculating the hash.
+Alice quickly notices that there are few implementation problems on the code. One is, that *security assumption of `sha256` hashes as secure signature on authentication on this case is wrong,* even thought it is one of the most used hashing algorithms. Hash algorithms in *Merkle–Damgård* family are vulnerable on [length extension attack.](https://en.wikipedia.org/wiki/Length_extension_attack) One could add more data on top of existing data, and calculate new valid hash, as long as the content length and old hash of the existing data is known, regardless if the old content data is unknown. The implementation fails here, when random prefix data is simply included with the actual data, before calculating the hash.
 
 However, it could be secure, when implemented correctly. See reference for [HMAC](https://docs.python-requests.org/en/master/user/advanced/#session-objects):
 
@@ -66,9 +66,9 @@ At first, badly selected hashing algorithm did not sound **that** bad, there is 
 
 **The task here** is to implement length extension attack on the web application. 
 
-Can you access route `/admin/top-secret` just by modifying the cookie of the guest user?
+**Can you access route `/admin/top-secret` just by modifying the cookie of the guest user?**
 
-In this case, we have access for hashed password (or secret) of the admin user, which still should be normally unusable for authentication because of the signature checks.
+In this case, we have access for hashed password (or secret,) of the admin user, which still should be normally unusable for authentication because of the signature checks.
 
 > You should return source code and shortly explain main mechanic on here; what you did. You can use existing tools for calculating new signatures.
 
