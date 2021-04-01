@@ -43,7 +43,7 @@ Note that for example the Bitcoin proof-of-work algorithm is based on a partial 
 
 ## Task 4: MACs gone wrong
 
-> This task might be extremely challenging, depending on your technical background. However, we try to focus on the cryptographic part here, while still bringing the example of whole partial system.
+> This task might be quite challenging, depending on your technical background. However, we try to focus on the cryptographic part here, while still bringing the example of whole partial system.
 
 ### Preface
 
