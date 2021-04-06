@@ -27,7 +27,7 @@ Select a stream cipher and encrypt some text with the generated keystream by XOR
 
 > Return possible source code and answer the questions.
 
-## Task 2:
+## Task 2: Partial collisions and preimages of hash functions
 
 This task focuses on collision and preimage attacks on hash functions. 
 
@@ -35,7 +35,7 @@ This task focuses on collision and preimage attacks on hash functions.
 
 **2.2** Implement a partial preimage search for some hash function (MD5, SHA-1…). Find preimages for hash values starting with 1-3 zero bytes. Report the preimages along with the time it took to find them.
 
-**2.3** Compare the computation and memory requirements of your implementations. You can use for example Python module [memory_profiler](https://github.com/pythonprofilers/memory_profiler) for computing memory usage. For computation performance, CLI utility `time` command could be enough. For more advanced analysis build-in tool [`cProfile`](https://docs.python.org/3/library/profile.html) can be useful, but stripping non-meaningful data is required.
+**2.3** Compare the computation and memory requirements of your implementations. If you are working on with Python, you can use for example Python module [memory_profiler](https://github.com/pythonprofilers/memory_profiler) for computing memory usage. For computation performance, CLI utility `time` command could be enough. For more advanced analysis build-in tool [cProfile](https://docs.python.org/3/library/profile.html) can be useful, but stripping non-meaningful data is required.
 
 > Return possible source code and answer the questions. If you are using profilers, it might be reasonable to include tables.
 
