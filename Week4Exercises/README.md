@@ -41,6 +41,34 @@ This task focuses on collision and preimage attacks on hash functions.
 
 Note that for example the Bitcoin proof-of-work algorithm is based on a partial preimage search of a hash function.
 
+## Task 3: Nonce reuse
+
+Alice wants to send Bob some longer text. She cuts text to separate messages of 50 characters and encrypts those messages separately. For encryption she uses secure stream cipher and only she and Bob know the key. Alice also carefully picks random nonce for messaging.
+
+Sadly one thing goes wrong: Alice forgets to get new random nonce for the each message. *Uh-oh*
+
+File *files/task3_messages.txt* contains first 10 captured ciphertexts Alice has sent to Bob. Each ciphertext is on its own row.
+
+Next things are known:
+* Message content
+  * Message has 8-bit ASCII encoding(ASCII is 7-bit encoding but it happens to be easier to handle full bytes and it does not matter in this task so easier way is taken).
+  * Message can contain all lowercase letters and spaces. No other characters or special characters are used.
+  * Alice has cutten text to pieces as-it-is for example without caring to keep words uncutted
+  * Language of message is english
+* Encryption
+  * Alice uses secure stream cipher with randomly selected nonce and key only known by her and Bob. Bruteforcing messages by guessing nonce and key to get correct keystream is not possible.
+  * Usually nonce is attached to sent message but we have cutten it out from material. You shall survive without it.
+  * Encryption is made by basic way of XORing keystream and plaintext. As we have 8-bit characters, encrypted text will be nice hexadecimal numbers, each byte in plaintext corresponding byte in ciphertext, for example 'abcd' => *encryption* => '1f2e3d4c'
+
+Your task is to find out what Alice has send to Bob. Good luck!
+
+**Task 3.1** Return solved messages. It does not have to be perfect, but aim for at least 90% accuracy. Return description what you did and code or other tools you used. Also explain shortly why your solution works. Have you seen this text before?
+
+**Task 3.2** Let's say that Alice has only sent 2 message to Bob with same flaw described in this task. Can you solve content then? If yes, then explain how or what limitations apply. If no, then explain why it is impossible or unfeasible.
+
+**Task 3.3** All messages in this task have same length. What happens when messages are variable lenght? Can you solve content then? If yes, then explain how or what limitations apply. If no, then explain why it is impossible or unfeasible.
+
+
 ## Task 4: MACs gone wrong
 
 > This task might be quite challenging, depending on your technical background. However, we try to focus on the cryptographic part here, while still bringing the example of whole partial system.
