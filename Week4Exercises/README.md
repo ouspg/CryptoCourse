@@ -29,7 +29,7 @@ Select a stream cipher and encrypt some text with the generated keystream by XOR
 
 ## Task 2: Partial collisions and preimages of hash functions
 
-This task focuses on collision and preimage attacks on hash functions. 
+This task focuses on collision and preimage attacks on hash functions. Take a look on course book, page 105 onwards.
 
 **2.1** Implement a partial collision search for different hash functions (MD5, SHA-1, SHA-3 etc.). Find partially colliding messages for 2-4 first bytes of the hash value. Report the colliding messages and the time it took to find a collision.
 
