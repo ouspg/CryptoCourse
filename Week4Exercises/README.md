@@ -35,9 +35,9 @@ This task focuses on collision and preimage attacks on hash functions.
 
 **2.2** Implement a partial preimage search for some hash function (MD5, SHA-1…). Find preimages for hash values starting with 1-3 zero bytes. Report the preimages along with the time it took to find them.
 
-**2.3** Compare the computation and memory requirements of your implementations.
+**2.3** Compare the computation and memory requirements of your implementations. You can use for example Python module [memory_profiler](https://github.com/pythonprofilers/memory_profiler) for computing memory usage. For computation performance, CLI utility `time` command could be enough. For more advanced analysis build-in tool [`cProfile`](https://docs.python.org/3/library/profile.html) can be useful, but stripping non-meaningful data is required.
 
-> Return possible source code and answer the questions.
+> Return possible source code and answer the questions. If you are using profilers, it might be reasonable to include tables.
 
 Note that for example the Bitcoin proof-of-work algorithm is based on a partial preimage search of a hash function.
 
@@ -79,8 +79,9 @@ Bob has been busy. He has been working on his side project; a web app where he i
 Once he is satisfied on his work from the login part, he asks his friend, Alice who is much more experienced on this matter, to check on his work. He is going to open-source his work.
 
 You can find the source code from the [app](app) directory.
+We are only interested in about the backend code in practice (Python files).
 
-Alice quickly notices that there are few implementation problems on the code. One is, that *security assumption of `sha256` hashes as secure signature on authentication on this case is wrong,* even thought it is one of the most used hashing algorithms. Hash algorithms in *Merkle–Damgård* family are vulnerable on [length extension attack.](https://en.wikipedia.org/wiki/Length_extension_attack) One could add more data on top of existing data, and calculate new valid hash, as long as the content length and old hash of the existing data is known, regardless if the old content data is unknown. The implementation fails here, when random prefix data is simply included with the actual data, before calculating the hash.
+Alice quickly notices that there are few implementation problems on the code. One is, that *security assumption of `sha256` hashes as secure signature on authentication on this case is wrong,* even thought it is one of the most used hashing algorithms. Hash algorithms in *Merkle–Damgård* family are vulnerable on [length extension attack.](https://en.wikipedia.org/wiki/Length_extension_attack) One could add more data on top of existing data, and calculate new valid hash, as long as the content length and old hash of the existing data is known, regardless if the old content data is unknown. The implementation fails here, when random prefix data is simply included with the actual data, before calculating the hash. See [security.py](app/security.py)
 
 However, it could be secure, when implemented correctly. See reference for [HMAC](https://docs.python-requests.org/en/master/user/advanced/#session-objects):
 
@@ -92,14 +93,11 @@ Pages 124-133 from the course book are related on this matter. There will be mor
 
 At first, badly selected hashing algorithm did not sound **that** bad, there is another flaw on the source code (see `security.py`) on `parse_session` method: it might not be perfect on parsing the cookie, and with combination of bad security assumptions for this case, it can lead for unexpected things. 
 
-**The task here** is to implement length extension attack on the web application. 
-
-**Can you access route `/admin/top-secret` just by modifying the cookie of the guest user?**
+**The task here** is to implement length extension attack on the web application, by modifying authentication cookie. **Can you access the route `/admin/top-secret` by only modifying the cookie of the guest user?**
 
 In this case, we have access for hashed password (or secret,) of the admin user, which still should be normally unusable for authentication because of the signature checks.
 
-> You should return source code and shortly explain main mechanic on here; what you did. You can use existing tools for calculating new signatures.
-
+> You should return source code and shortly explain main mechanic on here; what you did. **You can use existing tools for calculating new signatures.** Implementing own code for extending hash value with new data could be very challenging. You can get partial grade by reporting everything what you tried, even if it was not fully successful.
 
 **Disclaimer:** don't use app as example for many cases. For password hashing, proper algorithm such as [Argon2](https://en.wikipedia.org/wiki/Argon2) with salting should be used, which resists brute forcing.
 
