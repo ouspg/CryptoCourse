@@ -60,13 +60,13 @@ Next things are known:
   * Usually nonce is attached to sent message but we have cutten it out from material. You shall survive without it.
   * Encryption is made by basic way of XORing keystream and plaintext. As we have 8-bit characters, encrypted text will be nice hexadecimal numbers, each byte in plaintext corresponding byte in ciphertext, for example 'abcd' => *encryption* => '1f2e3d4c'
 
-Your task is to find out what Alice has send to Bob. Good luck!
+Your task is to find out what Alice has sent to Bob. Good luck!
 
 **Task 3.1** Return solved messages. It does not have to be perfect, but aim for at least 90% accuracy. Return description what you did and code or other tools you used. Also explain shortly why your solution works. Have you seen this text before?
 
 **Task 3.2** Let's say that Alice has only sent 2 message to Bob with same flaw described in this task. Can you solve content then? If yes, then explain how or what limitations apply. If no, then explain why it is impossible or unfeasible.
 
-**Task 3.3** All messages in this task have same length. What happens when messages are variable lenght? Can you solve content then? If yes, then explain how or what limitations apply. If no, then explain why it is impossible or unfeasible.
+**Task 3.3** All messages in this task have same length. What happens when messages have lengths? Can you solve content then? If yes, then explain how or what limitations apply. If no, then explain why it is impossible or unfeasible.
 
 
 ## Task 4: MACs gone wrong
