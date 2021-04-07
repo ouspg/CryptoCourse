@@ -1,0 +1,52 @@
+{% include 'head.html' %}
+
+{# HTML initlally based on colorlib template https://colorlib.com/wp/template/login-form-v2/#}
+{# Dependencies stripped/updated. Unused CSS and JavaScript removed #}
+
+<body>
+<div class="limiter">
+    <div class="container-login100">
+        <div id="root_image">
+            <img src="static/images/identity_2x.png" width="60%"></img>
+            {# Source: https://xkcd.com/1121/ #}
+        </div>
+        <div class="wrap-login100">
+            <form class="login100-form validate-form" action="/login" method="post">
+					<span class="login100-form-title p-b-26">
+						Welcome
+					</span>
+                <span class="login100-form-title p-b-48">
+						<i class="">Guest user and password: cryptonator</i>
+					</span>
+
+                <div class="wrap-input100 validate-input" data-validate="No special characters.">
+                    <input class="input100" type="text" name="username">
+                    <span class="focus-input100" data-placeholder="User"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+                    <input class="input100" type="password" name="password">
+                    <span class="focus-input100" data-placeholder="Password"></span>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <button class="login100-form-btn">
+                            Login
+                        </button>
+                    </div>
+                </div>
+
+                <div class="text-center p-t-115">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="dropDownSelect1"></div>
+
+{% include 'footer.html' %}
