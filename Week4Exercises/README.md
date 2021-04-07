@@ -66,7 +66,7 @@ Your task is to find out what Alice has sent to Bob. Good luck!
 
 **Task 3.2** Let's say that Alice has only sent 2 message to Bob with same flaw described in this task. Can you solve content then? If yes, then explain how or what limitations apply. If no, then explain why it is impossible or unfeasible.
 
-**Task 3.3** All messages in this task have same length. What happens when messages have lengths? Can you solve content then? If yes, then explain how or what limitations apply. If no, then explain why it is impossible or unfeasible.
+**Task 3.3** All messages in this task have same length. What happens when messages have differing lengths? Can you solve content then? If yes, then explain how or what limitations apply. If no, then explain why it is impossible or unfeasible.
 
 
 ## Task 4: MACs gone wrong
