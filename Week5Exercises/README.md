@@ -2,6 +2,8 @@
 
 This week’s exercises focus on keyed hashes and authenticated encryption.
 
+You can find related information from the book in pages 127-162. 
+
 ## Grading
 
 You are eligible for following points from the exercise. Previous task(s) should be completed before going further.
@@ -23,10 +25,12 @@ Compute an authenticated encryption of some message of your choosing. Then brute
 
 Note that the messages do not need to make any sense i.e. the messages can be just arbitrary binary strings.
 
-> Provide any source code, the key that you used and the two different messages with the same authentication value as your answer. 
+> Provide any source code, the key that you used and the two different messages with the same authentication value as your answer. You can showcase time used for brute forcing for example by using tables.
 
 
 ## Task 2: Timing attack
+
+
 In this task you will check for a potential timing attack in a cryptographic library of your choice.
 
 ***“Timing attacks on MAC verification” section of the course book (pages 140-142)  are very useful in this exercise.***
@@ -45,4 +49,43 @@ Implement a timing attack on the MAC verification.
 
 ## Task 3:
 
-## Task 4: 
+## Task 4: Forging CBC-MAC messages
+
+CBC-MAC was one of the first block-cipher based implementations for calculating message authentication tag . As it later turned out, it was far away from secure method without further enchantments. Short CBC-MAC intro can be found from the course book on the page 134.
+
+In this task we will take a look for the original CBC-MAC based message authentication. Your task is to demonstrate how you can somehow forge authenticated messages at least partially without knowing the original authentication key, as coming from valid sender. 
+
+Demonstration should happen as following:
+
+  * You have generator, e.g. client for HTTP server
+  * You have consumer, e.g. HTTP server
+
+Select CBC-MAC implementation for tags. Initialization vector (IV) is used.
+
+Client and server have some public protocol what you know, but some content is expected to change. 
+
+For example making bank transaction:
+
+```
+from=alice;to=bob=amount=40;
+```
+
+We don't need to encrypt the content, we only generate MAC tags. We can keep everything very simple.
+
+You should act as man-in-the middle party; you can receive, modify and forward messages further, from generator to consumer. Initialization vector is always transmitted with message and is *therefore* freely modifiable. 
+
+E.g. `message || IV || MAC`
+
+**What limitations you have modifying the message in such a way, that tag is still valid? How encryption algorithm block size affects here?**
+
+At this point, you have probably noticed the issue. Let's fix it.
+
+Consider following situation: you are able to capture following messages:
+
+(a), (b) and (a||b) with their related CBC-MACs.
+
+**What kind of messages you are able to forge, if message length is not limited? Demonstrate few of them.**
+
+Let's fix this problem by using fixed length messages. Further, we now encrypt the data, but accidentally use *the same key* for CBC-MAC and CBC encryption. What blocks you are able to modify now?
+
+> Show your code and answer the questions.
