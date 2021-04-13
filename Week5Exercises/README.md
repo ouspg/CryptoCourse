@@ -41,7 +41,7 @@ You know that Bob is using message service for sending authenticated encrypted m
 Mallory has managed to forge following message, but he is missing authentication key for creating tag. He does not know the length of the tag as well.
 
 ```
-Hey, what were the exact details of the company, just double-checking the address. Can you send copy for bob2@bob2.com
+Hey, what were the exact details of the company, just double-checking the address etc. Can you send email copy for bob2@bob2.com. It is not encrypted, so i delete it ASAP!
 
 Best Regards,
 Bob
