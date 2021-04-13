@@ -30,7 +30,7 @@ Note that the messages do not need to make any sense i.e. the messages can be ju
 
 ## Task 2: Timing attack
 
-In this task we will implement side-channel attack on MAC verification on target application. More precisely, implement a timing attack for the following scenario. 
+In this task we will implement a side-channel attack on MAC verification on target application. More precisely, implement a timing attack for the following scenario. 
 
 ***“Timing attacks on MAC verification” section of the course book (pages 140-142)  are very useful in this exercise.***
 
@@ -76,7 +76,7 @@ In this task you will see how the GHASH function in the GCM mode has a problem w
 
 You can use [this paper](https://eprint.iacr.org/2011/202.pdf) as a starting point.
 
-**3.1** Find a short cycle in the GHASH function. Give the value that belongs to a cycle and the length of the cycle
+**3.1** Find a short cycle in the GHASH function. Give the value that belongs to a cycle and the length of the cycle.
 
 **3.2** Demonstrate the possibility to generate a forgery by rearranging message blocks within a short cycle. That is show how the message can be changed and the hash value still remains the same.
 
