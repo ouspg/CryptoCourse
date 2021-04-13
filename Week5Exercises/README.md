@@ -47,7 +47,16 @@ Implement a timing attack on the MAC verification.
 > Answer the above questions and provide any source code you used in your work.
 
 
-## Task 3:
+## Task 3: Short cycles in GHASH 
+In this task you will see how the GHASH function in the GCM mode has a problem with some short cycles in the hash function.
+
+>"For example, the value H = 10d04d25f93556e69f58ce2f8d035a4 belongs to a cycle of length five, as it satisfies H^5 = H, and therefore H^e = H for any e that is a multiple of five (the very definition of cycle with respect to fifth powers). Consequently, in the preceding expression of the final GHASH value Xn, swapping the blocks Cn (multiplied to H) and the block Cn – 4 (multiplied to H 5) will leave the authentication tag unchanged, which amounts to a forgery.” 
+
+You can use this paper https://eprint.iacr.org/2011/202.pdf as a starting point.
+
+**3.1** Find a short cycle in the GHASH function. Give the value that belongs to a cycle and the length of the cycle
+
+**3.2** Demonstrate the possibility to generate a forgery by rearranging message blocks within a short cycle.
 
 ## Task 4: Forging CBC-MAC messages
 
