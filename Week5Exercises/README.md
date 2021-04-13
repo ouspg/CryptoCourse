@@ -12,7 +12,7 @@ Task #|Grade|Description|
 -----|:---:|-----------|
 Task 1 | 2 | Brute forcing a short authentication tag 
 Task 2 | 3 | Timing attack
-Task 3 | 4 | 
+Task 3 | 4 | Short cycles in GHASH
 Task 4 | 5 | 
 
 ## Task 1: Brute forcing a short authentication tag
@@ -29,7 +29,6 @@ Note that the messages do not need to make any sense i.e. the messages can be ju
 
 
 ## Task 2: Timing attack
-
 
 In this task you will check for a potential timing attack in a cryptographic library of your choice.
 
@@ -52,11 +51,13 @@ In this task you will see how the GHASH function in the GCM mode has a problem w
 
 >"For example, the value H = 10d04d25f93556e69f58ce2f8d035a4 belongs to a cycle of length five, as it satisfies H^5 = H, and therefore H^e = H for any e that is a multiple of five (the very definition of cycle with respect to fifth powers). Consequently, in the preceding expression of the final GHASH value Xn, swapping the blocks Cn (multiplied to H) and the block Cn – 4 (multiplied to H 5) will leave the authentication tag unchanged, which amounts to a forgery.” 
 
-You can use this paper https://eprint.iacr.org/2011/202.pdf as a starting point.
+You can use [this paper](https://eprint.iacr.org/2011/202.pdf) as a starting point.
 
 **3.1** Find a short cycle in the GHASH function. Give the value that belongs to a cycle and the length of the cycle
 
-**3.2** Demonstrate the possibility to generate a forgery by rearranging message blocks within a short cycle.
+**3.2** Demonstrate the possibility to generate a forgery by rearranging message blocks within a short cycle. That is show how the message can be changed and the hash value still remains the same.
+
+>Provide any source code that you used and answer the questions
 
 ## Task 4: Forging CBC-MAC messages
 
