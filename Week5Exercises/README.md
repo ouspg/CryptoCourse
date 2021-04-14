@@ -38,7 +38,7 @@ Mallory has managed to eavesdrop Bob and Alice. They have a joint project for in
 
 You know that Bob is using message service for sending authenticated encrypted messages with Alice, but it is implemented bit poorly. It verifies if message tag is valid before forwarding messages for receiver, secondly, it might not implement best practices on verifying tags; it might be open for side-channel attacks. Thirdly, it has been reusing IV and key-pairs, leading for ciphertext forgery. Uh-oh.
 
-Mallory has managed to forge following message, but he is missing authentication key for creating the valid tag. He does not know the length of the tag as well. It changes daily.
+Mallory has managed to forge following message, but he is missing authentication key for creating the valid tag. He does not know the total length of the tag as well. It changes daily. However, he knows that it is **hexstring with  length of even number**, e.g. `2e4c5b'.
 
 ```
 Hey, what were the exact details of the company, just double-checking the address etc. Can you send email copy for bob2@bob2.com. It is not encrypted, so i delete it ASAP!
@@ -47,23 +47,34 @@ Best Regards,
 Bob
 ```
 
+See ciphertext in [files](files) folder.
+
 Mallory thinks, that he could attempt timing attack for the server to forge valid tag.
 
-Binary application is simulating server. Check its help for arguments. It accepts data in following JSON format:
+Binary application is simulating server. See binary in [files/authenticator](files/authenticator). Run it on Linux (it requires glibc library) Check help for possible arguments.
+```
+./authenticator --help
+```
+
+**Disclaimer: you should never store encryption/tag keys in binary as in this case, someone always is able to extract them, even if the binary is obfuscated.**
+
+Application accepts data in following JSON format:
 ```
 {
+    "sender": "Bob",
     "receiver": "Alice",
     "data": "<base64 encoded binary ciphertext>",
-    "tag": "<hexstring>"
+    "tag": "<hexstring>" 
 }
 ```
-See ciphertext in files folder.
 
 The workflow of attack is something like this:
 
   1. Change the MAC value in the first byte of the MAC and time the execution of the verification
   2. Change the MAC value in the second byte and time the execution of the verification.
   3. Repeat the change in byte value and the timing for all bytes of the MAC tag.
+
+Note, that there might be noise in the time.
 
 **Can you figure out how Alice responded?**
 
@@ -86,12 +97,12 @@ You can use [this paper](https://eprint.iacr.org/2011/202.pdf) as a starting poi
 
 CBC-MAC was one of the first block-cipher based implementations for calculating message authentication tag . As it later turned out, it was far away from secure method without further enchantments. Short CBC-MAC intro can be found from the course book on the page 134.
 
-In this task we will take a look for the original CBC-MAC based message authentication. Your task is to demonstrate how you can somehow forge authenticated messages at least partially without knowing the original authentication key, as coming from valid sender. 
+In this task we will take a look for the original CBC-MAC based message authentication. Your task is to demonstrate how you can somehow forge authenticated messages at least partially without knowing the original authentication key, while they still seems to come from valid sender. 
 
 Demonstration should happen as following:
 
-  * You have generator, e.g. client for HTTP server. Creates tags for messages.
-  * You have consumer, e.g. HTTP server. Validates tag for messages.
+  * You have generator, e.g. client for HTTP server. Creates tags for messages, sends messages.
+  * You have consumer, e.g. HTTP server. Receives messages.Validates tags for messages.
 
 Select CBC-MAC implementation for tags. Initialization vector (IV) is used at first.
 
@@ -109,7 +120,7 @@ You should act as man-in-the middle party; you can receive, modify and forward m
 
 E.g. `message || IV || MAC`
 
-**What limitations you have modifying the message in such a way, that tag is still valid? Let's expect that we are getting the first message, we need to modify that and have no other information. How encryption algorithm block size affects here?**
+**What limitations you have modifying the message in such a way, that tag is still valid? Let's expect that we are getting the first message, we need to modify that and have no other information. How encryption algorithm block size affects here? *Demonstrate some messages with the created environment.***
 
 At this point, you have probably noticed the issue. Let's fix it.
 
@@ -121,6 +132,6 @@ Consider following situation: you are able to capture following messages:
 
 Let's 'fix' this problem in a way, that receiver accepts only fixed length messages. Further, we now encrypt the data, but accidentally use *the same key* for CBC-MAC and CBC encryption.
 
-**What blocks you are able to modify now without receiver noticing?**
+**What blocks you are able to modify without receiver noticing and why?**
 
 > Show your code and answer the questions.
