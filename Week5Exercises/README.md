@@ -34,9 +34,9 @@ In this task we will implement a side-channel attack on MAC verification on targ
 
 ***“Timing attacks on MAC verification” section of the course book (pages 140-142)  are very useful in this exercise.***
 
-Mallory has managed to eavesdrop Bob and Alice. They have a joint project for investing on some company, in a big time. They know that the stock of this company is about to jump like a really big, soon. You are desperate to know which company, but they did not said it aloud.
+Mallory has managed to eavesdrop Bob and Alice. They have a joint project for investing on some company, in a big time. They know that the stock of this company is about to jump like a really big, soon. Mallory is desperate to know which company, but they did not said it aloud.
 
-You know that Bob is using message service for sending authenticated encrypted messages with Alice, but it is implemented bit poorly. It verifies if message tag is valid before forwarding messages for receiver, secondly, it might not implement best practices on verifying tags; it might be open for side-channel attacks. Thirdly, it has been reusing IV and key-pairs, leading for ciphertext forgery. Uh-oh.
+Mallory knows that Bob is using message service for sending authenticated encrypted messages with Alice, but it is implemented bit poorly. It verifies if message tag is valid before forwarding messages for receiver, secondly, it might not implement the best practices on verifying tags; it is be open for side-channel attacks. Thirdly, it has been reusing IV and key-pairs, leading for ciphertext forgery. Uh-oh.
 
 Mallory has managed to forge following message, but he is missing authentication key for creating the valid tag. He does not know the total length of the tag as well. It changes daily. However, he knows that it is **hexstring with  length of even number**, e.g. `2e4c5b'.
 
@@ -46,19 +46,18 @@ Hey, what were the exact details of the company, just double-checking the addres
 Best Regards,
 Bob
 ```
+Ciphertext of above plaintext in binary format can be found from the [files](files) folder.
 
-See ciphertext in [files](files) folder.
+Mallory thinks he could attempt timing attack for the server to forge a valid tag.
 
-Mallory thinks, that he could attempt timing attack for the server to forge valid tag.
-
-Binary application is simulating server. See binary in [files/authenticator](files/authenticator). Run it on Linux (it requires glibc library) Check help for possible arguments.
+Binary application is simulating server in this task. See binary in [files/authenticator](files/authenticator). Run it on Linux (it requires glibc library) Check help for possible arguments.
 ```
 ./authenticator --help
 ```
 
 **Disclaimer: you should never store encryption/tag keys in binary as in this case, someone always is able to extract them, even if the binary is obfuscated.**
 
-Application accepts data in following JSON format:
+Application accepts data in following JSON format, either from STDIN or as file:
 ```
 {
     "sender": "Bob",
@@ -68,13 +67,13 @@ Application accepts data in following JSON format:
 }
 ```
 
-The workflow of attack is something like this:
+The workflow of the attack is something like this:
 
   1. Change the MAC value in the first byte of the MAC and time the execution of the verification
   2. Change the MAC value in the second byte and time the execution of the verification.
   3. Repeat the change in byte value and the timing for all bytes of the MAC tag.
 
-Note, that there might be noise in the time.
+Note, that there might be noise in the time. If you think you are doing everything perfectly, just try to run code again.
 
 **Can you figure out how Alice responded?**
 
