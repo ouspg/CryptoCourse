@@ -36,9 +36,9 @@ In this task we will implement a side-channel attack on MAC verification on targ
 
 Mallory has managed to eavesdrop Bob and Alice. They have a joint project for investing on some company, in a big time. They know that the stock of this company is about to jump like a really big, soon. Mallory is desperate to know which company, but they did not said it aloud.
 
-Mallory knows that Bob is using message service for sending authenticated encrypted messages with Alice, but it is implemented bit poorly. It verifies if message tag is valid before forwarding messages for receiver, secondly, it might not implement the best practices on verifying tags; it is be open for side-channel attacks. Thirdly, it has been reusing IV and key-pairs, leading for ciphertext forgery. Uh-oh.
+Mallory knows that Bob is using message service for sending authenticated encrypted messages with Alice, but it is implemented bit poorly. It verifies if message tag is valid before forwarding messages for receiver. Secondly, it might not implement the best practices on verifying tags; it is open for side-channel attacks. Thirdly, it has been reusing IV and key-pairs, leading for ciphertext forgery. Uh-oh.
 
-Mallory has managed to forge following message, but he is missing authentication key for creating the valid tag. He does not know the total length of the tag as well. It changes daily. However, he knows that it is **hexstring with  length of even number**, e.g. `2e4c5b'.
+Mallory has managed to forge following message, but he is missing authentication key for creating the valid tag. He does not know the total length of the tag as well. Tag changes daily. However, he knows that it is **hexstring with  length of even number**, e.g. `2e4c5b'.
 
 ```
 Hey, what were the exact details of the company, just double-checking the address etc. Can you send email copy for bob2@bob2.com. It is not encrypted, so i delete it ASAP!
