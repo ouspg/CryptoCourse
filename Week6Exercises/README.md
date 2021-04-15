@@ -1,9 +1,9 @@
 
 # Week 6 Exercises
 
-This week’s exercises focus on hard problems and RSA cryptosystem.
+This week’s exercises focus on hard problems and the RSA cryptosystem.
 
-You can find related information from the book in pages XXXX. 
+You can find related information from the book in pages 163-199. 
 
 ## Grading
 
