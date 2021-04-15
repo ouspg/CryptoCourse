@@ -18,7 +18,7 @@ Task 4 | 5 |
 
 ## Task 1: RSA encryption and signatures with OpenSSL ##
 
-In this task you need to encrypt and sign a message with RSA. The [OpenSSL Cookbook](https://www.feistyduck.com/library/openssl-cookbook/online/ch-openssl.html) may be helpful in this task. You can also find more concise presentations  on who to do this on the command line with the help of your favorite search engine. The command most useful here is '''rsautl'''.
+In this task you need to encrypt and sign a message with RSA. The [OpenSSL Cookbook](https://www.feistyduck.com/library/openssl-cookbook/online/ch-openssl.html) may be helpful in this task. You can also find more concise presentations  on who to do this on the command line with the help of your favorite search engine. The command most useful here is 'rsautl'.
 
 **1.1** Generate an RSA key of suitable length OR use one that you have previously generated. Generate a message and encrypt it using the public key.
 > Provide the key and the message as your answer. Also show the commands that you used to encrypt the message.
