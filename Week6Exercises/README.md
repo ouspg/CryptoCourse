@@ -26,7 +26,7 @@ In this task you need to encrypt and sign a message with RSA. The [OpenSSL Cookb
 **1.2** Use RSA to sign the message. 
 > Provide the public key, the message and the signature as your answer. Also show the commands you used to generate the singature.
 
-## Task 2: ##
+## Task 2: Message and signature verification? ##
 In this task you need to find correct messages and signatures. You are given files XXX and YYY that contain the messages and signatures under some private keys corresponding to public keys in the file ZZZ.
 
 **2.1** Match all messages with correct signatures and public keys.
