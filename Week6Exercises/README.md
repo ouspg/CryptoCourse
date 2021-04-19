@@ -44,7 +44,7 @@ In most of the courses on cryptography that you will attend, the instrcutor will
 
 But now that we are on a course that will give you some hands on experience on cryptography, maybe a little exercise in building your own cryptosystems might be in order.
 
-In this task you need to describe a public key cryptosystem based on a hard problem of your own choice.
+In this task you need to describe a public key cryptosystem based on a hard problem of your own choice. **The system that you describe does not need to be secure or to contain a security proof**. Of course, if you can do that, it might get you some extra credit + a publication in a conference :)
 
 **4.1** Describe your public key cryptography algorithm by answering the following questions in a few sentences.
  * What problem is the hard problem that your system is based on?
