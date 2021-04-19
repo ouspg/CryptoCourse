@@ -14,7 +14,7 @@ Task #|Grade|Description|
 Task 1 | 2 | RSA encryption and signatures with OpenSSL 
 Task 2 | 3 | Message and signature verification?
 Task 3 | 4 | Math problems?
-Task 4 | 5 | Roll your own public key crypto?
+Task 4 | 5 | Roll your own public key cryptosystem
 
 ## Task 1: RSA encryption and signatures with OpenSSL ##
 
