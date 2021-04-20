@@ -52,7 +52,7 @@ You have now some message that has been successfully signed by Alice. Now, forge
 Forge valid signature for that message (obviously you cannot ask that from the binary, because Alice would not never sign that kind of message).
 In the end, you can easily check with public key that your answer is correct.
 
-> Describe shortly the process and include forged message and signature in your answer.
+> Describe shortly the process and include any code, forged message and signature in your answer.
 
 ## Task 4: Roll your own public key cryptosystem ##
 In most of the courses on cryptography that you will attend, the instrcutor will tell you that you should not roll your own cryptographic systems. There are of course good reasons for this warning.
