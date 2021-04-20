@@ -49,7 +49,8 @@ RSA key length is 4096 bits in this case. You can find the public key in [files]
 
 You have now some message that has been successfully signed by Alice. Now, forge message that has some kind of positive implication of its content (so it could be interpreted as "positive confirmation from professor"). In practice, message should have at least `_p` prefix to describe positive alignment!
 
-Forge valid signature for that message (obviously you cannot ask that from the binary, because Alice would not never sign that kind of message).
+Forge valid signature for that message (obviously you cannot ask that from the binary, because Alice would not never sign that kind of message). *This is pure textbook RSA case - no hashing or padding used.*
+
 In the end, you can easily check with public key that your answer is correct.
 
 > Describe shortly the process and include any code, forged message and signature in your answer.
