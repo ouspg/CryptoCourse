@@ -43,7 +43,7 @@ Mallory wants the highest grade from the Cryptology University course. To get th
 
 **Read pages 188-189 from course book.**
 
-Use  binary (from [files](files) folder) of this task to make Alice "sign" some neutral, negative or other kind of message (does not matter if it is little "gibberish" text, Alice will happily sing quite lot of things, until certain limit: the file must have `_n` prefix (ASCII encoded) to describe neutral/negative clause of the message.
+Use  binary (from [files](files) folder) of this task to make Alice "sign" some neutral, negative or other kind of message (does not matter if it is little "gibberish" text, Alice will happily sing quite lot of things, until certain limit: the message content must have `_n` prefix (ASCII encoded) to describe neutral/negative clause of the message.
 
 RSA key length is 4096 bits in this case. You can find the public key in [files](files) folder as well.
 
