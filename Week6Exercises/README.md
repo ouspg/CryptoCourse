@@ -41,19 +41,23 @@ In this task you need to find correct messages and signatures. You are given fil
 
 Mallory wants the highest grade from the Cryptology University course. To get that he needs signed positive confirmation from his professor - Alice. Unfortunately Alice knows that he has not been very hardworking student (Mallory has been just spending all days thinking about incoming May Day instead of studying) and obviously she is not going to sing with her private key any message with positive implications. However, Mallory realizes that Alice may sign other types of confirmations, negative or neutral ones (and even the gibberish ones!).
 
-**Read pages 188-189 from course book.**
+**Read pages 188-189 from course book.** You might want to find out more from external sources also, it is quite simplified on the book.
 
-Use  binary (from [files](files) folder) of this task to make Alice "sign" some neutral, negative or other kind of message (does not matter if it is little "gibberish" text, Alice will happily sing quite lot of things, until certain limit: the message content must have `_n` prefix (ASCII encoded) to describe neutral/negative clause of the message.
+**Task 1.1.** Forging the valid signature
+
+Use  binary (from [files](files) folder) of this task to make Alice "sign" some neutral, negative or other kind of message (does not matter if it is little "gibberish" text, Alice will happily sign quite lot of things, until certain limit: the message content must have `_n` prefix (ASCII encoded) to describe neutral/negative clause of the message.
 
 RSA key length is 4096 bits in this case. You can find the public key in [files](files) folder as well.
 
-You have now some message that has been successfully signed by Alice. Now, forge message that has some kind of positive implication of its content (so it could be interpreted as "positive confirmation from professor"). In practice, message should have at least `_p` prefix to describe positive alignment!
+You have now some message that has been successfully signed by Alice. Now, forge message that has some kind of positive implication of its content (so it could be interpreted as "positive confirmation from professor"). In practice, message should have at least `_p` prefix to describe positive alignment! Message can contain something more as well; it does not necessary change the difficulty of the task.
 
-Forge valid signature for that message (obviously you cannot ask that from the binary, because Alice would not never sign that kind of message). *This is pure textbook RSA case - no hashing or padding used.*
+ Forge valid signature for that message (obviously you cannot ask that from the binary, because Alice would not never sign that kind of message). *This is pure textbook RSA case - no hashing or padding used.*
 
 In the end, you can easily check with public key that your answer is correct.
 
-> Describe shortly the process and include any code, forged message and signature in your answer.
+**Task 1.2.** What if we need to provide a valid understandable message for Alice for signing at first? How this and the length of the message affects the difficulty of process?
+
+> Describe shortly the process and include any code, forged message and signature in your answer. Remember to reference any external sourced used on your solution!
 
 ## Task 4: Roll your own public key cryptosystem ##
 In most of the courses on cryptography that you will attend, the instrcutor will tell you that you should not roll your own cryptographic systems. There are of course good reasons for this warning.
