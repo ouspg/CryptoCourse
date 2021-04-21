@@ -55,7 +55,7 @@ You have now some message that has been successfully signed by Alice. Now, forge
 
 In the end, you can easily check with public key that your answer is correct.
 
-**Task 1.2.** What if we need to provide a valid understandable message for Alice for signing at first? How this and the length of the message affects the difficulty of process?
+**Task 1.2.** We required only two bytes of real information. What if we need to provide a valid understandable message in whole for Alice for signing at first? How this and the length of the message affects the difficulty of process?
 
 > Describe shortly the process and include any code, forged message and signature in your answer. Remember to reference any external sourced used on your solution!
 
