@@ -33,7 +33,7 @@ In this task you need to find correct messages and signatures. You are given fil
 
 >Provide the matching pairs and any code that you used as your answer.
 
-**2.2** What potential vulnerabilities there are if only textbook version of RSA is used to sign many (different) messages with the same key?
+**2.2** What potential vulnerabilities there are if only textbook version of RSA is used to sign messages?
 
 >Answer the question in short textual form.
 
