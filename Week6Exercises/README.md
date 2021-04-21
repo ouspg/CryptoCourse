@@ -31,9 +31,9 @@ In this task you need to find correct messages and signatures. You are given fil
 
 **2.1** Match all messages with correct signatures and public keys.
 
->Provide the matching pairs and any code that you used as your answer.
+>Provide the matching pairs and any code that you used as your answer. Note that not all messages have a signature, and some have multiple signatures
 
-|Message row|Public key|Signature file(s)|
+|Message row|Public key(s)|Signature file(s)|
 --- | --- | --- 
 |1   |example.pem|example.sign|
 |2   |           |            |
