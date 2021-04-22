@@ -12,7 +12,7 @@ You are eligible for following points from the exercise. Previous task(s) should
 Task #|Grade|Description|
 -----|:---:|-----------|
 Task 1 | 2 | RSA encryption and signatures with OpenSSL 
-Task 2 | 3 | Message and signature verification?
+Task 2 | 3 | Message and signature verification
 Task 3 | 4 | Textbook RSA signature forgery
 Task 4 | 5 | Roll your own public key cryptosystem
 
@@ -26,7 +26,7 @@ In this task you need to encrypt and sign a message with RSA. The [OpenSSL Cookb
 **1.2** Use RSA to sign the message. 
 > Provide the public key, the message and the signature as your answer. Also show the commands you used to generate the singature.
 
-## Task 2: Message and signature verification? ##
+## Task 2: Message and signature verification ##
 In this task you need to find correct messages and signatures. You are given file `messages.txt` and folder `signatures` that contain the messages and signatures under some private keys corresponding to public keys in the folder `public_keys`.
 
 **2.1** Match all messages with correct signatures and public keys.
