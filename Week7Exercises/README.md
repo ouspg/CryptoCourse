@@ -23,7 +23,7 @@ As you recall from the lectures, you should always use a safe prime (i.e. prime 
 
 You are given a large [a prime number](t2_files/unsafe_p.txt) and a [generator](t2_files/generator.txt) of the group Z_p. Unfortunately, the prime p is very unsafe (i.e. p-1 has a lot of small factors). This means that it is possible that you end up in a small subgroup with your shared secret with Alice.
 
-Alice has sent you her [public share](unsafe_ga.txt) of the DH protocol. 
+Alice has sent you her [public share](t2_files/unsafe_ga.txt) of the DH protocol. 
 
 **2.1** Find out what is the order of Alice's share, i.e, *the smallest integer d for which Alice's share to the dth power equals 1 mod p.*
 
@@ -55,7 +55,7 @@ You are working in a multinational company and you have learned that the bookkee
 * The number on the eighth line is the product of the fourth and the seventh line.
 
 Generate a new encrypted file that decrypts the numbers to their original values instead of the fake ones, while conforming to the other rules in the report.
-All values in the ciphertexts should be in the range from 1 to p (the ElGamal modulus given in the parameters.txt file.
+All values in the ciphertexts should be in the range from 1 to p (the ElGamal modulus given in the [parameters.txt](t3_files/parameters.txt) file.
 
 > Return the new encrypted file together with any code that you have used to achieve it. Reference any external sources that you have used.
 
