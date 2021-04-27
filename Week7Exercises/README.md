@@ -33,9 +33,13 @@ Take a look for figure 11-2 and 11-3 in the course book on the pages 209-210, wh
 
 During the implementation, use *safe* DH parameters. For private keys of Bob and Alice, select a prime *p* where (p – 1) / 2 is also prime and that p is large enough.
 
-Select *safe* public prime *p* for modulus and generator *g* for base.
 
-**Task 1.2.** How have modern systems (e.g. TLS) solved this problem?
+However, you can select any generator *g* as base and public prime *p* as modulo. 
+
+**Task 1.2.** Explain shortly how selection of *g* and modulo *p* can affect for eavesdropping. 
+
+
+**Task 1.3.** How have modern systems (e.g. TLS) have further solved this problem?
 
 > Include source code and possible references. Answer the questions.
 
