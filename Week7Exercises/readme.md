@@ -18,6 +18,19 @@ Task 3.3| 5 | ElGamal & malleability
 ## Task 1: Naive DH and MitM ##
 
 ## Task 2: DH with a very unsafe prime ##
+As you recall from the lectures, you should always use a safe prime (i.e. prime p, where (p-1)/2 is also a prime) with DH key exchange. Let's see what happens when you deal with a **very** unsafe prime.
+
+You are given a large [a prime number](unsafe_p.txt) and a [generator](generator.txt) of the group Z_p. Unfortunately, the prime p is very unsafe (i.e. p-1 has a lot of small factors). This means that it is possible that you end up in a small subgroup with your shared secret with Alice.
+
+Alice has sent you her [public share](unsafe_ga.txt) of the DH protocol. 
+
+**2.1** Find out what is the order of Alice's share i.e the smallest integer d for which Alice's share to the dth power equals 1 mod p.
+
+**2.2** How many possibilities there are for your common shared secret with the given Alice's share? Does this number depend on your choice of your secret exponent? Why or why not?
+
+**2.3** Find out what are the different factors of p-1. (Yes, I know factoring is hard, but here you can go with some trial and error. So, divide the value p-1 with some prime(s) until the division is no longer even and work your way towards 1)
+
+> Answer the questions above and provide any code that you have used to solve the problems. Reference outside sources.
 
 ## Task 3: ElGamal & Malleability ##
 The purpose of this task is to introduce the ElGamal cryptosystem and to show how malleability works in this.
