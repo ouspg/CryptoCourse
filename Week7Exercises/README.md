@@ -23,19 +23,19 @@ However, originally the method (the simplest of DH protocols) did not provide an
 
 Diffie-Hellman is handled in the course book on the pages 201-216.
 
-Let's consider a situation where we have a third, unwanted party Mallory, who is able to eavesdrop the discussion of Bob and Alice. If Mallory is also able to capture the messages and modify them, then he is able to establish two distinct key exchanges, without Alice or Bob acknowledging it in the initial phase of the discussion.
+Let's consider a situation where we have a third, unwanted party Eve, who is able to eavesdrop the discussion of Bob and Alice. If Eve is also able to capture the messages and modify them, then he is able to establish two distinct key exchanges, without Alice or Bob acknowledging it in the initial phase of the discussion.
 
-In practice, Mallory is then able to decrypt all of the ongoing traffic while she is also required to proxy all of the messages to remain undetected.
+In practice, Eve is then able to decrypt all of the ongoing traffic while she is also required to proxy all of the messages to remain undetected.
 
-*Task 1.1.* Implement MitM attack
+**Task 1.1.** Implement MitM attack
 
-Take a look for figure 11-2 and 11-3 in the course book on the pages 209-210, which describes the anonymous protocol. Implement a scenario programmatically, where Alice and Bob attempts to establish key exchange, but instead Mallory captures the messages, and establish two distinct exchanges. Showcase how Mallory can act as middle proxy and decrypt the messages send by Alice or Bob. This can be simply three different functions for example, but we still want to make a real DH implementation.
+Take a look for figure 11-2 and 11-3 in the course book on the pages 209-210, which describes the anonymous protocol. Implement a scenario programmatically, where Alice and Bob attempts to establish key exchange, but instead Eve captures the messages, and establish two distinct exchanges. Showcase how Eve can act as middle proxy and decrypt the messages send by Alice or Bob. This can be simply three different functions for example, but we still want to make a real DH implementation.
 
 During the implementation, use *safe* DH parameters. E.g. select a prime *p* where (p – 1) / 2 is also prime and that p is large enough.
 
 Select *safe* public prime *p* for modulus and generator *g* for base.
 
-** Task 2.2. How have modern systems (e.g. TLS) solved this problem?
+**Task 1.2.** How have modern systems (e.g. TLS) solved this problem?
 
 > Include source code and possible references. Answer the questions.
 
