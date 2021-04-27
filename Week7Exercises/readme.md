@@ -24,7 +24,7 @@ The purpose of this task is to introduce the ElGamal cryptosystem and to show ho
 
 You should familiarise yourself with the [ElGamal cryptosystem](https://en.wikipedia.org/wiki/ElGamal_encryption).
 
-You are working in a multinational company and you have learned that the bookkeeping has been changing some key figures in reporting the revenues, taxes etc. to the authorities. In your position in the company you have been tasked with submitting the figures to the proper authorities. You would like to report the correct figures instead of the fake ones, but the numbers have been encrypted using ElGamal encryption. You have access to the public key parameters (parameters.txt) and the encrypted values (ciphertexts.txt). Each of the lines in the ciphertext file corresponds to the encryption of a single number in the reporting.
+You are working in a multinational company and you have learned that the bookkeeping has been changing some key figures in reporting the revenues, taxes etc. to the authorities. In your position in the company you have been tasked with submitting the figures to the proper authorities. You would like to report the correct figures instead of the fake ones, but the numbers have been encrypted using ElGamal encryption. You have access to the public key [parameters](parameters.txt) and the [encrypted values](ciphertexts.txt). Each of the lines in the ciphertext file corresponds to the encryption of a single number in the reporting.
 
 **3.1** Describe briefly how the malleability property of ElGamal may help you in defeating the immoral reporting of your company.
 
