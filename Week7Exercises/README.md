@@ -17,6 +17,28 @@ Task 3.3| 5 | ElGamal & malleability
 
 ## Task 1: Naive DH and MitM ##
 
+Diffie-Hellman key exchange can be thought as one of the foundations of modern public cryptography. Any amount of different parties can jointly establish a shared key in a possibly insecure channel, if the method is correctly implemented.
+
+However, originally the method (the simplest of DH protocols) did not provide any sort of authentication in key establishment and it was vulnerable to a man-in-the-middle attack.
+
+Diffie-Hellman is handled in the course book on the pages 201-216.
+
+Let's consider a situation where we have a third, unwanted party Mallory, who is able to eavesdrop the discussion of Bob and Alice. If Mallory is also able to capture the messages and modify them, then he is able to establish two distinct key exchanges, without Alice or Bob acknowledging it in the initial phase of the discussion.
+
+In practice, Mallory is then able to decrypt all of the ongoing traffic while she is also required to proxy all of the messages to remain undetected.
+
+*Task 1.1.* Implement MitM attack
+
+Take a look for figure 11-2 and 11-3 in the course book on the pages 209-210, which describes the anonymous protocol. Implement a scenario programmatically, where Alice and Bob attempts to establish key exchange, but instead Mallory captures the messages, and establish two distinct exchanges. Showcase how Mallory can act as middle proxy and decrypt the messages send by Alice or Bob. This can be simply three different functions for example, but we still want to make a real DH implementation.
+
+During the implementation, use *safe* DH parameters. E.g. select a prime *p* where (p – 1) / 2 is also prime and that p is large enough.
+
+Select *safe* public prime *p* for modulus and generator *g* for base.
+
+** Task 2.2. How have modern systems (e.g. TLS) solved this problem?
+
+> Include source code and possible references. Answer the questions.
+
 ## Task 2: DH with a very unsafe prime ##
 
 As you recall from the lectures, you should always use a safe prime (i.e. prime p, where (p-1)/2 is also a prime) with DH key exchange. Let's see what happens when you deal with a **very** unsafe prime.
