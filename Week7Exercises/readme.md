@@ -1,0 +1,19 @@
+# Week 6 Exercises
+
+This week’s exercises focus on hard problems and the RSA cryptosystem.
+
+You can find related information from the book in pages 163-199. 
+
+## Grading
+
+You are eligible for following points from the exercise. Previous task(s) should be completed before going further.
+
+Task #|Grade|Description|
+-----|:---:|-----------|
+Task 1 | 2 |  
+Task 2 | 3 | 
+Task 3 | 4 | 
+Task 4 | 5 | 
+
+## Task 1: ##
+
