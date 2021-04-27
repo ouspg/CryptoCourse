@@ -24,7 +24,7 @@ You are given a large [a prime number](unsafe_p.txt) and a [generator](generator
 
 Alice has sent you her [public share](unsafe_ga.txt) of the DH protocol. 
 
-**2.1** Find out what is the order of Alice's share i.e the smallest integer d for which Alice's share to the dth power equals 1 mod p.
+**2.1** Find out what is the order of Alice's share, i.e, *the smallest integer d for which Alice's share to the dth power equals 1 mod p.*
 
 **2.2** How many possibilities there are for your common shared secret with the given Alice's share? Does this number depend on your choice of your secret exponent? Why or why not?
 
