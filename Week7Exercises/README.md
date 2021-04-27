@@ -18,9 +18,10 @@ Task 3.3| 5 | ElGamal & malleability
 ## Task 1: Naive DH and MitM ##
 
 ## Task 2: DH with a very unsafe prime ##
+
 As you recall from the lectures, you should always use a safe prime (i.e. prime p, where (p-1)/2 is also a prime) with DH key exchange. Let's see what happens when you deal with a **very** unsafe prime.
 
-You are given a large [a prime number](unsafe_p.txt) and a [generator](generator.txt) of the group Z_p. Unfortunately, the prime p is very unsafe (i.e. p-1 has a lot of small factors). This means that it is possible that you end up in a small subgroup with your shared secret with Alice.
+You are given a large [a prime number](t2_files/unsafe_p.txt) and a [generator](t2_files/generator.txt) of the group Z_p. Unfortunately, the prime p is very unsafe (i.e. p-1 has a lot of small factors). This means that it is possible that you end up in a small subgroup with your shared secret with Alice.
 
 Alice has sent you her [public share](unsafe_ga.txt) of the DH protocol. 
 
@@ -37,7 +38,7 @@ The purpose of this task is to introduce the ElGamal cryptosystem and to show ho
 
 You should familiarise yourself with the [ElGamal cryptosystem](https://en.wikipedia.org/wiki/ElGamal_encryption).
 
-You are working in a multinational company and you have learned that the bookkeeping has been changing some key figures in reporting the revenues, taxes etc. to the authorities. In your position in the company you have been tasked with submitting the figures to the proper authorities. You would like to report the correct figures instead of the fake ones, but the numbers have been encrypted using ElGamal encryption. You have access to the public key [parameters](parameters.txt) and the [encrypted values](ciphertexts.txt). Each of the lines in the ciphertext file corresponds to the encryption of a single number in the reporting.
+You are working in a multinational company and you have learned that the bookkeeping has been changing some key figures in reporting the revenues, taxes etc. to the authorities. In your position in the company you have been tasked with submitting the figures to the proper authorities. You would like to report the correct figures instead of the fake ones, but the numbers have been encrypted using ElGamal encryption. You have access to the public key [parameters](t3_files/parameters.txt) and the [encrypted values](t3_files/ciphertexts.txt). Each of the lines in the ciphertext file corresponds to the encryption of a single number in the reporting.
 
 **3.1** Describe briefly how the malleability property of ElGamal may help you in defeating the immoral reporting of your company.
 
