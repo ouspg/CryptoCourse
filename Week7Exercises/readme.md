@@ -1,6 +1,6 @@
 # Week 6 Exercises
 
-This week’s exercises focus on hard problems and the RSA cryptosystem.
+This week’s exercises focus on Diffie-Hellman and elliptic curves.
 
 You can find related information from the book in pages 163-199. 
 
