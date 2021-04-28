@@ -1,6 +1,6 @@
 # Week 7 Exercises
 
-This week’s exercises focus on Diffie-Hellman key exchange an the ElGamal cryptosystem.
+This week’s exercises focus on Diffie-Hellman key exchange and the ElGamal cryptosystem. **Many of the problems include some mathematical comncepts that are not thoroughly presented in the course book or material. Please contact course staff, if you need any help in these exercises.**
 
 You can find related information from the book in pages 163-199. 
 
@@ -45,7 +45,7 @@ However, you can select any generator *g* as base and public prime *p* as modulo
 
 ## Task 2: DH with a very unsafe prime ##
 
-As you recall from the lectures, you should always use a safe prime (i.e. prime p, where (p-1)/2 is also a prime) with DH key exchange. Let's see what happens when you deal with a **very** unsafe prime.
+As you recall from the lectures, you should always use a safe prime (i.e. prime p, where (p-1)/2 is also a prime) with DH key exchange. Let's see what happens when you deal with a **very** unsafe prime. You can also check the page 215 from the course book. Also page 176 can contain some helpful hints.
 
 You are given a large [a prime number](t2_files/unsafe_p.txt) and a [generator](t2_files/generator.txt) of the group Z_p. Unfortunately, the prime p is very unsafe (i.e. p-1 has a lot of small factors). This means that it is possible that you end up in a small subgroup with your shared secret with Alice.
 
