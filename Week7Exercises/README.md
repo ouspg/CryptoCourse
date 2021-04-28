@@ -81,7 +81,7 @@ You are working in a multinational company and you have learned that the bookkee
 * The number on the eighth line is the product of the fourth and the seventh line.
 
 Generate a new encrypted file that decrypts the numbers to their original values instead of the fake ones, while conforming to the other rules in the report.
-All values in the ciphertexts should be in the range from 1 to p (the ElGamal modulus given in the [parameters.txt](t3_files/parameters.txt) file.
+All values in the ciphertexts should be in the range from 1 to p (the ElGamal modulus given in the [parameters.txt](t3_files/parameters.txt) file).
 
 > Return the new encrypted file together with any code that you have used to achieve it. Reference any external sources that you have used.
 
