@@ -51,11 +51,11 @@ You are given a large [a prime number](t2_files/unsafe_p.txt) and a [generator](
 
 Alice has sent you her [public share](t2_files/unsafe_ga.txt) of the DH protocol. 
 
-**2.1** Find out what is the order of Alice's share, i.e, *the smallest integer d for which Alice's share to the dth power equals 1 mod p.*
+**2.1** Find out what is the order of Alice's share, i.e, *the smallest integer d for which Alice's share to the dth power equals 1 modulo p.*
 
 **2.2** How many possibilities there are for your common shared secret with the given Alice's share? Does this number depend on your choice of your secret exponent? Why or why not?
 
-**2.3** Find out what are the different factors of p-1. (Yes, I know factoring is hard, but here you can go with some trial and error. So, divide the value p-1 with some small primes until the division is no longer even and work your way towards 1). 
+**2.3** Find out what are the different factors of p-1. (Yes, I know factoring is hard, but here you can go with some trial and error. So, divide the value p-1 with some small primes until the division is no longer even and work your way towards 1). Based on this factorisation, state what other small subgroups can you easily find in the given group. How do you produce generators for such subgroups from the original generator?
 
 **2.4.** What is the bit length of p and what level of security (approximately) could you expect from a prime of that size?
 
