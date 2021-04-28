@@ -124,7 +124,7 @@ class Eve(SingleParty):
 # After successfull key exchange, you can finally select some data which is encrypted by Alice,
 #  then decrypted by Eve, re-encrypted by Eve to pass data for Bob who finally decrypts the data
 
-# Example of simple use of the one  class *without* key exchange, by just setting shared key value
+# Example use of one of the classes *without* key exchange, by just setting shared key value
 al = Alice()
 al._G = 123456
 ciphertext = al.encrypt("Hello, world!")
