@@ -1,6 +1,6 @@
 # Week 7 Exercises
 
-This week’s exercises focus on Diffie-Hellman key exchange and the ElGamal cryptosystem. **Many of the problems include some mathematical comncepts that are not thoroughly presented in the course book or material. Please contact course staff, if you need any help in these exercises.**
+This week’s exercises focus on Diffie-Hellman key exchange and the ElGamal cryptosystem. **Many of the problems include some mathematical concepts that are not thoroughly presented in the course book or material. Please contact course staff, if you need any help in these exercises.**
 
 You can find related information from the book in pages 163-199. 
 
