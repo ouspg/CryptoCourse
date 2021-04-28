@@ -35,7 +35,7 @@ Take a look for figure 11-2 and 11-3 in the course book on the pages 209-210, wh
 
 During the implementation, use *safe* DH parameters. For private keys of Bob and Alice, select a prime *p* where (p – 1) / 2 is also prime and that p is large enough.
 
-However, you can select any generator *g* as base and public prime *p* as modulo. 
+However, you can select any generator *g* as base and public prime *p* (as long as it is long enough) as modulo. 
 
 Established key is used on symmetric encryption of AES in this case.
 

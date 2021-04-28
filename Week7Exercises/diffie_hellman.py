@@ -41,7 +41,7 @@ class SingleParty:
 
     # TODO Choose public values, however it might be that some values are better than others
     g: int = 0
-    p_modulus: int = 0  # prime
+    p_modulus: int = 0  # prime, usually 2048 bits to provide enough security
 
     _G: int = None  # Shared secret, calculated later
 
@@ -85,7 +85,7 @@ class Bob(SingleParty):
     def __init__(self):
         super(SingleParty).__init__()
 
-    def set_A(self):
+    def set_B(self):
         """TODO Implement calculation of B"""
         pass
 
