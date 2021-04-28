@@ -1,0 +1,26 @@
+SHA256 Checksum for the whole file:
+dcd3ae65e2b106f15f3825ccd42789e1cf5cc1fc3d63940072886bc078f3471f
+
+SHA256 Checksum for the 1st line:
+a7cdc13365995d2ddf54257f05181645c4d2f653fad7a576e66cd8bfbaab58ac
+
+SHA256 Checksum for the 2nd line:
+8c1f5c2ca2369615fbbb9ac00cf80d639e2edc2ddb80de5b3109d65ad3077857
+
+SHA256 Checksum for the 3rd line:
+31c33e8dfd13a8e366b69f78a05daf6a0e1999892af48024d64fd3efde27610c
+
+SHA256 Checksum for the 4th line:
+49ca21a49bc16e5037237290697596dd5c5771015cad7b1b23533c8d24aa224d
+
+SHA256 Checksum for the 5th line:
+7e1e23128c6b5b1d752cbb238c6ed2d1419cb86d11ec30e7cef2343274e8c024
+
+SHA256 Checksum for the 6th line:
+d38709b91f082df723fa7cdc7d9d3c3af87e3c25ff6d1fc8eceb53a0973fa787
+
+SHA256 Checksum for the 7th line:
+004082789d9fb77dffa3670eabad12eb472333545a64ea2fc8c77b3edb8f9dd4
+
+SHA256 Checksum for the 8th line:
+efc5bb5c7dc5174734e253cafa50dd475c658d3d9330c6eaf6500bc13bc6edec
