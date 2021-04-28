@@ -5,7 +5,7 @@ from Crypto.Random import get_random_bytes
 from typing import Union
 from hashlib import sha256
 
-# Methods for handling encryption and decryption of data, no need to touch
+# Methods for handling encryption and decryption of data, no need to edit
 
 
 def secret_into_aes_key(secret: int) -> bytes:
@@ -89,7 +89,7 @@ class Bob(SingleParty):
         """TODO Implement calculation of B"""
         pass
 
-    def set_G(self, B: int):
+    def set_G(self, A: int):
         """TODO Derive G from A (G is shared secret)"""
         pass
 
