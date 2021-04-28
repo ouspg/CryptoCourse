@@ -17,11 +17,11 @@ Task 3.3| 5 | ElGamal & malleability
 
 ## Task 1: Naive DH and MitM ##
 
-Diffie-Hellman key exchange can be thought as one of the foundations of modern public cryptography. Any amount of different parties can jointly establish a shared key in a possibly insecure channel, if the method is correctly implemented.
+Diffie-Hellman key exchange can be thought as one of the foundations of modern public cryptography. Any amount of different parties can jointly establish a shared private key in a possibly insecure channel, if the method is correctly implemented.
 
 However, originally the method (the simplest of DH protocols) did not provide any sort of authentication in key establishment and it was vulnerable to a man-in-the-middle attack.
 
-*Diffie-Hellman is handled in the course book on the pages 201-216.*
+*Diffie-Hellman is handled in the course book on the pages 201-216.* 
 
 Let's consider a situation where we have a third, unwanted party Eve, who is able to eavesdrop the discussion of Bob and Alice. If Eve is also able to capture the messages and modify them, then she is able to establish two distinct key exchanges, without Alice or Bob acknowledging anything in the initial phase of the discussion.
 
@@ -29,7 +29,7 @@ In practice, Eve is then able to decrypt all of the ongoing traffic while she is
 
 **Task 1.1.** Implement MitM attack
 
-Take a look for figure 11-2 and 11-3 in the course book on the pages 209-210, which describes the anonymous protocol. Implement a scenario programmatically, where Alice and Bob attempts to establish key exchange, but instead Eve captures the messages, and establish two distinct exchanges. Showcase how Eve can act as middle proxy and decrypt the messages send by Alice or Bob. 
+Take a look for figure 11-2 and 11-3 in the course book on the pages 209-210, which describes the anonymous protocol (Note that modulus is missing from this abstraction, should be used on implementation!). Implement a scenario programmatically, where Alice and Bob attempts to establish key exchange, but instead Eve captures the messages, and establish two distinct exchanges. Showcase how Eve can act as middle proxy and decrypt the messages send by Alice or Bob. 
 
 **We have a base for coding in Python that you could continue for easier implementation, see [diffie_hellman.py](diffie_hellman.py).**
 
@@ -37,7 +37,7 @@ During the implementation, use *safe* DH parameters. For private keys of Bob and
 
 However, you can select any generator *g* as base and public prime *p* (as long as it is long enough) as modulo. 
 
-Established key is used on symmetric encryption of AES in this case.
+Established key is used on symmetric encryption with AES-CBC on this case.
 
 **Task 1.2.** Explain shortly how selection of *g* and modulo *p* can affect for eavesdropping. 
 
