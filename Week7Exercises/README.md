@@ -83,9 +83,9 @@ You are working in a multinational company and you have learned that the bookkee
 * The number on the eighth line is the product of the fourth and the seventh line.
 
 Generate a new encrypted file that decrypts the numbers to their original values instead of the fake ones, while conforming to the other rules in the report.
-All values in the ciphertexts should be in the range from 1 to p (the ElGamal modulus given in the [parameters.txt](t3_files/parameters.txt) file).
+All values in the ciphertexts should be in the range from 1 to p (the ElGamal modulus given in the [parameters.txt](t3_files/parameters.txt) file). The ciphertexts should be formatted as `(x, y)`, where x & y are integers.
 
-You can check the correct hash values for the whole file and for each line separately in [here](t3_files/hash_solutions.txt). Use SHA256 hash on a file that has UTF-8 encoded values separated with `\n` for the whole ciphettext file and a file with a single line without `\n` for the single line checks. The ciphertexts should be formatted `(x, y)`, where x & y are integers.
+You can check the correct hash values for the whole file and for each line separately in [here](t3_files/hash_solutions.txt). Use SHA256 hash on a file that has UTF-8 encoded values one on each line separated with `\n` for the whole ciphertext file and a file with a single line without `\n` for the single line checks.
 
 > Return the new encrypted file together with any code that you have used to achieve it. Reference any external sources that you have used.
 
