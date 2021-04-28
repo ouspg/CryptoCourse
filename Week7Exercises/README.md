@@ -1,6 +1,6 @@
 # Week 7 Exercises
 
-This week’s exercises focus on Diffie-Hellman and elliptic curves.
+This week’s exercises focus on Diffie-Hellman key exchange an the ElGamal cryptosystem.
 
 You can find related information from the book in pages 163-199. 
 
