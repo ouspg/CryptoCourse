@@ -39,7 +39,7 @@ However, you can select any generator *g* as base and public prime *p* as modulo
 **Task 1.2.** Explain shortly how selection of *g* and modulo *p* can affect for eavesdropping. 
 
 
-**Task 1.3.** How have modern systems (e.g. TLS) have further solved this problem?
+**Task 1.3.** How have modern systems (e.g. TLS) further solved this problem?
 
 > Include source code and possible references. Answer the questions.
 
@@ -55,7 +55,9 @@ Alice has sent you her [public share](t2_files/unsafe_ga.txt) of the DH protocol
 
 **2.2** How many possibilities there are for your common shared secret with the given Alice's share? Does this number depend on your choice of your secret exponent? Why or why not?
 
-**2.3** Find out what are the different factors of p-1. (Yes, I know factoring is hard, but here you can go with some trial and error. So, divide the value p-1 with some prime(s) until the division is no longer even and work your way towards 1)
+**2.3** Find out what are the different factors of p-1. (Yes, I know factoring is hard, but here you can go with some trial and error. So, divide the value p-1 with some small primes until the division is no longer even and work your way towards 1). 
+
+**2.4.** What is the bit length of p and what level of security (approximately) could you expect from a prime of that size?
 
 > Answer the questions above and provide any code that you have used to solve the problems. Reference outside sources.
 
