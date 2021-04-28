@@ -45,13 +45,13 @@ class SingleParty:
 
     _G: int = None  # Shared secret, calculated later
 
-    def encrypt(self, data: bytes) -> bytes:
-        """Encrypt data, use established shared secrect as key"""
-        return encrypt_aes(data, secret_into_aes_key(self._G))
+    def encrypt(self, data: bytes, G: int = None) -> bytes:
+        """Encrypt data, use established shared secret as key by default if no G parameter provided"""
+        return encrypt_aes(data, secret_into_aes_key(G if G else self._G))
 
-    def decrypt(self, data: bytes) -> bytes:
-        """Decrypt data, use established shared secrect as key"""
-        return decrypt_aes(data, secret_into_aes_key(self._G))
+    def decrypt(self, data: bytes, G: int = None) -> bytes:
+        """Decrypt data, use established shared secret as key by default if no G parameter provided"""
+        return decrypt_aes(data, secret_into_aes_key(G if G else self._G))
 
 
 # Define private exponents for Bob, Alice and Eve
@@ -101,6 +101,7 @@ class Eve(SingleParty):
     - two private exponents
     - two shared keys
     - methods for implementing the key exchange and storing A, B, C and D (Check course book from the page 210)
+    Note that Eve must change parameters when decrypting/encrypting data
     """
 
     A: int = 0  # A from Alice
