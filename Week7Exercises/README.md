@@ -2,8 +2,6 @@
 
 This week’s exercises focus on Diffie-Hellman key exchange and the ElGamal cryptosystem. **Many of the problems include some mathematical concepts that are not thoroughly presented in the course book or material. Please contact course staff, if you need any help in these exercises.**
 
-You can find related information from the book in pages 163-199. 
-
 ## Grading
 
 You are eligible for following points from the exercise. Previous task(s) should be completed before going further.
