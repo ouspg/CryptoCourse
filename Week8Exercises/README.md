@@ -29,7 +29,7 @@ Go to the Common Vulenrabilities and Exposures (CVE) [website](https://cve.mitre
 
 **2.1** Which version has the most listed vulnerabilities in the CVE database?
 
-**2.2** What is the most severe vulnerability listed for each version of TLS?
+**2.2** What is the most severe vulnerability listed for each version of TLS? Severity can be measured with the [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) and this information can be accessed by clicking the *Learn more at National Vulnerability Database (NVD)* -link from the CVE listing.
 
 **2.3** What is the most recent vulnerability listed for each version of TLS?
 
