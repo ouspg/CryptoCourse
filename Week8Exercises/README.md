@@ -69,7 +69,7 @@ sslv2                              1,159
 
 Could we knowingly force specific clients to use older, dangerous versions of TLS instead of their latest supported version?
 
-**Task 4.1.** Implement downgrading attack with non-transparent TCP proxy
+### Task 4.1. Implement downgrading attack with non-transparent TCP proxy
 
 To be able to implement downgrading attack for specific client and server, attacker should be able to intercept and modify the traffic. In the most of the cases, attacker has no possibility to change the behavior of client, hence it must implement man-in-the-middle attack and remain undetected.
 
@@ -81,7 +81,7 @@ It is recommended to use provided virtual machine, unless you know what you are 
 
 Take a look for initial source code of the [proxy](tls_mitm.py). You should modify it further to implement downgrading attack. 
 
-### Pre-requisites
+#### Pre-requisites
 
 Following modifications for virtual machine are required that traffic is correctly redirected through proxy.
 They will reset on reboot (except groupadd).
@@ -125,13 +125,13 @@ In the case of problems or when you stop using the proxy, you can reset iptables
 
 If endless circulation seems to happen when running the proxy code, make sure that group changes are activated (run `id` command and see if you are part of `tlstesting` group and it is primary group.)
 
-### Goal
+#### Goal
 
 The great starting point for getting to know how TLS packets are handled on byte level, is [this website](https://tls.ulfheim.net/). And Wikipedia...
 
 Your main goal is to identify supported TLS versions and ciphers from data analysis, finally dropping connections in such a way, that client will establish connection with lower TLS version than it supports with the target server. In practice, this is only few lines of *correct* code.
 
-### Target
+#### Target
 
 Use server <server> as your target. What is the lowest supported TLS/SSL version?
 
