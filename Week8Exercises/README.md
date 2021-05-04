@@ -37,7 +37,7 @@ Go to the Common Vulenrabilities and Exposures (CVE) [website](https://cve.mitre
 
 ## Task 3: Testing TLS connections with OpenSSL ##
 
-In this task you are to test a website of your choosing with the help of OpenSSL. The OpenSSL Cookbook section 2: [Testing TLS with OpenSSL](https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html) will be **very helpful** in this task.
+In this task you are to test a website of your choosing with the help of OpenSSL. The OpenSSL Cookbook section 2: [Testing TLS with OpenSSL](https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html) will be **very helpful** in this task. You can also use `nmap` and suitable scripts like [this](https://nmap.org/nsedoc/scripts/ssl-enum-ciphers.html). **Be mindful that some methods of testing may be invasive and may be considered 'hostile' by the server. If you choose to use such tools, please test only sites that approve of this type of testing e.g. have an active bug bounty program**. You can always ask the course staff for advice, if you need any assistance.
 
 **3.1** Choose a website that supports HTTPS/TLS. What versions of TLS are supported? What ciphersuites are supported? Are there any preferences set by the website?
 
