@@ -86,7 +86,7 @@ Take a look for initial source code of the [proxy](). You should modify it furth
 Following modifications for virtual machine are required that traffic is correctly redirected through proxy.
 They will reset on reboot (except groupadd).
 
-Run following commands as root (`sudo su`):
+Run following commands as root (Run `sudo su` to change into root user):
 
 Enable IP forwarding:
 ```console
@@ -95,7 +95,7 @@ sysctl -w net.ipv6.conf.all.forwarding=1
 ```
 
 Prevent ICMP redirects:
-```
+```console
 sysctl -w net.ipv4.conf.all.send_redirects=0
 ```
 
