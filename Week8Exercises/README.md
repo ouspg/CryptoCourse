@@ -75,7 +75,7 @@ To be able to implement downgrading attack for specific client and server, attac
 
 Any link, hop or router between the client and destination server could be usable for a such scenario.
 
-In this task, we will implement a **proxy server** on the provided virtual machine to demonstrate such a link and modify traffic on the fly. In practice, it could be router or any link, client might not notice anything.
+In this task, we will implement a **proxy server** on the provided virtual machine to demonstrate such a link and modify traffic on the fly. In practice, it could be any router or link, client might not notice anything.
 
 It is recommended to use provided virtual machine, unless you know what you are doing.
 
