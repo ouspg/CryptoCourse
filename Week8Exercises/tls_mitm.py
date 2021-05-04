@@ -6,14 +6,13 @@ import argparse
 import select
 import sys
 import enum
-import ssl
 
 
 class TLSProxyHandler(socketserver.BaseRequestHandler):
 
     logger = logging.getLogger("TLSProxyHandler")
     timeout = 10.0  # In seconds
-    # See for example https://tools.ietf.org/html/rfc5246#appendix-A.1
+    # For tls content types see for example https://tools.ietf.org/html/rfc5246#appendix-A.1
     # Or https://en.wikipedia.org/wiki/Transport_Layer_Security
     tls_content_type = {
         20: "change_cipher_spec",
@@ -23,8 +22,11 @@ class TLSProxyHandler(socketserver.BaseRequestHandler):
         24: "heartbeat",
     }
 
-    def _handle_tls_packet(self, _socket: socket.socket):
+    def _handle_tls_record(self, _socket: socket.socket):
         """Method for handling potential TLS packet and making actions based on data
+
+        Websites without full TLS support will break as non-tls packets are dropped.
+        You can change that by removing condition starting at line 55
 
         TODO implement downgrading attack
 
@@ -39,8 +41,8 @@ class TLSProxyHandler(socketserver.BaseRequestHandler):
         # _socket.settimeout(1)
         self.raw_data = _socket.recv(5)
         if len(self.raw_data) < 5:
-            # self.logger.warning("Not enough data to be TLS packet...")
-            self.raw_data = 0
+            self.logger.debug("Not enough data to be TLS record...")
+            self.raw_data = None
             return
         (
             self.content_type,
@@ -51,17 +53,19 @@ class TLSProxyHandler(socketserver.BaseRequestHandler):
 
         if self.content_type not in self.tls_content_type.keys():
             self.logger.debug("Not TLS record packet")
+            self.raw_data = None
 
-        # Length tells the size of the rest of the incoming data
-        self.logger.debug(f"TLS packet detected. Size: {self.length}")
-        self.logger.debug(f"TLS content type: {self.content_type}")
-        self.logger.debug(
-            f"TLS major version: {self.major_version} and minor version {self.minor_version}"
-        )
+        else:
+            # Length tells the size of the rest of the incoming data
+            self.logger.debug(f"TLS record detected. Size: {self.length}")
+            self.logger.debug(f"TLS content type: {self.content_type}")
+            self.logger.debug(
+                f"TLS major version: {self.major_version} and minor version {self.minor_version}"
+            )
 
-        self.text_content_type = self.tls_content_type.get(self.content_type)
+            self.text_content_type = self.tls_content_type.get(self.content_type)
 
-        self.raw_data += _socket.recv(self.length)
+            self.raw_data += _socket.recv(self.length)
 
     def handle(self):
         """Handle incoming request. New thread is instanced automatically for separete sources.
@@ -82,7 +86,7 @@ class TLSProxyHandler(socketserver.BaseRequestHandler):
         self.logger.info(f"Connection destination is {_dst_host}:{_dst_port}")
 
         # Let's see initial request data
-        self._handle_tls_packet(self.request)
+        self._handle_tls_record(self.request)
         self.forward = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.forward.connect((_dst_host, _dst_port))
 
@@ -115,7 +119,7 @@ class TLSProxyHandler(socketserver.BaseRequestHandler):
             for rsock in readable:
                 # Socket where data is sent
                 ssock = None
-                self._handle_tls_packet(rsock)
+                self._handle_tls_record(rsock)
                 if not self.raw_data:
                     return
                 if rsock == self.forward:

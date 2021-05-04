@@ -129,6 +129,8 @@ In the case of problems or when you stop using the proxy, you can reset iptables
 
 If endless circulation seems to happen when running the proxy code, make sure that group changes are activated (run `id` command and see if you are part of `tlstesting` group)
 
+
+
 **Task 4.2.** Give some examples how attacker can further use downgrade attack to compromise potentially otherwise secure system or client data.
 
 **Task 4.3.** How TLS 1.3 is protecting from downgrade attacks? How is this better/is this different than previous mechanism ([RFC7507](https://tools.ietf.org/html/rfc7507))?
