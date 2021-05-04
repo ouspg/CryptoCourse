@@ -114,23 +114,29 @@ ip6tables -t nat -A OUTPUT -p tcp -m owner ! --gid-owner tlstesting --dport 80 -
 ip6tables -t nat -A OUTPUT -p tcp -m owner ! --gid-owner tlstesting --dport 443 -j REDIRECT --to-port 8080
 ```
 
-Return to regular user, activate group changes:
+Return to regular user, activate group changes and set `tlstesting` as primary group:
 ```console
 newgrp tlstesting
-```
-Make our proxy code belong to above group:
-```console
-chgrp tlstesting tls_mitm.py
 ```
 
 From now on, the proxy must be running for those ports to work.
 
 In the case of problems or when you stop using the proxy, you can reset iptables with command `iptables -t nat -F`. Note that this will also remove prior custom modifications.
 
-If endless circulation seems to happen when running the proxy code, make sure that group changes are activated (run `id` command and see if you are part of `tlstesting` group)
+If endless circulation seems to happen when running the proxy code, make sure that group changes are activated (run `id` command and see if you are part of `tlstesting` group and it is primary group.)
 
+### Goal
 
+The great starting point for getting to know how TLS packets are handled on byte level, is [this website](https://tls.ulfheim.net/). And Wikipedia...
+
+Your main goal is to identify supported TLS versions and ciphers from data analysis, finally dropping connections in such a way, that client will establish connection with lower TLS version than it supports with the target server. In practice, this is only few lines of *correct* code.
+
+### Target
+
+Use server <server> as your target. What is the lowest supported TLS/SSL version?
 
 **Task 4.2.** Give some examples how attacker can further use downgrade attack to compromise potentially otherwise secure system or client data.
 
 **Task 4.3.** How TLS 1.3 is protecting from downgrade attacks? How is this better/is this different than previous mechanism ([RFC7507](https://tools.ietf.org/html/rfc7507))?
+
+> Return modified source code and answer the questions.

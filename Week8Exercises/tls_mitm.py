@@ -25,15 +25,13 @@ class TLSProxyHandler(socketserver.BaseRequestHandler):
     def _handle_tls_record(self, _socket: socket.socket):
         """Method for handling potential TLS packet and making actions based on data
 
-        Websites without full TLS support will break as non-tls packets are dropped.
-        You can change that by removing condition starting at line 55
-
         TODO implement downgrading attack
 
         Detect supported TLS versions
         Detect supported ciphers
 
-        Drop connections in such a way to web server thinks we support only the lowest available
+        Drop connections in such a way to web server thinks we support only the lowest available.
+        You might need to edit code elsewhere as well.
 
         """
 
@@ -42,7 +40,8 @@ class TLSProxyHandler(socketserver.BaseRequestHandler):
         self.raw_data = _socket.recv(5)
         if len(self.raw_data) < 5:
             self.logger.debug("Not enough data to be TLS record...")
-            self.raw_data = None
+            self.raw_data += _socket.recv(1024 * 64)
+            self.text_content_type = "None"
             return
         (
             self.content_type,
@@ -53,11 +52,13 @@ class TLSProxyHandler(socketserver.BaseRequestHandler):
 
         if self.content_type not in self.tls_content_type.keys():
             self.logger.debug("Not TLS record packet")
-            self.raw_data = None
+            self.raw_data += _socket.recv(1024 * 64)
+            self.text_content_type = "None"
+            return
 
         else:
             # Length tells the size of the rest of the incoming data
-            self.logger.debug(f"TLS record detected. Size: {self.length}")
+            self.logger.debug(f"TLS packet detected. Size: {self.length}")
             self.logger.debug(f"TLS content type: {self.content_type}")
             self.logger.debug(
                 f"TLS major version: {self.major_version} and minor version {self.minor_version}"
