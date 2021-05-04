@@ -86,7 +86,7 @@ class TLSProxyHandler(socketserver.BaseRequestHandler):
         self.forward = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.forward.connect((_dst_host, _dst_port))
 
-        # Make type definiton of request and forward source
+        # Make type definition of 'request' and 'forward' source
         socket_direction = enum.Enum(
             "SocketDirection",
             {
