@@ -135,8 +135,12 @@ Your main goal is to identify supported TLS versions and ciphers from data analy
 
 Use server <server> as your target. What is the lowest supported TLS/SSL version?
 
-**Task 4.2.** Give some examples how attacker can further use downgrade attack to compromise potentially otherwise secure system or client data.
+### Task 4.2. Downgrade attack and existing vulnerabilities
 
-**Task 4.3.** How TLS 1.3 is protecting from downgrade attacks? How is this better/is this different than previous mechanism ([RFC7507](https://tools.ietf.org/html/rfc7507))?
+Give some examples how attacker can further use downgrade attack to compromise potentially otherwise secure system or client data.
+
+### Task 4.3. Applying protection
+
+ How TLS 1.3 is protecting from downgrade attacks? How is this better/is this different than previous mechanism ([RFC7507](https://tools.ietf.org/html/rfc7507))?
 
 > Return modified source code and answer the questions.
