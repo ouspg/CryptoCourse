@@ -149,10 +149,12 @@ Server does not use `TLS_FALLBACK_SCSV` mechanism to prevent downgrading. Howeve
 
 ### Task 4.2. Downgrade attack and existing vulnerabilities
 
-Give some examples how attacker can further use downgrade attack to compromise potentially otherwise secure system or client data.
+The target website has some potential vulnerabilities. Give some examples how attacker can further use downgrade attack to compromise potentially otherwise secure system or client data.
+
+Find some proof of concept (PoC) code from GitHub or other place which could be potentially used to exploit identified vulnerabilities. Reference these with links.
 
 ### Task 4.3. Applying protection
 
  How TLS 1.3 is protecting from downgrade attacks? How is this better/is this different than previous mechanism ([RFC7507](https://tools.ietf.org/html/rfc7507))?
 
-> Return modified source code and answer the questions.
+> Return modified source code, answer the questions and provide required information.
