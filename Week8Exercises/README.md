@@ -37,7 +37,13 @@ Go to the Common Vulenrabilities and Exposures (CVE) [website](https://cve.mitre
 
 ## Task 3: Testing TLS connections with OpenSSL ##
 
-In this task you are to test a website of your choosing with the help of OpenSSL. The OpenSSL Cookbook section 2: [Testing TLS with OpenSSL](https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html) will be **very helpful** in this task. You can also use `nmap` and suitable scripts like [this](https://nmap.org/nsedoc/scripts/ssl-enum-ciphers.html). **Be mindful that some methods of testing may be invasive and may be considered 'hostile' by the server. If you choose to use such tools, please test only sites that approve of this type of testing e.g. have an active bug bounty program**. You can always ask the course staff for advice, if you need any assistance.
+In this task you are to test a website of your choosing with the help of OpenSSL. The OpenSSL Cookbook section 2: [Testing TLS with OpenSSL](https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html) will be **very helpful** in this task. 
+
+You can also use `nmap` and suitable scripts like [this](https://nmap.org/nsedoc/scripts/ssl-enum-ciphers.html). Yet another great tool is [testssl.sh](https://github.com/drwetter/testssl.sh) for this kind of testing.
+
+**Be mindful that some methods of testing may be invasive and may be considered 'hostile' by the server. If you choose to use such tools, please test only sites that approve of this type of testing e.g. have an active bug bounty program**. You can always ask the course staff for advice, if you need any assistance.
+
+We have provided one website for you that you can test without any limits: https://tlstest.rahtiapp.fi
 
 **3.1** Choose a website that supports HTTPS/TLS. What versions of TLS are supported? What ciphersuites are supported? Are there any preferences set by the website?
 
@@ -99,7 +105,7 @@ Prevent ICMP redirects:
 sysctl -w net.ipv4.conf.all.send_redirects=0
 ```
 
-Create testing group, which is not affected by the routing table to prevent circularity:
+Create testing group, which is not affected by the routing table to prevent circularity (process must by launched by user which has this group as primary group):
 
 ```console
 groupadd tlstesting && \
@@ -123,17 +129,21 @@ From now on, the proxy must be running for those ports to work.
 
 In the case of problems or when you stop using the proxy, you can reset iptables with command `iptables -t nat -F`. Note that this will also remove prior custom modifications.
 
-If endless circulation seems to happen when running the proxy code, make sure that group changes are activated (run `id` command and see if you are part of `tlstesting` group and it is primary group.)
+If endless circulation seems to happen when running the proxy code, make sure that group changes are activated (run `id` command and see if you are part of `tlstesting` group and that is primary group.)
 
 #### Goal
 
 The great starting point for getting to know how TLS packets are handled on byte level, is [this website](https://tls.ulfheim.net/). And Wikipedia...
 
-Your main goal is to identify supported TLS versions and ciphers from data analysis, finally dropping connections in such a way, that client will establish connection with lower TLS version than it supports with the target server. In practice, this is only few lines of *correct* code.
+Your main goal is to identify supported TLS versions and ciphers from data analysis, finally dropping connections in such a way, that client will establish connection with lower TLS version than it supports with the target server. In practice, this is not that many lines of *correct* code.
+
+You can further modify proxy code to only alter the target server traffic.
 
 #### Target
 
-Use server <server> as your target. What is the lowest supported TLS/SSL version?
+Use server https://tlstest.rahtiapp.fi as your target. What is the lowest supported TLS/SSL version?
+
+Server does not use `TLS_FALLBACK_SCSV` mechanism to prevent downgrading. However, you might need to use specific client anyway to be able to accept TLSv1 connections. Virtual machine has Docker installed, if you need some really old versions for some cases.
 
 ### Task 4.2. Downgrade attack and existing vulnerabilities
 

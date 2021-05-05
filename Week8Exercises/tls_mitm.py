@@ -37,7 +37,7 @@ class TLSProxyHandler(socketserver.BaseRequestHandler):
 
         # TLS record header length is 5 in general
         # Can you use content type to identify when we get TLS record, and what it contains?
-        # For great tutorial https://tls.ulfheim.net/
+        # For great tutorial see https://tls.ulfheim.net/
         self.raw_data = _socket.recv(5)
         if len(self.raw_data) < 5:
             self.logger.debug("Not enough data to be TLS record...")
