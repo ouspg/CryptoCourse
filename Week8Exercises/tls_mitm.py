@@ -41,6 +41,7 @@ class TLSProxyHandler(socketserver.BaseRequestHandler):
         self.raw_data = _socket.recv(5)
         if len(self.raw_data) < 5:
             self.logger.debug("Not enough data to be TLS record...")
+            return
 
         self.raw_data += _socket.recv(1024 ** 64)
 
