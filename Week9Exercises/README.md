@@ -1,6 +1,6 @@
 # Week 9 Exercises
 
-This week’s exercises focus on post quantum cryptografy.
+This week’s exercises focus on post quantum cryptography.
 
 ## Grading
 
