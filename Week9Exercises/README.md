@@ -28,8 +28,7 @@ Task 4 | 5 |
 
 
 
-> Answer the questions and provide any code/scripts that you used in testing the systems. You can provide snippets of the TLS tests that you run with OpenSSL.
-
+> Answer the questions  
 
 ## Task 4: ##
 
