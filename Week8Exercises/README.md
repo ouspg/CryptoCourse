@@ -25,13 +25,15 @@ In this task you will familiarise yourself with the TLS versions 1.1, 1.2. and 1
 
 ## Task 2: Getting to know the vulnerabilities of SSL/TLS ##
 
-Go to the Common Vulenrabilities and Exposures (CVE) [website](https://cve.mitre.org/). Search for vulnerabilities in the TLS protocol and different versions (1.1, 1.2, 1.3).
+Go to the Common Vulnerabilities and Exposures (CVE) [website](https://cve.mitre.org/). Search for vulnerabilities in the TLS protocol and different versions (1.1, 1.2, 1.3).
 
 **2.1** Which version has the most listed vulnerabilities in the CVE database?
 
-**2.2** What is the most severe vulnerability listed for each version of TLS? Severity can be measured with the [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) and this information can be accessed by clicking the *Learn more at National Vulnerability Database (NVD)* -link from the CVE listing.
+**2.2** What is the most severe vulnerability listed for each version of TLS? Severity can be measured with the [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) and this information can be accessed by clicking the *Learn more at National Vulnerability Database (NVD)* -link from the CVE listing. How does the vulnerability work? What cryptographic primitive (if any) is affected? At what level of abstraction does the vulnerability appear (theoretical, protocol or implementation)? What types of applications does it impact? Can you find tools/code from the Internet that implement this attack? Are there any news on this vulnerability being used in some data breach/attack?
 
-**2.3** What is the most recent vulnerability listed for each version of TLS?
+**2.3** What is the most recent vulnerability listed for each version of TLS? How does the vulnerability work? What cryptographic primitive (if any) is affected? At what level of abstraction does the vulnerability appear (theoretical, protocol or implementation)? What types of applications does it impact? Can you find tools/code from the Internet that implement this attack? Are there any news on this vulnerability being used in some data breach/attack?
+
+Feel free to expand the table from Task 1 with the information from this task.
 
 > Answer the questions above. Reference any outside sources that you have used.
 
