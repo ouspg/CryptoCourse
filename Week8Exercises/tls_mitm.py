@@ -36,37 +36,13 @@ class TLSProxyHandler(socketserver.BaseRequestHandler):
         """
 
         # TLS record header length is 5 in general
-        # _socket.settimeout(1)
+        # Can you use content type to identify when we get TLS record, and what it contains?
+        # For great tutorial https://tls.ulfheim.net/
         self.raw_data = _socket.recv(5)
         if len(self.raw_data) < 5:
             self.logger.debug("Not enough data to be TLS record...")
-            self.raw_data += _socket.recv(1024 * 64)
-            self.text_content_type = "None"
-            return
-        (
-            self.content_type,
-            self.major_version,
-            self.minor_version,
-            self.length,
-        ) = struct.unpack("!BBBH", self.raw_data)
 
-        if self.content_type not in self.tls_content_type.keys():
-            self.logger.debug("Not TLS record packet")
-            self.raw_data += _socket.recv(1024 * 64)
-            self.text_content_type = "None"
-            return
-
-        else:
-            # Length tells the size of the rest of the incoming data
-            self.logger.debug(f"TLS packet detected. Size: {self.length}")
-            self.logger.debug(f"TLS content type: {self.content_type}")
-            self.logger.debug(
-                f"TLS major version: {self.major_version} and minor version {self.minor_version}"
-            )
-
-            self.text_content_type = self.tls_content_type.get(self.content_type)
-
-            self.raw_data += _socket.recv(self.length)
+        self.raw_data += _socket.recv(1024 ** 64)
 
     def handle(self):
         """Handle incoming request. New thread is instanced automatically for separete sources.
