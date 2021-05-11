@@ -18,10 +18,11 @@ Now in the final week we'd like to get your feedback on the course. Please answe
 
 * What did you like about the lectures?
 * What would you improve on the lectures?
-* What was missing from the course (i.e. what more would you have wanted from the course)?
 * What did you like about the exercises?
 * How would you improve the exercises?
 * Did you miss some type of an exercise or some content as an exercise?
+* What was missing from the course (i.e. what more would you have wanted from the course)?
+* What was the worst part of the course in your opinion?
 * Freeform feedback on the course
 
 > Answer the questions above.
