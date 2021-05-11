@@ -38,7 +38,7 @@ In this task you wil try out some quantum computing yourself. Go to [the IBM qua
 
 ## Task 3: Post-quantum Cryptography ##
 In this task you will learn more about post-quantum cryptography. 
-Go to the [NIST PQC website](https://csrc.nist.gov/projects/post-quantum-cryptography) and look at the finalists of the PQC standardisation (Round 3 candidates, not alternate candidates). 
+Go to the [NIST PQC website](https://csrc.nist.gov/projects/post-quantum-cryptography) and look at the finalists of the PQC standardisation (Round 3 finalist candidates, not alternate candidates). 
 
 **3.1** Answer the following questions:
 * What hard problems are the candidates based on?
