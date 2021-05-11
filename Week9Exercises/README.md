@@ -38,11 +38,14 @@ In this task you wil try out some quantum computing yourself. Go to [the IBM qua
 ## Task 3: Post-quantum Cryptography ##
 In this task you will learn more about post-quantum cryptography. 
 Go to the [NIST PQC website](https://csrc.nist.gov/projects/post-quantum-cryptography) and look at the finalists of the PQC standardisation (Round 3 candidates, not alternate candidates). 
+
 **3.1** Answer the following questions:
 * What hard problems are the candidates based on?
 * What security levels are the candidates aiming for? (NIST has specified [five](https://csrc.nist.gov/CSRC/media/Projects/Post-Quantum-Cryptography/documents/call-for-proposals-final-dec-2016.pdf) pages 16-17)
 * What parameters sizes do the candidates have? Key size, signature size, key generation time, signature generation time, verification time etc?
+
 **3.2** Look for any implementations of the finalists e.g. via Google. What systems/libraries/applications support these? Can you find a rationale for the decision to support a specific method?
+
 **3.3** Pick a finalist candidate. Do a search on [Google Scholar](scholar.google.com) with the candidate name and some additional suitable search terms (e.g. 'post-quantum cryptography'). How many results can you find? Are there any attacks on or weaknessess in the proposed scheme? If there are, explain these very briefly.
 
 > Answer the questions above. Reference any outseide sources. For task 3.3 please list your query terms.  
