@@ -14,7 +14,7 @@ Task 3.1 & 3.2 | 4 | Post-quantum Cryptography
 Task 3.3 | 5 | Post-quantum Cryptography
 
 ## Task 1: Feedback on the course ##
-Now in the final week we'd like to get your feedback on the course. Please answer the questions below. **Note that you can give also anonymous feedback through the Moodle platform in the Feedback section.**
+Now in the final week we'd like to get your feedback on the course. Please answer the questions below. **Note that you can give also anonymous feedback through the University official [feedback pages](http://palaute.oulu.fi/).**
 
 * What did you like about the lectures?
 * What would you improve on the lectures?
