@@ -6,7 +6,7 @@ Exercises for the course Cryptographic systems and their weaknesses 521149S
 
 Course wil go through basic concepts of cryptography, definitions and concepts of cryptographic security and testing these through programming. Showing different cryptographic weaknesses and demonstrating different implementations of these through programming. Basics of quantum computing and post-quantum cryptography.
 
-You can find the course from the [Moodle.](https://moodle.oulu.fi/course/view.php?id=7315)
+You can find the course from the [Moodle.](https://moodle.oulu.fi/) (FIXME!)
 
 ## Exercise requirements
 
