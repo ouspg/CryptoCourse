@@ -18,9 +18,9 @@ You are eligible for the following points from the exercise. Previous task(s) sh
 
 Task #|Grade|Description|
 -----|:---:|-----------|
-Task 1 | 2 | Fooling a perfect cipher
-Task 2 | 3 | Vigenere cipher
-Task 3 | 4-5 | Generating randomness and testing randomness
+Task 1 | 1 | Fooling a perfect cipher
+Task 2 | 2 | Vigenere cipher
+Task 3 | 3-4 | Generating randomness and testing randomness
 
 
 ## Task 1: Fooling a perfect cipher
