@@ -16,10 +16,10 @@ You are eligible for following points from the exercise. Previous task(s) should
 
 Task #|Grade|Description|
 -----|:---:|-----------|
-Task 1 | 2 | Modes of operation
-Task 2 | 3 | Wrong model type of attack
-Task 3 | 4 | Forged cipher
-Task 4 | 5 | Padding oracle
+Task 1 | 1 | Modes of operation
+Task 2 | 2 | Wrong model type of attack
+Task 3 | 3 | Forged cipher
+Task 4 | 4 | Padding oracle
 
 ## Task 1: Modes of operation
 
@@ -31,7 +31,9 @@ Take a short message with two identical message blocks (e.g. all zeroes). Notice
 
 Generate a suitable key (e.g. 128 bits) to use with AES. 
 
-Encrypt your message using three different modes of operation ECB, CBC and CTR with the same key. Compare the encryptions, from the part of the first and second identical message blocks. Describe the results.
+Encrypt your message using three different modes of operation ECB, CBC and CTR with the same key. Compare the encryptions, from the part of the first and second identical message blocks. Describe the results. 
+
+Explain also shortly the purpose of the nonce and possible salt in this case. Are they the same thing?
 
 **Task 1.2.** What can you say about for example the indistinguishability properties of the three modes of operation? 
 
