@@ -16,10 +16,10 @@ You are eligible for following points from the exercise. Previous task(s) should
 
 Task #|Grade|Description|
 -----|:---:|-----------|
-Task 1 | 2 | Generating public keys with OpenSSL
-Task 2 | 3 | Generating certificate signing requests with OpenSSL
-Task 3 | 4 | Generating symmetric keys with limited randomness and brute forcing the key.
-Task 4 | 5 | Security level analysis of your favorite application
+Task 1 | 1 | Generating public keys with OpenSSL
+Task 2 | 2 | Generating certificate signing requests with OpenSSL
+Task 3 | 3 | Generating symmetric keys with limited randomness and brute forcing the key.
+Task 4 | 4 | Security level analysis of your favorite application
 
 ## Task 1: Generating public keys with OpenSSL
 
