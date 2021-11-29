@@ -39,7 +39,7 @@ In this task you wil try out some quantum computing yourself. Go to [the IBM qua
 
 ## Task 3: 
 
-In this week, you have two options for the final assignment which will give you up to 2 points in this weeks grade. Select one from them.
+In this week, you have two options for the final assignment. They are equal for acquiring the maximum grade.
 
 ### Post-quantum Cryptography (Option 1)
 In this task you will learn more about post-quantum cryptography. 
