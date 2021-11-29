@@ -1,8 +1,5 @@
 # Week 2 Exercises
 
-This week’s exercises focus on key generation, brute forcing and security assumptions.
-
-First two tasks are heavily using [OpenSSL](https://www.openssl.org/) from the command-line, and the book [OpenSSL Cookbook 3ed Online](https://www.feistyduck.com/library/openssl-cookbook/online/) could be very useful.
 
 ## Environment
 
@@ -14,7 +11,7 @@ The course virtual machine is suitable.
 
 You are eligible for following points from the exercise. Previous task(s) should be completed before going further.
 
-Task #|Grade|Description|
+[Task](Task) #|Grade|Description|
 -----|:---:|-----------|
 Task 1 | 1 | Generating public keys with OpenSSL
 Task 2 | 2 | Generating certificate signing requests with OpenSSL
@@ -67,30 +64,3 @@ Encrypt some data with the key, delete the key from memory and try to brute forc
 
 > Remember to mention the members of your group, in case one was formed.
 
-
-## Task 4: Security level analysis of your favorite application
-
-Pick an application (such as a secure messaging application, VPN system etc.) and identify its crypto schemes, key length, and respective security levels. Your analysis can be based on marketing material, blog posts, websites, research papers or code analysis (if the application has open source code).
-
-Report your findings (with references to sources) in a brief (1-2 A4 pages) document. Use figures and/or tables, if necessary.
-
-An example structure for this type of document could be
-
-1. Introduction
-    * The name and type of application (HW/SW, VPN/messaging/firewall/home appliance…)
-    * The reason you picked this application
-    * The intended use of the application
-
-2. Cryptography
-    * What (data) is protected?
-    * What algorithms are used?
-    * What key lengths?
-    * What arguments (if any) are given in support of using the above algorithms and key lengths?
-3. Analysis
-    * What is the level of security provided in the system based on your analysis?
-    * Are there any gaps and/or discrepancies between different cryptographic primitives?
-    * (optional) How could the security of the cryptography be improved?
-4. References
-    * Give a list of all the reference material that you have used. Please reference these also in the text so that we can see, where each bit of information has been collected.
-
-> You can also make a separate PDF document, and upload it into your repository, if you want. Remember to reference for it.

@@ -1,8 +1,10 @@
-# Week 3 Exercises
+# Cryptographic security and block ciphers
 
-This week’s exercises focus on block ciphers.
+This week’s exercises focus on block ciphers, public-private key generation and practical use of certificates.
 
-*Pages 53-75* from the course book could be helpful for this exercise. It is available in the library of the University of Oulu in [digital format](https://oula.finna.fi/Record/oy_electronic_oy.9917612964306252).
+*Pages 53-75* from the course book could be helpful for block cipher related assignments. It is available in the library of the University of Oulu in [digital format](https://oula.finna.fi/Record/oy_electronic_oy.9917612964306252).
+
+Second and third task are heavily using [OpenSSL](https://www.openssl.org/) from the command-line, and the book [OpenSSL Cookbook 3ed Online](https://www.feistyduck.com/library/openssl-cookbook/online/) could be very useful.
 
 ## Environment
 
@@ -14,14 +16,14 @@ The course virtual machine is suitable.
 
 You are eligible for following points from the exercise. Previous task(s) should be completed before going further.
 
-Task #|Grade|Description|
+[Task](Task) #|Grade|Description|
 -----|:---:|-----------|
 Task 1 | 1 | Modes of operation
 Task 2 | 2 | Wrong model type of attack
 Task 3 | 3 | Forged cipher
 Task 4 | 4 | Padding oracle
 
-## Task 1: Modes of operation
+## Task 1: Modes of operations in block ciphers
 
 Let's have a practical look at different modes of operations.
 
@@ -41,34 +43,21 @@ Explain also shortly the purpose of the nonce and possible salt in this case. Ar
 
 > Include source code and answer the questions. You can highlight interesting comparison results with screenshots for example.
 
-## Task 2: Wrong model type of attack
+## Task 2: Digital COVID Certificate
 
-<p align="right">
-<img src="img/encryptic.png" alt="Random number. Source: XKCD" height="400px" align="right"/>
-</p>
+Public-Private keypairs 
 
+Format:
+base45-encoded QR code and decoding CBOR to JSON
+Base45 for QR required
 
-In some cases you can use a very secure cryptographic primitive (in this case a block cipher) but fail to protect the data because the threat model you are using is completely wrong. In this task you will learn more about this type of failure through a real world example.
-
-Familiarize yourself with the Adobe password attack from 2013 [for example from here.](https://arstechnica.com/information-technology/2013/11/how-an-epic-blunder-by-adobe-could-strengthen-hand-of-password-crackers/)
-
-**Task 2.1.** Complete some of the crossword puzzles made using the leaked database and encrypted passwords at https://zed0.co.uk/crossword/. The puzzle's origins lies in the xkcd comic which can seen on the right.
-
- > Include screen captures of completed puzzle(s) in your work.
- 
-**Task 2.2.** What is the method used to protect the passwords in the leaked Adobe database? 
-
-**Task 2.3.** What is the “industry standard” for protecting passwords in databases? Method might be totally different in these days.
-
-**Task 2.4.** Why does the mistake allow for easy decryption of the passwords (i.e. making a crossword puzzle)?
-
-**Task 2.5.** The mode of operation chosen in the Adobe case is ECB. Would some other encryption mode of operation have helped? If yes, how? If not, why? If both, then how and why not?
+Spec : https://github.com/ehn-dcc-development/hcert-spec
+Finland test data: https://github.com/eu-digital-green-certificates/dgc-testdata/tree/main/FI
 
 
-> Answer the questions shortly (3-5 sentences / question). Mention possible sources.
 
 
-## Task 3: Forged cipher
+## Task 3: Forged cipher (Alternative)?
 
 In this task you will do a similar attack as in Week 1 Task 1, but against a real world secure encryption scheme. The message below is encrypted with AES (a secure standard for symmetric encryption) using a provably secure mode of operation. Yet, you should be able to modify the message according to the task below.
 
