@@ -10,10 +10,10 @@ You are eligible for following points from the exercise. Previous task(s) should
 
 Task #|Grade|Description|
 -----|:---:|-----------|
-Task 1 | 2 | Brute forcing a short authentication tag 
-Task 2 | 3 | Timing attack
-Task 3 | 4 | Short cycles in GHASH
-Task 4 | 5 | Forging CBC-MAC messages
+Task 1 | 1 | Brute forcing a short authentication tag 
+Task 2 | 2 | Timing attack
+Task 3 | 3 | Short cycles in GHASH
+Task 4 | 4 | Forging CBC-MAC messages
 
 ## Task 1: Brute forcing a short authentication tag
 
@@ -23,7 +23,7 @@ Choose the shortest possible tag length (1 or 2 bytes is enough, more than 4 may
 
 Compute an authenticated encryption of some message of your choosing. Then brute force another message that has the same authentication tag. 
 
-Note that the messages do not need to make any sense i.e. the messages can be just arbitrary binary strings.
+Note that the messages do not need to make any sense i.e. the messages can be just arbitrary binary strings. Note also that crypto libraries usually calculate full tag length behind the scenes and strip the leftmost bytes from output. You can do this yourself aswell, no need to modify the library.
 
 > Provide any source code, the key that you used and the two different messages with the same authentication value as your answer. You can showcase time used for brute forcing for example by using tables.
 
@@ -84,7 +84,7 @@ In this task you will see how the GHASH function in the GCM mode has a problem w
 
 >"For example, the value H = 10d04d25f93556e69f58ce2f8d035a4 belongs to a cycle of length five, as it satisfies H^5 = H, and therefore H^e = H for any e that is a multiple of five (the very definition of cycle with respect to fifth powers). Consequently, in the preceding expression of the final GHASH value Xn, swapping the blocks Cn (multiplied to H) and the block Cn – 4 (multiplied to H 5) will leave the authentication tag unchanged, which amounts to a forgery.” 
 
-You can use [this paper](https://eprint.iacr.org/2011/202.pdf) as a starting point.
+You can use [this paper](https://eprint.iacr.org/2011/202.pdf) as a starting point. You can use values from the paper.
 
 **3.1** Find a short cycle in the GHASH function. Give the value that belongs to a cycle and the length of the cycle.
 
