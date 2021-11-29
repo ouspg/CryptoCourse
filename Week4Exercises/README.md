@@ -10,20 +10,20 @@ You are eligible for following points from the exercise. Previous task(s) should
 
 Task #|Grade|Description|
 -----|:---:|-----------|
-Task 1 | 2 | Stream cipher usage
-Task 2 | 3 | Partial collisions and preimages of hash functions
-Task 3 | 4 | Nonce reuse
-Task 4 | 5 | MACs gone wrong
+Task 1 | 1 | Stream cipher usage
+Task 2 | 2 | Partial collisions and preimages of hash functions
+Task 3 | 3 | Nonce reuse
+Task 4 | 4 | MACs gone wrong
 
 ## Task 1: Stream cipher usage
 
 Select a stream cipher and encrypt some text with the generated keystream by XORing the keystream to the plaintext.
 
-**1.1.** Take the plaintext from Week 3 exercises task 3: "Move the tables to the patio as soon as possible!" and encrypt it with the keystream. Generate a ciphertext that will decrypt to "Move the chairs to the house as soon as possible!" under the same keystream (remember ASCII encoding etc.) Is there something similar in ciphertexts? Why/why not?
+**1.1.** Take the plaintext from Week 3 exercises task 3: "Move the tables to the patio as soon as possible!" and encrypt it with the keystream. Generate a ciphertext that will decrypt to "Move the chairs to the house as soon as possible!" under the same keystream (remember ASCII encoding etc.). Remember that we are forging a new ciphertext that can be decrypted with the original key/nonce. Is there something similar in ciphertexts? Why/why not?
 
 **1.2.** Encrypt a message of your choice with a key and a nonce of your choice. Use another key and the same nonce to encrypt another, slightly different message of your choice, e.g. change one letter to another. Can you spot any pattern in the cipher texts? Can you get any relation between the plaintexts out of the ciphertexts?
 
-**1.3.** Compare the encryption speed/time of AES-CBC, AES-CTR and the stream cipher of your choice. Which is most efficient? Is the difference great?
+**1.3.** Compare the encryption speed/time of AES-CBC, AES-CTR and the stream cipher of your choice. Which is most efficient? Is the difference great? Does your pc have hardware support for encryption? Note that a very little data size causes results to be highly affected by system noise.
 
 > Return possible source code and answer the questions.
 
@@ -37,7 +37,10 @@ This task focuses on collision and preimage attacks on hash functions. Take a lo
 
 **2.3** Compare the computation and memory requirements of your implementations. If you are working on with Python, you can use for example Python module [memory_profiler](https://github.com/pythonprofilers/memory_profiler) for computing memory usage. For computation performance, CLI utility `time` command could be enough. For more advanced analysis build-in tool [cProfile](https://docs.python.org/3/library/profile.html) can be useful, but stripping non-meaningful data is required.
 
-> Return possible source code and answer the questions. If you are using profilers, it might be reasonable to include tables.
+> Return possible source code and answer the questions. If you are using profilers, it might be reasonable to include tables. Remember to write down the original and collided messages as well as their hashes.
+| Original Message | Colliding message | Original Hash | Colliding hash |
+|------------------|-------------------|---------------|----------------|
+|                  |                   |               |                |
 
 Note that for example the Bitcoin proof-of-work algorithm is based on a partial preimage search of a hash function.
 
