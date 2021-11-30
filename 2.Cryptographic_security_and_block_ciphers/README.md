@@ -1,4 +1,4 @@
-# Cryptographic security and block ciphers
+# Week 2: Cryptographic security and block ciphers
 
 This week’s exercises focus on block ciphers, public-private key generation and practical use of certificates.
 
