@@ -1,4 +1,4 @@
-# Week 5 Exercises
+# Week 4: Keyed hashes and authenticated encryption
 
 This week’s exercises focus on keyed hashes and authenticated encryption.
 
