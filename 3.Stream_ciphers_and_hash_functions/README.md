@@ -1,4 +1,4 @@
-# Week 4 Exercises
+# Week 3: Stream ciphers and hash functions
 
 This week’s exercises focus on stream ciphers and hash functions. We briefly touch the topic of MACs on the final task, which is the main theme of the following week.
 
