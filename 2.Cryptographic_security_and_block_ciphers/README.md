@@ -19,7 +19,7 @@ You are eligible for following points from the exercise. Previous task(s) should
 [Task](Task) #|Grade|Description|
 -----|:---:|-----------|
 Task 1 | 1 | Modes of operation
-Task 2 | 2 | Wrong model type of attack
+Task 2 | 2-3 | Digital COVID Certificate
 Task 3 | 3 | Forged cipher
 Task 4 | 4 | Padding oracle
 
@@ -45,7 +45,29 @@ Explain also shortly the purpose of the nonce and possible salt in this case. Ar
 
 ## Task 2: Digital COVID Certificate
 
-Public-Private keypairs 
+COVID-19 has been a nuisance of the past two years. 
+Just recently, there has been a lot of discussion and usage of COVID-19 Passport on verification of the vaccasine status, confirmation of recent Rapid Antigen Test (RAT) or Nucleic acid aplification test (NAAT) and succesful recovery status.
+
+But how does it work? In this exercise, we will take a brief look on practical public-key cryptography and its usage on certificate generation and signing - however we don't try to understand the underlying math and potential problems yet.
+In the end, we demonstrate a simpler application of COVID-19 Password and how one could be created.
+
+### Task 2.1. Public-key generation
+
+The main advantage of public key cryptography was the requirement of two different keys; public key can be used for encryption but only the private key can decrypt the data. Hence, you can share the public key for everyone to secure data, but only the owner of the private key can access it.
+Public-key cryptography is not only limited for encryption; authentication is an another important concept.
+Public keys can be use for creating *digital signature* for the data; with purpose to verify the origin of the data with private key.
+
+Your first task is to create different kind of public-private (also called asymmetric) key-pairs, by using different cryptographic algorithms.
+
+
+
+OpenSSL Cookbook could be very useful in this exercise.
+
+
+
+
+You can also take a look on the sample implementation of eHN-S protocol which is available [here.](https://github.com/ehn-dcc-development/ehn-sign-verify-python-trivial)
+
 
 Format:
 base45-encoded QR code and decoding CBOR to JSON
