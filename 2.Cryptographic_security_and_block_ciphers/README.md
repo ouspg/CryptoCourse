@@ -59,7 +59,7 @@ The main advantage of public key cryptography was the requirement of two differe
 Hence, you can share the public key for everyone to secure the data, but only the owner of the private key can access it.
 
 Public-key cryptography is not only limited for encryption; authentication is an another important concept.
-Public keys can be used for creating *digital certificate* for the data; with purpose of verifying the origin of the data with the public key.
+Public keys can be used for creating *digital certificate* for the data; with purpose of verifying the entity behind authenticating the data with the public key.
 Compare also with *digital signature*; it verifies the authenticity of the data but not always the entity behind the data.
 
 Your first task is to create different kind of public-private (also called asymmetric) key-pairs, by using different cryptographic algorithms.
@@ -67,7 +67,7 @@ Later some of these keys are used for creating the digital certificate.
 
 #### Task 2.1.1. Generate RSA and ECDSA keys of different lengths with OpenSSL. Private keys are required for time measurement.
 
-Use both legacy command `genrsa` and newer commands `genpkey` for creating the RSA keys.
+Use both legacy command `genrsa` and newer command `genpkey` for creating the RSA keys.
 For ECDSA keys, use `ecparam` command.
 
 Compare the results and the time it takes to generate the keys.
