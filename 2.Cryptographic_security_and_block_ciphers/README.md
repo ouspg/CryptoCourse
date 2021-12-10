@@ -46,18 +46,46 @@ Explain also shortly the purpose of the nonce and possible salt in this case. Ar
 ## Task 2: Digital COVID Certificate
 
 COVID-19 has been a nuisance of the past two years. 
-Just recently, there has been a lot of discussion and usage of COVID-19 Passport on verification of the vaccasine status, confirmation of recent Rapid Antigen Test (RAT) or Nucleic acid aplification test (NAAT) and succesful recovery status.
+Just recently, there has been a lot of discussion and usage of the COVID-19 Passport on verification of the vaccasine status, confirmation of recent Rapid Antigen Test (RAT) or Nucleic acid aplification test (NAAT) and confirmed recovery status.
 
-But how does it work? In this exercise, we will take a brief look on practical public-key cryptography and its usage on certificate generation and signing - however we don't try to understand the underlying math and potential problems yet.
-In the end, we demonstrate a simpler application of COVID-19 Password and how one could be created.
+But how does it work? In this exercise, we will take a brief look on practical public-key cryptography and its usage on certificate generation and signing.
+We don't try to understand the underlying math and potential problems; at least yet.
+Finally, we demonstrate a simple application of COVID-19 Password and how one could be created. 
+How safe it is?
 
 ### Task 2.1. Public-key generation
 
-The main advantage of public key cryptography was the requirement of two different keys; public key can be used for encryption but only the private key can decrypt the data. Hence, you can share the public key for everyone to secure data, but only the owner of the private key can access it.
+The main advantage of public key cryptography was the requirement of two different keys; public key can be used for encryption but only the private key can decrypt the data. 
+Hence, you can share the public key for everyone to secure data, but only the owner of the private key can access it.
+
 Public-key cryptography is not only limited for encryption; authentication is an another important concept.
-Public keys can be use for creating *digital signature* for the data; with purpose to verify the origin of the data with private key.
+Public keys can be used for creating *digital certificate* for the data; with purpose of verifying the origin of the data with the public key.
+Compare for *digital signature*; it verifies the authenticity of the data but not always the entity behind the data.
 
 Your first task is to create different kind of public-private (also called asymmetric) key-pairs, by using different cryptographic algorithms.
+Later some of these keys are used for creating digital certificate.
+
+OpenSSL can be used to generate different kind of asymmetric key-pairs.
+We will try out RSA and ECDSA algorithms.
+
+Task 2.1. Generate RSA and ECDSA/DSA keys of different lengths with OpenSSL. Private keys are required for time measurement.
+
+Use both legacy commands (genrsa & dsaparam/gendsa) and newer commands (genpkey) and finally compare the results and the time it takes to generate the keys.
+It is recommended to try relatively high key length to notice difference (RSA).
+
+*For ECDSA, use **secp256r1** curve, we will use these keys later on.*
+
+Note, that with legacy commands you are expected to generate RSA and DSA keys. With newer commands you should generate RSA and ECDSA keys.
+
+We are mainly interested on the differences and practical use of OpenSSL on here - DSA/ECDSA can be considered as weak algorithms in these days, they are very dependent on the PRNG of the operating system when signing messages, while DSA being already officially deprecated by OpenSSL because of the low key length requirements.
+
+You might need to use some additional commands, to generate the public keys only.
+
+On Linux, you can measure time with time command. To see explanation of produced output, you can reference here.
+
+Task 2.2. Different commands (legacy vs. new) might be using different Public-Key Cryptography Standards (PKCS) output format. Which ones have been used? What binary format is the newer one representing?
+
+> Answer the questions and include all possible commands you used on your answers. Return your public keys (and public keys only!) as a mark of completion of this task.
 
 
 
