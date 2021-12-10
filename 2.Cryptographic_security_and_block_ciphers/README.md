@@ -53,7 +53,7 @@ We don't try to understand the underlying math - at least yet.
 Finally, we demonstrate a simple application of COVID-19 Password and how one could be created. 
 How safe it is?
 
-### Task 2.1. Public-key generation
+### Task 2.1. Public and private key generation
 
 The main advantage of public key cryptography was the requirement of two different keys; public key can be used for encryption but only the private key can decrypt the data. 
 Hence, you can share the public key for everyone to secure the data, but only the owner of the private key can access it.
@@ -69,11 +69,12 @@ Later some of these keys are used for creating the digital certificate.
 
 Use both legacy command `genrsa` and newer command `genpkey` for creating the RSA keys.
 For ECDSA keys, use `ecparam` command.
+OpenSSL Cookbook could be very useful in this exercise.
 
 Compare the results and the time it takes to generate the keys.
 It is recommended to try relatively high key length to notice difference (RSA).
 
-*For ECDSA, use `secp256r1` curve as it is used as base for cerficates later on.
+*For ECDSA, use `secp256r1` curve as it is used as base for certificates later on.
 For comparison, use `Curve25519` for ECDSA key generation as well.*
 
 Note, that with legacy commands you are expected to generate only RSA keys. With newer commands you should generate RSA and ECDSA keys.
@@ -81,11 +82,11 @@ Note, that with legacy commands you are expected to generate only RSA keys. With
 We are mainly interested on the differences and practical use of OpenSSL on here .
 You might need to use some additional commands, to generate the public keys only.
 
-On Linux, you can measure time with time command. To see explanation of produced output, you can reference here.
+On Linux, you can measure time with `time` command. To see explanation of produced output, you can reference here.
 
 #### Task 2.1.2. Different commands (legacy vs. new) might be using different Public-Key Cryptography Standards (PKCS) output format. Which ones have been used?
 
-#### Task 2.1.3. What are the practical differences of `secp256r1` and `Curve25519`? Is there a reason we are testing these?
+#### Task 2.1.3. What are the practical differences of `secp256r1` and `Curve25519`? Is there a reason why we are testing these?
 
 #### Task 2.1.4. Can you notice significant time differences between algorithms on key generation?
 
@@ -95,7 +96,7 @@ On Linux, you can measure time with time command. To see explanation of produced
 
 
 
-OpenSSL Cookbook could be very useful in this exercise.
+### 2.2. Certificate sign requests
 
 
 
