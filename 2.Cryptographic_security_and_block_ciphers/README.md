@@ -49,7 +49,7 @@ COVID-19 has been a nuisance of the past two years.
 Just recently, there has been a lot of discussion and usage of the COVID-19 Passport on verification of the vaccasine status, confirmation of recent Rapid Antigen Test (RAT) or Nucleic acid aplification test (NAAT) and confirmed recovery status.
 
 But how does it work? In this exercise, we will take a brief look on practical public-key cryptography and its usage on certificate generation and signing.
-We don't try to understand the underlying math and potential problems; at least yet.
+We don't try to understand the underlying math - at least yet.
 Finally, we demonstrate a simple application of COVID-19 Password and how one could be created. 
 How safe it is?
 
@@ -59,8 +59,8 @@ The main advantage of public key cryptography was the requirement of two differe
 Hence, you can share the public key for everyone to secure the data, but only the owner of the private key can access it.
 
 Public-key cryptography is not only limited for encryption; authentication is an another important concept.
-Public keys can be used for creating *digital certificate* for the data; with purpose of verifying the entity behind authenticating the data with the public key.
-Compare also with *digital signature*; it verifies the authenticity of the data but not always the entity behind the data.
+Private keys can be used for creating *digital certificate* for the data; with purpose of verifying the entity behind authentication by using corresponding public key.
+Compare with *digital signature*: it verifies the authenticity of the data but not always the entity behind the data.
 
 Your first task is to create different kind of public-private (also called asymmetric) key-pairs, by using different cryptographic algorithms.
 Later some of these keys are used for creating the digital certificate.
@@ -73,18 +73,23 @@ For ECDSA keys, use `ecparam` command.
 Compare the results and the time it takes to generate the keys.
 It is recommended to try relatively high key length to notice difference (RSA).
 
-*For ECDSA, use at least `secp256r1` curve, we will use these keys later on.*
-For comparison, you could try to use `Curve25519` for ECDSA as well.
+*For ECDSA, use `secp256r1` curve as it is used as base for cerficates later on.
+For comparison, use `Curve25519` for ECDSA key generation as well.*
 
-Note, that with legacy commands you are expected to generate RSA and DSA keys. With newer commands you should generate RSA and ECDSA keys.
+Note, that with legacy commands you are expected to generate only RSA keys. With newer commands you should generate RSA and ECDSA keys.
 
-We are mainly interested on the differences and practical use of OpenSSL on here - DSA/ECDSA can be considered as weak algorithms in these days, they are very dependent on the PRNG of the operating system when signing messages, while DSA being already officially deprecated by OpenSSL because of the low key length requirements.
-
+We are mainly interested on the differences and practical use of OpenSSL on here .
 You might need to use some additional commands, to generate the public keys only.
 
 On Linux, you can measure time with time command. To see explanation of produced output, you can reference here.
 
-#### Task 2.1.2. Different commands (legacy vs. new) might be using different Public-Key Cryptography Standards (PKCS) output format. Which ones have been used? What binary format is the newer one representing?
+#### Task 2.1.2. Different commands (legacy vs. new) might be using different Public-Key Cryptography Standards (PKCS) output format. Which ones have been used?
+
+#### Task 2.1.3. What are the practical differences of `secp256r1` and `Curve25519`? Is there a reason we are testing these?
+
+#### Task 2.1.4. Can you notice significant time differences between algorithms on key generation?
+
+#### Task 2.1.5. Why ECDSA algorithm can be considered as problematic or even "weak"?
 
 > Answer the questions and include all possible commands you used on your answers. Return your public keys (and public keys only!) as a mark of completion of this task.
 
