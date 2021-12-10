@@ -63,17 +63,18 @@ Public keys can be used for creating *digital certificate* for the data; with pu
 Compare also with *digital signature*; it verifies the authenticity of the data but not always the entity behind the data.
 
 Your first task is to create different kind of public-private (also called asymmetric) key-pairs, by using different cryptographic algorithms.
-Later some of these keys are used for creating digital certificate.
+Later some of these keys are used for creating the digital certificate.
 
-OpenSSL can be used to generate different kind of asymmetric key-pairs.
-We will try out RSA and ECDSA algorithms.
+#### Task 2.1.1. Generate RSA and ECDSA keys of different lengths with OpenSSL. Private keys are required for time measurement.
 
-#### Task 2.1.1. Generate RSA and ECDSA/DSA keys of different lengths with OpenSSL. Private keys are required for time measurement.
+Use both legacy command `genrsa` and newer commands `genpkey` for creating the RSA keys.
+For ECDSA keys, use `ecparam` command.
 
-Use both legacy commands (genrsa & dsaparam/gendsa) and newer commands (genpkey) and finally compare the results and the time it takes to generate the keys.
+Compare the results and the time it takes to generate the keys.
 It is recommended to try relatively high key length to notice difference (RSA).
 
-*For ECDSA, use **secp256r1** curve, we will use these keys later on.*
+*For ECDSA, use at least `secp256r1` curve, we will use these keys later on.*
+For comparison, you could try to use `Curve25519` for ECDSA as well.
 
 Note, that with legacy commands you are expected to generate RSA and DSA keys. With newer commands you should generate RSA and ECDSA keys.
 
