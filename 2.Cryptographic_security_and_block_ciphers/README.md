@@ -56,11 +56,11 @@ How safe it is?
 ### Task 2.1. Public-key generation
 
 The main advantage of public key cryptography was the requirement of two different keys; public key can be used for encryption but only the private key can decrypt the data. 
-Hence, you can share the public key for everyone to secure data, but only the owner of the private key can access it.
+Hence, you can share the public key for everyone to secure the data, but only the owner of the private key can access it.
 
 Public-key cryptography is not only limited for encryption; authentication is an another important concept.
 Public keys can be used for creating *digital certificate* for the data; with purpose of verifying the origin of the data with the public key.
-Compare for *digital signature*; it verifies the authenticity of the data but not always the entity behind the data.
+Compare also with *digital signature*; it verifies the authenticity of the data but not always the entity behind the data.
 
 Your first task is to create different kind of public-private (also called asymmetric) key-pairs, by using different cryptographic algorithms.
 Later some of these keys are used for creating digital certificate.
@@ -68,7 +68,7 @@ Later some of these keys are used for creating digital certificate.
 OpenSSL can be used to generate different kind of asymmetric key-pairs.
 We will try out RSA and ECDSA algorithms.
 
-Task 2.1. Generate RSA and ECDSA/DSA keys of different lengths with OpenSSL. Private keys are required for time measurement.
+#### Task 2.1.1. Generate RSA and ECDSA/DSA keys of different lengths with OpenSSL. Private keys are required for time measurement.
 
 Use both legacy commands (genrsa & dsaparam/gendsa) and newer commands (genpkey) and finally compare the results and the time it takes to generate the keys.
 It is recommended to try relatively high key length to notice difference (RSA).
@@ -83,7 +83,7 @@ You might need to use some additional commands, to generate the public keys only
 
 On Linux, you can measure time with time command. To see explanation of produced output, you can reference here.
 
-Task 2.2. Different commands (legacy vs. new) might be using different Public-Key Cryptography Standards (PKCS) output format. Which ones have been used? What binary format is the newer one representing?
+#### Task 2.1.2. Different commands (legacy vs. new) might be using different Public-Key Cryptography Standards (PKCS) output format. Which ones have been used? What binary format is the newer one representing?
 
 > Answer the questions and include all possible commands you used on your answers. Return your public keys (and public keys only!) as a mark of completion of this task.
 
