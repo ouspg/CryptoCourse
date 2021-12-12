@@ -56,6 +56,7 @@ How safe it is?
 ### Task 2.1. Public and private key generation
 
 The main advantage of public key cryptography was the requirement of two different keys; public key can be used for encryption but only the private key can decrypt the data. 
+Public key can be derived from the private key but not the other way around (at least with the current state-of-the-art algorithms).
 Hence, you can share the public key for everyone to secure the data, but only the owner of the private key can access it.
 
 Public-key cryptography is not only limited for encryption; authentication is an another important concept.
@@ -65,19 +66,21 @@ Compare with *digital signature*: it verifies the authenticity of the data but n
 Your first task is to create different kind of public-private (also called asymmetric) key-pairs, by using different cryptographic algorithms.
 Later some of these keys are used for creating the digital certificate.
 
-#### Task 2.1.1. Generate RSA and ECDSA keys of different lengths with OpenSSL. Private keys are required for time measurement.
+#### Task 2.1.1. Generate RSA, ECDSA and EdDSA keys with OpenSSL. Both public and private keys are required.
 
 Use both legacy command `genrsa` and newer command `genpkey` for creating the RSA keys.
 For ECDSA keys, use `ecparam` command.
 OpenSSL Cookbook could be very useful in this exercise.
 
 Compare the results and the time it takes to generate the keys.
+For RSA, use different key lenghts to notice difference.
 It is recommended to try relatively high key length to notice difference (RSA).
 
-*For ECDSA, use `secp256r1` curve as it is used as base for certificates later on.
-For comparison, use `Curve25519` for ECDSA key generation as well.*
+For ECDSA, use `secp256r1` curve as it is used as base for certificates later on.
+For comparison, use `Curve25519` for ECDSA key generation as well.
+Finally, generate `EdDSA` keys.
 
-Note, that with legacy commands you are expected to generate only RSA keys. With newer commands you should generate RSA and ECDSA keys.
+Note, that with legacy commands you are expected to generate only RSA keys. With newer commands you should generate other keys.
 
 We are mainly interested on the differences and practical use of OpenSSL on here .
 You might need to use some additional commands, to generate the public keys only.
@@ -86,11 +89,11 @@ On Linux, you can measure time with `time` command. To see explanation of produc
 
 #### Task 2.1.2. Different commands (legacy vs. new) might be using different Public-Key Cryptography Standards (PKCS) output format. Which ones have been used?
 
-#### Task 2.1.3. What are the practical differences of `secp256r1` and `Curve25519`? Is there a reason why we are testing these?
+#### Task 2.1.3. What are the practical differences of `secp256r1` and `Curve25519`? Is there a reason why we are testing these? 
 
 #### Task 2.1.4. Can you notice significant time differences between algorithms on key generation?
 
-#### Task 2.1.5. Why ECDSA algorithm can be considered as problematic or even "weak"?
+#### Task 2.1.5. Why DSA/ECDSA algorithm can be considered as problematic or even "weak"? Why is EdDSA considered as better alterinative?
 
 > Answer the questions and include all possible commands you used on your answers. Return your public keys (and public keys only!) as a mark of completion of this task.
 
