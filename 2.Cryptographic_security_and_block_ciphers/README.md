@@ -77,29 +77,31 @@ It is recommended to try relatively high key length to notice difference (RSA).
 
 For ECDSA, use `secp256r1` curve as it is used as base for certificates later on.
 For comparison, use `Curve25519` for ECDSA key generation as well.
-Finally, generate `EdDSA` keys, by using also `Curve25519` to construct `Ed25519` keys.
+Finally, generate `EdDSA` keys, by using also `Curve25519` to construct so-called `Ed25519` keys.
 
 Note, that with legacy commands you are expected to generate only RSA keys. With newer commands you should generate other keys.
 
 We are mainly interested on the differences and practical use of OpenSSL on here .
 You might need to use some additional commands, to generate the public keys only.
 
-On Linux, you can measure time with `time` command. To see explanation of produced output, you can reference here.
+On Linux, you can measure time with `time` command.
 
 #### Task 2.1.2. Different commands (legacy vs. new) might be using different Public-Key Cryptography Standards (PKCS) output format. Which ones have been used?
 
-#### Task 2.1.3. What are the practical differences of `secp256r1` and `Curve25519`? Is there a reason why we are testing these? 
+#### Task 2.1.3. What are the practical differences of curves `secp256r1` and `Curve25519`? 
 
-#### Task 2.1.4. Can you notice significant time differences between algorithms on key generation?
+#### Task 2.1.4. Can you notice significant time differences between tested algorithms on key generation?
 
 #### Task 2.1.5. Why DSA/ECDSA algorithm can be considered as problematic or even "weak"? Why is EdDSA (especially Ed25519) considered as better alterinative?
 
 > Answer the questions and include all possible commands you used on your answers. Return your public keys (and public keys only!) as a mark of completion of this task.
 
 
+### 2.2. Certificate sign requests and root of trust
 
-### 2.2. Certificate sign requests
 
+With OpenSSL you can generate certificate sign requests.
+In this task, we take a look for a so called **Trust Chain* as well.
 
 
 
