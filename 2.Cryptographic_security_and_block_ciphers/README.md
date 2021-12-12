@@ -73,12 +73,11 @@ For ECDSA keys, use `ecparam` command.
 OpenSSL Cookbook could be very useful in this exercise.
 
 Compare the results and the time it takes to generate the keys.
-For RSA, use different key lenghts to notice difference.
 It is recommended to try relatively high key length to notice difference (RSA).
 
 For ECDSA, use `secp256r1` curve as it is used as base for certificates later on.
 For comparison, use `Curve25519` for ECDSA key generation as well.
-Finally, generate `EdDSA` keys.
+Finally, generate `EdDSA` keys, by using also `Curve25519` to construct `Ed25519` keys.
 
 Note, that with legacy commands you are expected to generate only RSA keys. With newer commands you should generate other keys.
 
@@ -93,7 +92,7 @@ On Linux, you can measure time with `time` command. To see explanation of produc
 
 #### Task 2.1.4. Can you notice significant time differences between algorithms on key generation?
 
-#### Task 2.1.5. Why DSA/ECDSA algorithm can be considered as problematic or even "weak"? Why is EdDSA considered as better alterinative?
+#### Task 2.1.5. Why DSA/ECDSA algorithm can be considered as problematic or even "weak"? Why is EdDSA (especially Ed25519) considered as better alterinative?
 
 > Answer the questions and include all possible commands you used on your answers. Return your public keys (and public keys only!) as a mark of completion of this task.
 
