@@ -100,10 +100,10 @@ On Linux, you can measure time with `time` command.
 ### 2.2. Certificate sign requests and root of trust
 
 Primary signature algorithm in DCC is Elliptic Curve Signature Algorithm (ECDSA), by using P-256 parameters, as defined in the [hcert specification.](https://github.com/ehn-dcc-development/hcert-spec/blob/main/hcert_spec.md#332-signature-algorithm)
-In the previous task we already generated suitable keys for this. (By using *secp256r1* curve, which is alias for NIST P-256)
+In the previous task we already generated suitable keys for this, by using *secp256r1* curve, which is [alias for NIST P-256/prime256v1.](https://tools.ietf.org/search/rfc4492#appendix-A)
 
-With OpenSSL you can generate certificate sign requests.
-In this task, we take a look for a so called **Trust Chain* as well.
+With OpenSSL you can also generate certificate sign requests.
+In this task, we take a look for a so called **Trust Chain**; how different entities can be tied together with chains.
 
 
 
