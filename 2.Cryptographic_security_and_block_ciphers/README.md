@@ -46,7 +46,7 @@ Explain also shortly the purpose of the nonce and possible salt in this case. Ar
 ## Task 2: Digital COVID Certificate
 
 COVID-19 has been a nuisance of the past two years. 
-Just recently, there has been a lot of discussion and usage of the COVID-19 Passport (more precisely, The European Digital Covid Certificate (DCC)) on verification of the vaccasine status, confirmation of recent Rapid Antigen Test (RAT) or Nucleic acid aplification test (NAAT) and confirmed recovery status.
+Just recently, there has been a lot of discussion and usage of the COVID-19 Passport (or more precisely, The European Digital Covid Certificate (DCC)) on verification of the vaccasine status, confirmation of recent Rapid Antigen Test (RAT) or Nucleic acid aplification test (NAAT) and confirmed recovery status.
 
 But how does it work? In this exercise, we will take a brief look on practical public-key cryptography and its usage on certificate generation and signing.
 We don't try to understand the underlying math - at least yet.
@@ -99,6 +99,8 @@ On Linux, you can measure time with `time` command.
 
 ### 2.2. Certificate sign requests and root of trust
 
+Primary signature algorithm in DCC is Elliptic Curve Signature Algorithm (ECDSA), by using P-256 parameters, as defined in the [hcert specification.](https://github.com/ehn-dcc-development/hcert-spec/blob/main/hcert_spec.md#332-signature-algorithm)
+In the previous task we already generated suitable keys for this. (By using *secp256r1* curve, which is alias for NIST P-256)
 
 With OpenSSL you can generate certificate sign requests.
 In this task, we take a look for a so called **Trust Chain* as well.
