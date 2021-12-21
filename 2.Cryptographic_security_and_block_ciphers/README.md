@@ -46,7 +46,7 @@ Explain also shortly the purpose of the nonce and possible salt in this case. Ar
 ## Task 2: Digital COVID Certificate
 
 COVID-19 has been a nuisance of the past two years. 
-Just recently, there has been a lot of discussion and usage of the COVID-19 Passport on verification of the vaccasine status, confirmation of recent Rapid Antigen Test (RAT) or Nucleic acid aplification test (NAAT) and confirmed recovery status.
+Just recently, there has been a lot of discussion and usage of the COVID-19 Passport (more precisely, The European Digital Covid Certificate (DCC)) on verification of the vaccasine status, confirmation of recent Rapid Antigen Test (RAT) or Nucleic acid aplification test (NAAT) and confirmed recovery status.
 
 But how does it work? In this exercise, we will take a brief look on practical public-key cryptography and its usage on certificate generation and signing.
 We don't try to understand the underlying math - at least yet.
