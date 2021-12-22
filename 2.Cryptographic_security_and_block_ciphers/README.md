@@ -43,15 +43,15 @@ Explain also shortly the purpose of the nonce and possible salt in this case. Ar
 
 > Include source code and answer the questions. You can highlight interesting comparison results with screenshots for example.
 
-## Task 2: Digital COVID Certificate
+## Task 2: Digital COVID Certificate (DCC)
 
 COVID-19 has been a nuisance of the past two years. 
 Just recently, there has been a lot of discussion and usage of the COVID-19 Passport (or more precisely, The European Digital Covid Certificate (DCC)) on verification of the vaccasine status, confirmation of recent Rapid Antigen Test (RAT) or Nucleic acid aplification test (NAAT) and confirmed recovery status.
 
-But how does it work? In this exercise, we will take a brief look on practical public-key cryptography and its usage on certificate generation and signing.
-We don't try to understand the underlying math - at least yet.
-Finally, we demonstrate a simple application of COVID-19 Password and how one could be created. 
-How safe it is?
+But how does it work? In this exercise, we will take a brief look on practical public-key cryptography and its usage on certificate generation and use cases. 
+Finally, we demonstrate a simple application of COVID-19 Password and how one simple implementation works. 
+
+Note also that for example TLS certificates on your browser work by using same principles.
 
 ### Task 2.1. Public and private key generation
 
@@ -99,13 +99,48 @@ On Linux, you can measure time with `time` command.
 
 ### 2.2. Certificate sign requests and root of trust
 
-Primary signature algorithm in DCC is Elliptic Curve Signature Algorithm (ECDSA), by using P-256 parameters, as defined in the [hcert specification.](https://github.com/ehn-dcc-development/hcert-spec/blob/main/hcert_spec.md#332-signature-algorithm)
+In this task, we take a look for a so called **Trust Chain**; how different entities can be tied together with using other certificate as issuer for another one, to create so called certificate chains.
+
+On DCC, trust chain contains usually three entities; Country Signing Certificate Authority (CSCA), Document Signer Certificate (DSC) and finally the electronic health certificate itself.
+
+There is usually only one CSCA per country, but there can be multiple DSC issuers.
+
+If you are curious how this works in Finland:
+  * Based on the [EU DCC.](https://dvv.fi/-/digi-ja-vaestotietovirasto-toteuttaa-eu-koronatodistusten-tarkastuspalvelun-suomeen?languageId=en_US)
+  * "CSCA" in Finland for DCC (VRK CA for Social Welfare and Health Care Service Providers): https://dvv.fi/en/ca-certificates
+    * Official CSCA, but for different purposes https://poliisi.fi/en/csca 
+   
+  * DCC:s in Finland are issued by Kela (kanta.fi), which is DSC issuer. More details available [here.](https://www.kanta.fi/en/system-developers/eu-koronatodistuksen-verifiointi)
+#### Task 2.2.1. Understanding certificate chains
+
+It seems to be hard to find the official link for the public certificate, but we can find one from the public list provided by Sweden, which is available [here.](https://dgcg.covidbevis.se/tp/)
+
+By using command line, we can download public trust list as following:
+```console
+curl https://dgcg.covidbevis.se/tp/trust-list | jq -R 'split(".") | .[0],.[1] | @base64d | fromjson' <<< $(cat "${JWT}") > trustlist.json
+```
+Trust list is in [JWT format](https://jwt.io/), which is correctly parsed with above command and actual JSON is generated into file `trustlist.json`.
+
+Further, we can extract public certificate information of the Finland as following
+```console
+jq -s '.[1].dsc_trust_list.FI' trustlist.json 
+```
+Or extract the actual certificate in DER format:
+```console
+jq -sr '.[1].dsc_trust_list.FI.keys[0].x5c[0]' trustlist.json | base64 -d > fi.der
+```
+
+Now, 
+
+
+
+
+
+Primary signature algorithm in DCC is Elliptic Curve Signature Algorithm (ECDSA), by using P-256 parameters withcombination of SHA256 hashing algorithm, as defined in the [HCERT specification(Electronic Health Certificate).](https://github.com/ehn-dcc-development/hcert-spec/blob/main/hcert_spec.md#332-signature-algorithm)
+
 In the previous task we already generated suitable keys for this, by using *secp256r1* curve, which is [alias for NIST P-256/prime256v1.](https://tools.ietf.org/search/rfc4492#appendix-A)
 
 With OpenSSL you can also generate certificate sign requests.
-In this task, we take a look for a so called **Trust Chain**; how different entities can be tied together with chains.
-
-
 
 You can also take a look on the sample implementation of eHN-S protocol which is available [here.](https://github.com/ehn-dcc-development/ehn-sign-verify-python-trivial)
 
@@ -118,6 +153,11 @@ Spec : https://github.com/ehn-dcc-development/hcert-spec
 Finland test data: https://github.com/eu-digital-green-certificates/dgc-testdata/tree/main/FI
 
 
+More information
+
+* Specification in [kanta.fi](https://www.kanta.fi/documents/20143/1474889/finnish-national-vaccination-certificate-verification.pdf/d241dfd3-4eab-373f-cb44-80a49bcaac6d?t=1621344168881)
+* Sample in [kanta.fi](https://www.kanta.fi/documents/20143/120102/mallitodistus_eu-rokotustodistus.pdf/f107fdfc-bfbc-6e0f-0bac-da56fbe01722?t=1624341191059)
+* Collection of trustlits to find certificates for validating DCC available for example [here.](https://github.com/section42/hcert-trustlist-mirror)
 
 
 ## Task 3: Forged cipher (Alternative)?
