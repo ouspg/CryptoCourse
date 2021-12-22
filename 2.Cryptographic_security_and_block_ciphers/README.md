@@ -49,7 +49,7 @@ COVID-19 has been a nuisance of the past two years.
 Just recently, there has been a lot of discussion and usage of the COVID-19 Passport (or more precisely, The European Digital Covid Certificate (DCC)) on verification of the vaccasine status, confirmation of recent Rapid Antigen Test (RAT) or Nucleic acid aplification test (NAAT) and confirmed recovery status.
 
 But how does it work? In this exercise, we will take a brief look on practical public-key cryptography and its usage on certificate generation and use cases. 
-Finally, we demonstrate a simple application of COVID-19 Password and how one simple implementation works. 
+Finally, we demonstrate a simple application of DCC and how one simple implementation works. 
 
 Note also that for example TLS certificates on your browser work by using same principles.
 
@@ -60,7 +60,7 @@ Public key can be derived from the private key but not the other way around (at 
 Hence, you can share the public key for everyone to secure the data, but only the owner of the private key can access it.
 
 Public-key cryptography is not only limited for encryption; authentication is an another important concept.
-Private keys can be used for creating *digital certificate* for the data; with purpose of verifying the entity behind authentication by using corresponding public key.
+Private keys can be used for creating *digital certificate* for the data; with purpose of verifying the entity behind authentication (ownership) by using corresponding public key.
 Compare with *digital signature*: it verifies the authenticity of the data but not always the entity behind the data.
 
 Your first task is to create different kind of public-private (also called asymmetric) key-pairs, by using different cryptographic algorithms.
@@ -102,8 +102,8 @@ On Linux, you can measure time with `time` command.
 In this task, we'll take a look for a so called **a chain of trust**; how different entities can be tied together by using other certificate as issuer for another one, to create so called certificate chains.
 These certificates are created by using private keys; similar keys than we created in the previous task.
 
-On DCC, trust chain contains usually three entities; Country Signing Certificate Authority (CSCA), Document Signer Certificate (DSC) and finally the electronic health certificate itself.
-CSCA can be usually thought as root certificate, DSC as intermediate certificate and DCC as end-user certificate.
+On DCC, trust chain contains usually three entities; Country Signing Certificate Authority (CSCA), Document Signer Certificate (DSC) and finally the electronic health certificate itself. 
+CSCA can be usually thought as root certificate, DSC as intermediate certificate and DCC as end-entity certificate.
 
 There can be one or more CSCA and DSC issuers per country.
 
@@ -112,17 +112,17 @@ There can be one or more CSCA and DSC issuers per country.
 Let's create a sample certification chain. 
 Consult OpenSSL cookbook for certificate sign requests.
 
-Your task is to create root certificate, intermediate certificate and end-user certificate.
-We will be using different key for each certificate. 
+Your task is to create root certificate, intermediate certificate and end-entity certificate.
+We will be using different key and key type for each certificate. 
 This is only for testing purposes and you should use the best available algorithm in your real life scenario.
 
 Workflow is following. Use keys from the previous task.
 
   1. Use Ed25519 key for creating the root certificate
   2. Use ECDSA key with `secp256r1` curve for intermediate certificate and use previous root certificate as issuer
-  3. Finally use RSA key with at least 4096 bit key size for end-user certificate. Use intermediate certificate as issuer.
+  3. Finally use RSA key with at least 4096 bit key size for end-entity certificate. Use intermediate certificate as issuer.
 
-  > Show commands and return public keys and as mark of completion of this part. Certificates will be used later on.
+  > Show commands and return certificates and as mark of completion of this part. Certificates will be used later on.
   
 #### Task 2.2.2. Understanding certificate chains
 
@@ -152,7 +152,7 @@ Or extract the actual certificate in DER format:
 jq -sr '.[1].dsc_trust_list.FI.keys[0].x5c[0]' trustlist.json | base64 -d > fi.der
 ```
 
-Now, read certificate contents with `openssl`. Note correct data format.
+Now, we can read certificate contents with `openssl`. Note correct data format.
 
 Let's verificate the certificate chain:
 
