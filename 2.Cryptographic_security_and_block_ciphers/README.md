@@ -105,21 +105,24 @@ On DCC, trust chain contains usually three entities; Country Signing Certificate
 
 There is usually only one CSCA per country, but there can be multiple DSC issuers.
 
-If you are curious how this works in Finland:
+If you are curious how DCC works in Finland:
   * Based on the [EU DCC.](https://dvv.fi/-/digi-ja-vaestotietovirasto-toteuttaa-eu-koronatodistusten-tarkastuspalvelun-suomeen?languageId=en_US)
   * "CSCA" in Finland for DCC (VRK CA for Social Welfare and Health Care Service Providers): https://dvv.fi/en/ca-certificates
     * Official CSCA, but for different purposes https://poliisi.fi/en/csca 
    
   * DCC:s in Finland are issued by Kela (kanta.fi), which is DSC issuer. More details available [here.](https://www.kanta.fi/en/system-developers/eu-koronatodistuksen-verifiointi)
+  
 #### Task 2.2.1. Understanding certificate chains
 
 It seems to be hard to find the official link for the public certificate, but we can find one from the public list provided by Sweden, which is available [here.](https://dgcg.covidbevis.se/tp/)
+We will use that as an example.
 
 By using command line, we can download public trust list as following:
 ```console
 curl https://dgcg.covidbevis.se/tp/trust-list | jq -R 'split(".") | .[0],.[1] | @base64d | fromjson' <<< $(cat "${JWT}") > trustlist.json
 ```
 Trust list is in [JWT format](https://jwt.io/), which is correctly parsed with above command and actual JSON is generated into file `trustlist.json`.
+We'll pass signature verification, but you can do it if you want.
 
 Further, we can extract public certificate information of the Finland as following
 ```console
@@ -130,11 +133,22 @@ Or extract the actual certificate in DER format:
 jq -sr '.[1].dsc_trust_list.FI.keys[0].x5c[0]' trustlist.json | base64 -d > fi.der
 ```
 
-Now, 
+Now, read certificate contents with `openssl`. Note correct data format.
+
+Let's verificate the certificate chain:
+
+ 1. Get issuer information from the DER file, and find provided issuer from the https://dvv.fi/en/ca-certificates.
+ 2. Download this issuer certificate.
+ 3. Read information from issuer certificate with `openssl` and find root certificate from the same place. Download it.
+
+ At this point, we should have three different files. Root certificate, intermediate certificate and user certificate.
+ 
+ We can verify whole certificate chain with `openssl verify` command.
+ 
+ > Construct sample command, and provide it as completion of this part. Is certificate chain OK?
 
 
-
-
+### Task 2.3.
 
 Primary signature algorithm in DCC is Elliptic Curve Signature Algorithm (ECDSA), by using P-256 parameters withcombination of SHA256 hashing algorithm, as defined in the [HCERT specification(Electronic Health Certificate).](https://github.com/ehn-dcc-development/hcert-spec/blob/main/hcert_spec.md#332-signature-algorithm)
 
