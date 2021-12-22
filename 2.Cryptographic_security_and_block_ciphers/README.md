@@ -20,7 +20,7 @@ You are eligible for following points from the exercise. Previous task(s) should
 -----|:---:|-----------|
 Task 1 | 1 | Modes of operation
 Task 2 | 2-3 | Digital COVID Certificate
-Task 3 | 3 | Forged cipher
+Task 3 | 3 | Forged cipher (alternative)
 Task 4 | 4 | Padding oracle
 
 ## Task 1: Modes of operations in block ciphers
@@ -122,9 +122,11 @@ Workflow is following. Use keys from the previous task.
   2. Use ECDSA key with `secp256r1` curve for intermediate certificate and use previous root certificate as issuer
   3. Finally use RSA key with at least 4096 bit key size for end-entity certificate. Use intermediate certificate as issuer.
 
+  Note, that end-entity certificate should not be able to sign other certificates! Some `openssl` extensions are required.
+  
   > Show commands and return certificates and as mark of completion of this part. Certificates will be used later on.
   
-#### Task 2.2.2. Understanding certificate chains
+#### Task 2.2.2. Understanding and verifying certificate chains
 
 If you are curious how DCC works in Finland:
   * Based on the [EU DCC.](https://dvv.fi/-/digi-ja-vaestotietovirasto-toteuttaa-eu-koronatodistusten-tarkastuspalvelun-suomeen?languageId=en_US)
@@ -136,7 +138,7 @@ If you are curious how DCC works in Finland:
 It seems to be hard to find the official link for the Finnish DCC public certificate, but we can find one from the public list provided by Sweden, which is available [here.](https://dgcg.covidbevis.se/tp/)
 We will use that as an example.
 
-By using command line, we can download public trust list as following:
+By using command line, we can download public trust list of EU countries as following:
 ```console
 curl https://dgcg.covidbevis.se/tp/trust-list | jq -R 'split(".") | .[0],.[1] | @base64d | fromjson' <<< $(cat "${JWT}") > trustlist.json
 ```
@@ -152,13 +154,13 @@ Or extract the actual certificate in DER format:
 jq -sr '.[1].dsc_trust_list.FI.keys[0].x5c[0]' trustlist.json | base64 -d > fi.der
 ```
 
-Now, we can read certificate contents with `openssl`. Note correct data format.
+Now, we can read certificate contents with `openssl`. Note the correct data format.
 
 Let's verificate the certificate chain:
 
  1. Get issuer information from the DER file, and find provided issuer from the https://dvv.fi/en/ca-certificates.
  2. Download this issuer certificate.
- 3. Read information from issuer certificate with `openssl` and find root certificate from the same place. Download it and read its information.
+ 3. Read information from the issuer certificate with `openssl` and find root certificate from the same place. Download it and read its information.
 
  At this point, we should have three different files. Root certificate, and two intermediate certificates.
  
@@ -168,6 +170,15 @@ Let's verificate the certificate chain:
 
 
 ### Task 2.3. DCC verification and generation
+
+At this point, we haven't touched the actual DCC yet. 
+For the most people, this is seen as QR code which you download from kanta.fi website.
+
+We are not going too deep into the techinal details.
+
+Following image showcases high level data structure. (Source: HCERT spec)
+
+![overview](https://github.com/ehn-dcc-development/hcert-spec/raw/main/overview.png)
 
 Primary signature algorithm in DCC is Elliptic Curve Signature Algorithm (ECDSA), by using P-256 parameters withcombination of SHA256 hashing algorithm, as defined in the [HCERT specification(Electronic Health Certificate).](https://github.com/ehn-dcc-development/hcert-spec/blob/main/hcert_spec.md#332-signature-algorithm)
 In the previous task we already generated suitable keys for this, by using *secp256r1* curve, which is [alias for NIST P-256/prime256v1.](https://tools.ietf.org/search/rfc4492#appendix-A)
