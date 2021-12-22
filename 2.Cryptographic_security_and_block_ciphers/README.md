@@ -99,22 +99,41 @@ On Linux, you can measure time with `time` command.
 
 ### 2.2. Certificate sign requests and root of trust
 
-In this task, we take a look for a so called **Trust Chain**; how different entities can be tied together with using other certificate as issuer for another one, to create so called certificate chains.
+In this task, we'll take a look for a so called **a chain of trust**; how different entities can be tied together by using other certificate as issuer for another one, to create so called certificate chains.
+These certificates are created by using private keys; similar keys than we created in the previous task.
 
 On DCC, trust chain contains usually three entities; Country Signing Certificate Authority (CSCA), Document Signer Certificate (DSC) and finally the electronic health certificate itself.
+CSCA can be usually thought as root certificate, DSC as intermediate certificate and DCC as end-user certificate.
 
-There is usually only one CSCA per country, but there can be multiple DSC issuers.
+There can be one or more CSCA and DSC issuers per country.
+
+#### Task 2.2.1. Generating certificate chains
+
+Let's create a sample certification chain. 
+Consult OpenSSL cookbook for certificate sign requests.
+
+Your task is to create root certificate, intermediate certificate and end-user certificate.
+We will be using different key for each certificate. 
+This is only for testing purposes and you should use the best available algorithm in your real life scenario.
+
+Workflow is following. Use keys from the previous task.
+
+  1. Use Ed25519 key for creating the root certificate
+  2. Use ECDSA key with `secp256r1` curve for intermediate certificate and use previous root certificate as issuer
+  3. Finally use RSA key with at least 4096 bit key size for end-user certificate. Use intermediate certificate as issuer.
+
+  > Show commands and return public keys and as mark of completion of this part. Certificates will be used later on.
+  
+#### Task 2.2.2. Understanding certificate chains
 
 If you are curious how DCC works in Finland:
   * Based on the [EU DCC.](https://dvv.fi/-/digi-ja-vaestotietovirasto-toteuttaa-eu-koronatodistusten-tarkastuspalvelun-suomeen?languageId=en_US)
   * "CSCA" in Finland for DCC (VRK CA for Social Welfare and Health Care Service Providers): https://dvv.fi/en/ca-certificates
     * Official CSCA, but for different purposes https://poliisi.fi/en/csca 
    
-  * DCC:s in Finland are issued by Kela (kanta.fi), which is DSC issuer. More details available [here.](https://www.kanta.fi/en/system-developers/eu-koronatodistuksen-verifiointi)
-  
-#### Task 2.2.1. Understanding certificate chains
+  * DCC:s in Finland are issued by Kela (kanta.fi), which is the final DSC issuer. More details available [here.](https://www.kanta.fi/en/system-developers/eu-koronatodistuksen-verifiointi)
 
-It seems to be hard to find the official link for the public certificate, but we can find one from the public list provided by Sweden, which is available [here.](https://dgcg.covidbevis.se/tp/)
+It seems to be hard to find the official link for the Finnish DCC public certificate, but we can find one from the public list provided by Sweden, which is available [here.](https://dgcg.covidbevis.se/tp/)
 We will use that as an example.
 
 By using command line, we can download public trust list as following:
@@ -139,22 +158,20 @@ Let's verificate the certificate chain:
 
  1. Get issuer information from the DER file, and find provided issuer from the https://dvv.fi/en/ca-certificates.
  2. Download this issuer certificate.
- 3. Read information from issuer certificate with `openssl` and find root certificate from the same place. Download it.
+ 3. Read information from issuer certificate with `openssl` and find root certificate from the same place. Download it and read its information.
 
- At this point, we should have three different files. Root certificate, intermediate certificate and user certificate.
+ At this point, we should have three different files. Root certificate, and two intermediate certificates.
  
- We can verify whole certificate chain with `openssl verify` command.
+ We can verify the whole current certificate chain with single `openssl verify` command.
  
  > Construct sample command, and provide it as completion of this part. Is certificate chain OK?
 
 
-### Task 2.3.
+### Task 2.3. DCC verification and generation
 
 Primary signature algorithm in DCC is Elliptic Curve Signature Algorithm (ECDSA), by using P-256 parameters withcombination of SHA256 hashing algorithm, as defined in the [HCERT specification(Electronic Health Certificate).](https://github.com/ehn-dcc-development/hcert-spec/blob/main/hcert_spec.md#332-signature-algorithm)
-
 In the previous task we already generated suitable keys for this, by using *secp256r1* curve, which is [alias for NIST P-256/prime256v1.](https://tools.ietf.org/search/rfc4492#appendix-A)
 
-With OpenSSL you can also generate certificate sign requests.
 
 You can also take a look on the sample implementation of eHN-S protocol which is available [here.](https://github.com/ehn-dcc-development/ehn-sign-verify-python-trivial)
 
