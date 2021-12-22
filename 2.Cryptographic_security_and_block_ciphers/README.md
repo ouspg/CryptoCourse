@@ -176,12 +176,15 @@ For the most people, this is seen as QR code which you download from kanta.fi we
 
 We are not going too deep into the techinal details.
 
-Following image showcases high level data structure. (Source: HCERT spec)
+Following image showcases the high level data structure. (Source: HCERT spec)
 
 ![overview](https://github.com/ehn-dcc-development/hcert-spec/raw/main/overview.png)
 
+The health data is signed with the certificate, which is issued by Kela and was downloaded from the Swedish trust list.
+
 Primary signature algorithm in DCC is Elliptic Curve Signature Algorithm (ECDSA), by using P-256 parameters withcombination of SHA256 hashing algorithm, as defined in the [HCERT specification(Electronic Health Certificate).](https://github.com/ehn-dcc-development/hcert-spec/blob/main/hcert_spec.md#332-signature-algorithm)
 In the previous task we already generated suitable keys for this, by using *secp256r1* curve, which is [alias for NIST P-256/prime256v1.](https://tools.ietf.org/search/rfc4492#appendix-A)
+
 
 
 You can also take a look on the sample implementation of eHN-S protocol which is available [here.](https://github.com/ehn-dcc-development/ehn-sign-verify-python-trivial)
