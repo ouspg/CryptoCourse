@@ -116,10 +116,10 @@ Your task is to create root certificate, intermediate certificate and end-entity
 We will be using different key and key type for each certificate. 
 This is only for testing purposes and you should use the best available algorithm in your real life scenario.
 
-Workflow is following. Use keys from the previous task.
+Workflow is the following. Use keys from the previous task.
 
   1. Use Ed25519 key for creating the root certificate
-  2. Use ECDSA key with `secp256r1` curve for intermediate certificate and use previous root certificate as issuer
+  2. Use ECDSA key with `secp256r1` curve for the intermediate certificate and use previous root certificate as issuer
   3. Finally use RSA key with at least 4096 bit key size for end-entity certificate. Use intermediate certificate as issuer.
 
   Note, that end-entity certificate should not be able to sign other certificates! Some `openssl` extensions are required.
@@ -135,7 +135,7 @@ If you are curious how DCC works in Finland:
    
   * DCC:s in Finland are issued by Kela (kanta.fi), which is the final DSC issuer. More details available [here.](https://www.kanta.fi/en/system-developers/eu-koronatodistuksen-verifiointi)
 
-It seems to be hard to find the official link for the Finnish DCC public certificate, but we can find one from the public list provided by Sweden, which is available [here.](https://dgcg.covidbevis.se/tp/)
+It seems to be hard to find the official link for the Finnish DCC public certificate (Kela/kanta.fi cert), but we can find one from the public list provided by Sweden, which is available [here.](https://dgcg.covidbevis.se/tp/)
 We will use that as an example.
 
 By using command line, we can download public trust list of EU countries as following:
@@ -172,7 +172,7 @@ Let's verificate the certificate chain:
 ### Task 2.3. DCC verification and generation
 
 At this point, we haven't touched the actual DCC yet. 
-For the most people, this is seen as QR code which you download from kanta.fi website.
+For the most people, this is seen as QR code which you download from the `kanta.fi` website.
 
 We are not going too deep into the techinal details.
 
