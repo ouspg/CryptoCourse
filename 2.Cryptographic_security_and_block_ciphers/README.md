@@ -135,7 +135,9 @@ If you are curious how DCC works in Finland:
    
   * DCC:s in Finland are issued by Kela (kanta.fi), which is the final DSC issuer. More details available [here.](https://www.kanta.fi/en/system-developers/eu-koronatodistuksen-verifiointi)
 
-It seems to be hard to find the official link for the Finnish DCC public certificate (Kela/kanta.fi cert), but we can find one from the public list provided by Sweden, which is available [here.](https://dgcg.covidbevis.se/tp/)
+Finnish DCC public certificate (Kela/kanta.fi cert) can be found from the international public list provided by Sweden, which is available [here.](https://dgcg.covidbevis.se/tp/)
+Finland does not maintain similar public service themselves, according to kanta.fi technical support.
+
 We will use that as an example.
 
 By using command line, we can download public trust list of EU countries as following:
@@ -200,7 +202,6 @@ Finland test data: https://github.com/eu-digital-green-certificates/dgc-testdata
 
 More information
 
-* Specification in [kanta.fi](https://www.kanta.fi/documents/20143/1474889/finnish-national-vaccination-certificate-verification.pdf/d241dfd3-4eab-373f-cb44-80a49bcaac6d?t=1621344168881)
 * Sample in [kanta.fi](https://www.kanta.fi/documents/20143/120102/mallitodistus_eu-rokotustodistus.pdf/f107fdfc-bfbc-6e0f-0bac-da56fbe01722?t=1624341191059)
 * Collection of trustlits to find certificates for validating DCC available for example [here.](https://github.com/section42/hcert-trustlist-mirror)
 
