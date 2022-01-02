@@ -1,4 +1,4 @@
-# Week 6 Exercises
+# Diffie-Hellman-Merkle
 
 This week’s exercises focus on Diffie-Hellman-Merkle (mostly known as Diffie-Hellman) key exchange and the ElGamal cryptosystem. **Many of the problems include some mathematical concepts that are not thoroughly presented in the course book or material. Please contact course staff, if you need any help in these exercises.**
 
