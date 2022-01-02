@@ -140,12 +140,12 @@ Finland does not maintain similar public service themselves, according to kanta.
 
 We will use that as an example.
 
-By using command line, we can download public trust list of EU countries as following:
+By using command line, we can download the public trust list of EU countries as following:
 ```console
 curl https://dgcg.covidbevis.se/tp/trust-list | jq -R 'split(".") | .[0],.[1] | @base64d | fromjson' <<< $(cat "${JWT}") > trustlist.json
 ```
 Trust list is in [JWT format](https://jwt.io/), which is correctly parsed with above command and actual JSON is generated into file `trustlist.json`.
-We'll pass signature verification at this time, but you can do it if you want. JWT header contains algorithm information and the signature could be found from the final section.
+We'll pass signature verification at this time, but you can do it if you want. JWT header contains algorithm information and the signature could be found from the final section. Sections were separated with dots.
 
 Further, we can extract public certificate information of the Finland as following
 ```console
@@ -164,7 +164,7 @@ Let's verificate the certificate chain:
  2. Download this issuer certificate.
  3. Read information from the issuer certificate with `openssl` and find root certificate from the same place. Download it and read its information.
 
- At this point, we should have three different files. Root certificate, and two intermediate certificates.
+ At this point, we should have three different files. Root certificate, and two intermediate certificates. (We don't have end-entity cerfiticate here.)
  
  We can verify the whole current certificate chain with single `openssl verify` command.
  
@@ -182,7 +182,7 @@ Following image showcases the high level data structure. (Source: HCERT spec)
 
 ![overview](https://github.com/ehn-dcc-development/hcert-spec/raw/main/overview.png)
 
-The health data is signed with the certificate, which is issued by Kela and was downloaded from the Swedish trust list.
+The health data is signed with the certificate, which is issued by Kela. We downloaded the public part from the Swedish trust list.
 
 Primary signature algorithm in DCC is Elliptic Curve Signature Algorithm (ECDSA), by using P-256 parameters with combination of SHA256 hashing algorithm, as defined in the [HCERT specification(Electronic Health Certificate).](https://github.com/ehn-dcc-development/hcert-spec/blob/main/hcert_spec.md#332-signature-algorithm)
 In the previous task we already generated suitable keys for this, by using *secp256r1* curve, which is [alias for NIST P-256/prime256v1.](https://tools.ietf.org/search/rfc4492#appendix-A)
