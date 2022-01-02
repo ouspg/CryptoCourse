@@ -220,12 +220,12 @@ Corresponding QR code is available [here.](https://github.com/eu-digital-green-c
 #### Task 2.3.1. Validate the test DCC case (1) against the test certificate
 
 The official health data is signed with the certificate, which is issued by Kela. We downloaded the public part from the Swedish trust list, but it is not valid for these test files.
-For this assigment, we need to use test certificate, which was included in the test case.
+For this assigment, we need to use test certificate, which was included in the test case. It is still properly issued by Kela.
 
 For actual validation, we will use the sample implementation in Python of eHN-Simplified protocol which is available [here.](https://github.com/ehn-dcc-development/ehn-sign-verify-python-trivial)
 You should verify the test Digital Covid Certificate against test certificate with this sample implementation.
 
-Clone repository on your machine and install required dependencies.
+Clone repository on your machine and install required dependencies. Tool is command-line utility with few arguments.
 
 Worflow is something like following:
 
@@ -246,6 +246,8 @@ sudo apt-get install zbar-tools
 ```
 Upstream and source code is available [here.](https://github.com/mchehab/zbar)
 
+For usage, check `man zbarimg`
+
 > Include possible commands you used to be able to verify the QR code against the test certificate. Include screenshot from the final working command.
 
 
@@ -254,15 +256,17 @@ More information
 * Official sample in [kanta.fi](https://www.kanta.fi/documents/20143/120102/mallitodistus_eu-rokotustodistus.pdf/f107fdfc-bfbc-6e0f-0bac-da56fbe01722?t=1624341191059)
 * Collection of trustlits to find certificates for validating DCC available for example [here.](https://github.com/section42/hcert-trustlist-mirror)
 
-#### Task 2.3.2. Creating your own DCCs
+#### Task 2.3.2. Creating your own DCCs (Not valid...)
 
 Primary signature algorithm in DCC is Elliptic Curve Signature Algorithm (ECDSA), by using P-256 parameters with combination of SHA256 hashing algorithm, as defined in the [HCERT specification(Electronic Health Certificate).](https://github.com/ehn-dcc-development/hcert-spec/blob/main/hcert_spec.md#332-signature-algorithm)
-In the previous task we already generated suitable keys for this, by using *secp256r1* curve, which is [alias for NIST P-256/prime256v1.](https://tools.ietf.org/search/rfc4492#appendix-A)
+In the first part of this task we already generated suitable keys and cerfiticate for this, by using *secp256r1* curve, which is [alias for NIST P-256/prime256v1.](https://tools.ietf.org/search/rfc4492#appendix-A)
 
-Spec : https://github.com/ehn-dcc-development/hcert-spec
-Finland test data: https://github.com/eu-digital-green-certificates/dgc-testdata/tree/main/FI
+Use this corresponding key to sign some arbitrary data with `hc1_sign.py` program in a sample implementation. Include certificate information. The output is base45 encoded data, same as QR code can contain. You can verify this again, by using `hc1_verify.py`, similarly than you have done earlier.
 
 
+> Include the command and output string, matching the private key and certificate you generated earlier.
+
+#### Task 2.3.3. What are the imaginary worst-case-scenarios for DCC, if root certificate, intermediate certificate(s) or end-entity certificate (yours) get leaked?
 
 
 ## Task 3: Forged cipher (option 2, make this task instead of 2.2 and 2.3 for grade 3)
