@@ -100,7 +100,7 @@ On Linux, you can measure time with `time` command.
 > Answer the questions and include all possible commands you used on your answers. Return your public keys (and public keys only!) as a mark of completion of this task.
 
 
-### 2.2. Certificate sign requests and root of trust
+### Task 2.2. Certificate sign requests and root of trust
 
 In this task, we'll take a look for a so called **a chain of trust**; how different entities can be tied together by using other certificate as issuer for another one, to create so called certificate chains.
 These certificates are created by using private keys; similar keys than we created in the previous task.
@@ -222,7 +222,7 @@ Corresponding QR code is available [here.](https://github.com/eu-digital-green-c
 The official health data is signed with the certificate, which is issued by Kela. We downloaded the public part from the Swedish trust list, but it is not valid for these test files.
 For this assigment, we need to use test certificate, which was included in the test case. It is still properly issued by Kela.
 
-For actual validation, we will use the sample implementation in Python of eHN-Simplified protocol which is available [here.](https://github.com/ehn-dcc-development/ehn-sign-verify-python-trivial)
+For actual validation, we will use the sample implementation in Python of eHN-Simplified protocol which is available [here.](https://github.com/ehn-dcc-development/ehn-sign-verify-python-trivial) It handles the most data conversions which go out of the scope of this course.
 You should verify the test Digital Covid Certificate against test certificate with this sample implementation.
 
 Clone repository on your machine and install required dependencies. Tool is command-line utility with few arguments.
@@ -254,14 +254,12 @@ For usage, check `man zbarimg`
 More information
 
 * Official sample in [kanta.fi](https://www.kanta.fi/documents/20143/120102/mallitodistus_eu-rokotustodistus.pdf/f107fdfc-bfbc-6e0f-0bac-da56fbe01722?t=1624341191059)
-* Collection of trustlits to find certificates for validating DCC available for example [here.](https://github.com/section42/hcert-trustlist-mirror)
-
 #### Task 2.3.2. Creating your own DCCs (Not valid...)
 
 Primary signature algorithm in DCC is Elliptic Curve Signature Algorithm (ECDSA), by using P-256 parameters with combination of SHA256 hashing algorithm, as defined in the [HCERT specification(Electronic Health Certificate).](https://github.com/ehn-dcc-development/hcert-spec/blob/main/hcert_spec.md#332-signature-algorithm)
 In the first part of this task we already generated suitable keys and cerfiticate for this, by using *secp256r1* curve, which is [alias for NIST P-256/prime256v1.](https://tools.ietf.org/search/rfc4492#appendix-A)
 
-Use this corresponding key to sign some arbitrary data with `hc1_sign.py` program in a sample implementation. Include certificate information. The output is base45 encoded data, same as QR code can contain. You can verify this again, by using `hc1_verify.py`, similarly than you have done earlier.
+Use this corresponding key to sign some arbitrary data with `hc1_sign.py` program in a sample implementation. Include certificate information. The output is base45 encoded data, same as QR code can contain. You can verify this again, by using `hc1_verify.py`, similarly than you have done earlier. Take a look for possible arguments of the program.
 
 
 > Include the command and output string, matching the private key and certificate you generated earlier.
