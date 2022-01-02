@@ -217,7 +217,7 @@ Long story short, the QR code contains base45 encoded and zlib compressed health
 The sample data is acquired from [DCC test data repository](https://github.com/eu-digital-green-certificates/dgc-testdata/blob/main/FI/2DCode/raw/1.json ), being the first (1) test case.
 Corresponding QR code is available [here.](https://github.com/eu-digital-green-certificates/dgc-testdata/blob/main/FI/png/1.png)
 
-##### Task 2.3.1. Validate the test DCC case (1) against the test certificate
+#### Task 2.3.1. Validate the test DCC case (1) against the test certificate
 
 The official health data is signed with the certificate, which is issued by Kela. We downloaded the public part from the Swedish trust list, but it is not valid for these test files.
 For this assigment, we need to use test certificate, which was included in the test case.
@@ -229,11 +229,11 @@ Clone repository on your machine and install required dependencies.
 
 Worflow is something like following:
 
-    1. Read QR code which was available [here.](https://github.com/eu-digital-green-certificates/dgc-testdata/blob/main/FI/png/1.png)
-    2. Extract certificate information from the [raw test JSON](https://github.com/eu-digital-green-certificates/dgc-testdata/blob/main/FI/2DCode/raw/1.json)
-    3. Convert certificate for suitable data format with `openssl`
-    4. Verify test DCC against test certificate with the sample Python implementation by passing QR content and certificate as arguments.
-    5. Provide screenshot which includes executed command and the output
+  1. Read QR code which was available [here.](https://github.com/eu-digital-green-certificates/dgc-testdata/blob/main/FI/png/1.png)
+  2. Extract certificate information from the [raw test JSON](https://github.com/eu-digital-green-certificates/dgc-testdata/blob/main/FI/2DCode/raw/1.json)
+  3. Convert certificate for suitable data format with `openssl`
+  4. Verify test DCC against test certificate with the sample Python implementation by passing QR content and certificate as arguments.
+  5. Provide screenshot which includes executed command and the output
     
 
 **Reading QR codes:**
@@ -254,7 +254,7 @@ More information
 * Official sample in [kanta.fi](https://www.kanta.fi/documents/20143/120102/mallitodistus_eu-rokotustodistus.pdf/f107fdfc-bfbc-6e0f-0bac-da56fbe01722?t=1624341191059)
 * Collection of trustlits to find certificates for validating DCC available for example [here.](https://github.com/section42/hcert-trustlist-mirror)
 
-##### Task 2.3.2. Creating your own DCCs
+#### Task 2.3.2. Creating your own DCCs
 
 Primary signature algorithm in DCC is Elliptic Curve Signature Algorithm (ECDSA), by using P-256 parameters with combination of SHA256 hashing algorithm, as defined in the [HCERT specification(Electronic Health Certificate).](https://github.com/ehn-dcc-development/hcert-spec/blob/main/hcert_spec.md#332-signature-algorithm)
 In the previous task we already generated suitable keys for this, by using *secp256r1* curve, which is [alias for NIST P-256/prime256v1.](https://tools.ietf.org/search/rfc4492#appendix-A)
