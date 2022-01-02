@@ -39,9 +39,9 @@ This task focuses on collision and preimage attacks on hash functions. Take a lo
 
 > Return possible source code and answer the questions. If you are using profilers, it might be reasonable to include tables. Remember to write down the original and collided messages as well as their hashes. Reference table can be found below.
 
-| Search Type | Hash Funciton | Original Message | Forged message | Original Hash                    | Collision/preimage | Time measurement/memory usesage |
-|-------------|---------------|------------------|----------------|----------------------------------|--------------------|---------------------------------|
-| Collision   | MD5           | SampleMessage    | ???            | f46c22f09f5899e98c4a58eb86a1bec0 | ???                | ???                             |
+| Search Type | Hash Funciton | Original Message | Forged message | Original Hash                    | Collision/preimage | Time measurement/memory usage |
+|-------------|---------------|------------------|----------------|----------------------------------|--------------------|-------------------------------|
+| Collision   | MD5           | SampleMessage    | ???            | f46c22f09f5899e98c4a58eb86a1bec0 | ???                | ???                           |
 
 Note that for example the Bitcoin proof-of-work algorithm is based on a partial preimage search of a hash function.
 
