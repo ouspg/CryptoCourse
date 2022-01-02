@@ -1,5 +1,5 @@
 
-# Week 6 Exercises
+# Hard problems and RSA
 
 This week’s exercises focus on hard problems and the RSA cryptosystem.
 
@@ -11,10 +11,10 @@ You are eligible for following points from the exercise. Previous task(s) should
 
 Task #|Grade|Description|
 -----|:---:|-----------|
-Task 1 | 2 | RSA encryption and signatures with OpenSSL 
-Task 2 | 3 | Message and signature verification
-Task 3 | 4 | Textbook RSA signature forgery
-Task 4 | 5 | Roll your own public key cryptosystem
+Task 1 | 1 | RSA encryption and signatures with OpenSSL 
+Task 2 | 2 | Message and signature verification
+Task 3 | 3 | Textbook RSA signature forgery
+Task 4 | 3 | Roll your own public key cryptosystem
 
 ## Task 1: RSA encryption and signatures with OpenSSL ##
 
