@@ -1,6 +1,6 @@
-# Week 7 Exercises
+# Week 6 Exercises
 
-This week’s exercises focus on Diffie-Hellman key exchange and the ElGamal cryptosystem. **Many of the problems include some mathematical concepts that are not thoroughly presented in the course book or material. Please contact course staff, if you need any help in these exercises.**
+This week’s exercises focus on Diffie-Hellman-Merkle (mostly known as Diffie-Hellman) key exchange and the ElGamal cryptosystem. **Many of the problems include some mathematical concepts that are not thoroughly presented in the course book or material. Please contact course staff, if you need any help in these exercises.**
 
 ## Grading
 
@@ -8,10 +8,10 @@ You are eligible for following points from the exercise. Previous task(s) should
 
 Task #|Grade|Description|
 -----|:---:|-----------|
-Task 1 | 2 |  Naive DH and MitM
-Task 2 | 3 | DH with a very unsafe prime
-Tasks 3.1 & 3.2 | 4 | ElGamal & malleability
-Task 3.3| 5 | ElGamal & malleability
+Task 1 | 1 |  Naive DH and MitM
+Task 2 | 2 | DH with a very unsafe prime
+Tasks 3.1 & 3.2 | 3 | ElGamal & malleability
+Task 3.3| 4 | ElGamal & malleability
 
 ## Task 1: Naive DH and MitM ##
 
@@ -31,16 +31,16 @@ Take a look for figure 11-2 and 11-3 in the course book on the pages 209-210, wh
 
 **We have a base for coding in Python that you could continue for easier implementation, see [diffie_hellman.py](diffie_hellman.py).**
 
-During the implementation, use *safe* DH parameters. For private keys of Bob and Alice, select a prime *p* where (p – 1) / 2 is also prime and that p is large enough.
+During the implementation, use *safe* DH parameters. For private keys of Bob and Alice, select a prime which is large enough.
 
-However, you can select any generator *g* as base and public prime *p* (as long as it is long enough) as modulo. 
+You should select generator *g* (consider performance) as base and public modulus p as a safe prime when number p = 2q + 1, where q is also prime. 
 
 Established key is used on symmetric encryption with AES-CBC on this case.
 
 **Task 1.2.** Explain shortly how selection of *g* and modulo *p* can affect for eavesdropping. 
 
 
-**Task 1.3.** How have modern systems (e.g. TLS) further solved this problem?
+**Task 1.3.** How have modern systems (e.g. TLS) further solved MitM problem?
 
 > Include source code and possible references. Answer the questions.
 
