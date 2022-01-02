@@ -37,11 +37,11 @@ This task focuses on collision and preimage attacks on hash functions. Take a lo
 
 **2.3** Compare the computation and memory requirements of your implementations. If you are working on with Python, you can use for example Python module [memory_profiler](https://github.com/pythonprofilers/memory_profiler) for computing memory usage. For computation performance, CLI utility `time` command could be enough. For more advanced analysis build-in tool [cProfile](https://docs.python.org/3/library/profile.html) can be useful, but stripping non-meaningful data is required.
 
-> Return possible source code and answer the questions. If you are using profilers, it might be reasonable to include tables. Remember to write down the original and collided messages as well as their hashes.
+> Return possible source code and answer the questions. If you are using profilers, it might be reasonable to include tables. Remember to write down the original and collided messages as well as their hashes. Reference table can be found below.
 
-| Original Message | Colliding message | Original Hash | Colliding hash |
-|------------------|-------------------|---------------|----------------|
-|                  |                   |               |                |
+| Search Type | Hash Funciton | Original Message | Forged message | Original Hash                    | Collision/preimage | Time measurement/memory usesage |
+|-------------|---------------|------------------|----------------|----------------------------------|--------------------|---------------------------------|
+| Collision   | MD5           | SampleMessage    | ???            | f46c22f09f5899e98c4a58eb86a1bec0 | ???                | ???                             |
 
 Note that for example the Bitcoin proof-of-work algorithm is based on a partial preimage search of a hash function.
 
