@@ -6,7 +6,7 @@ Exercises for the course Cryptographic systems and their weaknesses 521149S
 
 Course will go through basic concepts of cryptography, definitions and concepts of cryptographic security and testing these through programming. Showing different cryptographic weaknesses and demonstrating different implementations of these through programming. Basics of quantum computing and post-quantum cryptography.
 
-You can find the course from [Moodle.](https://moodle.oulu.fi/) (FIXME!)
+You can find the course from [Moodle.](https://moodle.oulu.fi/course/view.php?id=11126) 
 
 ## Exercise requirements
 
@@ -16,7 +16,8 @@ We will be also using the OpenSSL Cookbook which is available free on [here.](ht
 
 Programming and command-line usage skills are required.
 
-Some of the exercises require access to the Linux environment. macOS might be suitable as well, but not fully tested.
+Some of the exercises require access to the Linux environment. macOS might be suitable as well for many tasks, but not fully tested. 
+Some assignments include pre-compiled binaries, and those require Linux environment with recent glibc library.
 
 Required software:
 
@@ -27,6 +28,7 @@ Required software:
   * Code editor of your choice, `VSCodium` and `vim` are pre-installed.
   * Git for assignment management. Web GUI usage is also allowed.
   * Different programming languages, depending on your choice
+  * Docker is useful
 
 Some additional software requirements might appear during the course.
 
