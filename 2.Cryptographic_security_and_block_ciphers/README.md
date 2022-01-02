@@ -63,6 +63,8 @@ Public-key cryptography is not only limited for the encryption; authentication i
 Private keys can be used for creating *the digital certificate* for the data; with purpose of verifying the entity behind the authentication (ownership) by using the corresponding public key.
 Compare with *digital signature*: it verifies the authenticity of the data but not always the entity behind the data.
 
+We will go more in details about public-private key cryptography later on the course.
+
 Your first task is to create different kind of public-private (also called asymmetric) key-pairs, by using different cryptographic algorithms.
 Later some of these keys are used for creating the digital certificate.
 
@@ -182,10 +184,45 @@ Following image showcases the high level data structure. (Source: HCERT spec)
 
 ![overview](https://github.com/ehn-dcc-development/hcert-spec/raw/main/overview.png)
 
+Long story short, the QR code contains base45 encoded health-payload data, which can be finally parsed to following format:
+
+```json
+{
+        "v": [
+            {
+                "ci": "URN:UVCI:01:FI:DZYOJVJ6Y8MQKNEI95WBTOEIM#X",
+                "co": "FI",
+                "dn": 1,
+                "dt": "2021-03-05",
+                "is": "The Social Insurance Institution of Finland",
+                "ma": "ORG-100001417",
+                "mp": "EU/1/20/1525",
+                "sd": 1,
+                "tg": "840539006",
+                "vp": "J07BX03"
+            }
+        ],
+        "dob": "1967-02-01",
+        "nam": {
+            "fn": "Testaaja",
+            "gn": "Matti Kari Yrjänä",
+            "fnt": "TESTAAJA",
+            "gnt": "MATTI<KARI<YRJAENAE"
+        },
+        "ver": "1.0.0"
+} 
+```
+The sample data is acquired from [DCC test data repository](https://github.com/eu-digital-green-certificates/dgc-testdata/blob/main/FI/2DCode/raw/1.json ), being the first (1) test case.
+Corresponding QR code is available [here.](https://github.com/eu-digital-green-certificates/dgc-testdata/blob/main/FI/png/1.png)
+
+
+
+
 The health data is signed with the certificate, which is issued by Kela. We downloaded the public part from the Swedish trust list.
 
 Primary signature algorithm in DCC is Elliptic Curve Signature Algorithm (ECDSA), by using P-256 parameters with combination of SHA256 hashing algorithm, as defined in the [HCERT specification(Electronic Health Certificate).](https://github.com/ehn-dcc-development/hcert-spec/blob/main/hcert_spec.md#332-signature-algorithm)
 In the previous task we already generated suitable keys for this, by using *secp256r1* curve, which is [alias for NIST P-256/prime256v1.](https://tools.ietf.org/search/rfc4492#appendix-A)
+
 
 
 
@@ -206,7 +243,7 @@ More information
 * Collection of trustlits to find certificates for validating DCC available for example [here.](https://github.com/section42/hcert-trustlist-mirror)
 
 
-## Task 3: Forged cipher (Alternative)?
+## Task 3: Forged cipher (option 2 for grade 3)
 
 In this task you will do a similar attack as in Week 1 Task 1, but against a real world secure encryption scheme. The message below is encrypted with AES (a secure standard for symmetric encryption) using a provably secure mode of operation. Yet, you should be able to modify the message according to the task below.
 
