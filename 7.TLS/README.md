@@ -1,6 +1,6 @@
 # Week 7 Exercises
 
-This week’s exercises focus on TLS.
+This week’s exercises focus on TLS. Chapter 13 in the book is about TLS.
 
 ## Grading
 
@@ -51,7 +51,7 @@ We have provided one website for you that you can test without any limits: https
 
 **3.2** Test how low you can go with TLS connections (you can try even SSL, if you feel like it). What is the lowest version of TLS (or SSL) that is supported by the website?
 
-**3.3** Go back to Task 2 and the different vulnerabilities listed for TLS. Does it seem that the website you are testing could be vulnerable to some of the known CVEs? For example `testssl.sh` shows some potential CVEs directly. Look for some of them if you did not report them previosly. What is the severity of CVE? What it allows attacker to do? **Beware that even if analysis script shows potential CVEs, you might always need to verify it manually before claming that the site being vulnerable. Unless you know exactly how script is testing it.**
+**3.3** Go back to Task 2 and the different vulnerabilities listed for TLS. Does it seem that the website you are testing could be vulnerable to some of the known CVEs? For example `testssl.sh` shows some potential CVEs directly. Look for some of them if you did not report them previosly. What is the severity of CVE? What it allows attacker to do? **Beware that even if analysis script shows some potential CVEs, you might always need to verify it manually before claming the site being vulnerable. Unless you know exactly how script is testing it.**
 
 > Answer the questions and provide any code/scripts that you used in testing the systems. You can provide snippets of the TLS tests that you run with OpenSSL.
 
