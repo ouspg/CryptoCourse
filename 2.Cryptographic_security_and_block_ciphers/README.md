@@ -19,8 +19,9 @@ You are eligible for following points from the exercise. Previous task(s) should
 [Task](Task) #|Grade|Description|
 -----|:---:|-----------|
 Task 1 | 1 | Modes of operation
-Task 2 | 2-3 | Digital COVID Certificate
-Task 3 | 3 | Forged cipher (alternative)
+Task 2.1. | 2 | Digital COVID Certificate - key generation
+Task 2.2-2.3 | 3 | Digital COVID Certificate - cerftificate chains and validation
+Task 3 | 3 | Forged cipher (alternative for 2.2 and 2.3)
 Task 4 | 4 | Padding oracle
 
 ## Task 1: Modes of operations in block ciphers
@@ -176,7 +177,7 @@ Let's verificate the certificate chain:
 ### Task 2.3. DCC verification and generation
 
 At this point, we haven't touched the actual DCC yet. 
-For the most people, this is seen as QR code which you download from the `kanta.fi` website.
+For the most people, this is seen as QR (Quick Response) code which you download from the `kanta.fi` website.
 
 We are not going too deep into the techinal details.
 
@@ -184,7 +185,7 @@ Following image showcases the high level data structure. (Source: HCERT spec)
 
 ![overview](https://github.com/ehn-dcc-development/hcert-spec/raw/main/overview.png)
 
-Long story short, the QR code contains base45 encoded health-payload data, which can be finally parsed to following format:
+Long story short, the QR code contains base45 encoded and zlib compressed health-payload CBOR data on COSE format with a signature (COSE Sign1 type). Payload can be finally parsed and converted into following JSON structure:
 
 ```json
 {
@@ -212,38 +213,59 @@ Long story short, the QR code contains base45 encoded health-payload data, which
         "ver": "1.0.0"
 } 
 ```
+[CBOR](https://cbor.io/) format and [COSE](https://datatracker.ietf.org/doc/html/rfc8152) protocol are optimized for low-power devices.
 The sample data is acquired from [DCC test data repository](https://github.com/eu-digital-green-certificates/dgc-testdata/blob/main/FI/2DCode/raw/1.json ), being the first (1) test case.
 Corresponding QR code is available [here.](https://github.com/eu-digital-green-certificates/dgc-testdata/blob/main/FI/png/1.png)
 
+##### Task 2.3.1. Validate the test DCC case (1) against the test certificate
+
+The official health data is signed with the certificate, which is issued by Kela. We downloaded the public part from the Swedish trust list, but it is not valid for these test files.
+For this assigment, we need to use test certificate, which was included in the test case.
+
+For actual validation, we will use the sample implementation in Python of eHN-Simplified protocol which is available [here.](https://github.com/ehn-dcc-development/ehn-sign-verify-python-trivial)
+You should verify the test Digital Covid Certificate against test certificate with this sample implementation.
+
+Clone repository on your machine and install required dependencies.
+
+Worflow is something like following:
+
+    1. Read QR code which was available [here.](https://github.com/eu-digital-green-certificates/dgc-testdata/blob/main/FI/png/1.png)
+    2. Extract certificate information from the [raw test JSON](https://github.com/eu-digital-green-certificates/dgc-testdata/blob/main/FI/2DCode/raw/1.json)
+    3. Convert certificate for suitable data format with `openssl`
+    4. Verify test DCC against test certificate with the sample Python implementation by passing QR content and certificate as arguments.
+    5. Provide screenshot which includes executed command and the output
+    
+
+**Reading QR codes:**
+
+**It is recommended to *NOT* install some random QR reading app for your phone to read sensitive information (e.g DCC), unless you know precisely how this data is processed!**
+
+On the course virtual machine, you can install Debian package `zbar-tools` for reading QR contents:
+```console
+sudo apt-get install zbar-tools
+```
+Upstream and source code is available [here.](https://github.com/mchehab/zbar)
+
+> Include possible commands you used to be able to verify the QR code against the test certificate. Include screenshot from the final working command.
 
 
+More information
 
-The health data is signed with the certificate, which is issued by Kela. We downloaded the public part from the Swedish trust list.
+* Official sample in [kanta.fi](https://www.kanta.fi/documents/20143/120102/mallitodistus_eu-rokotustodistus.pdf/f107fdfc-bfbc-6e0f-0bac-da56fbe01722?t=1624341191059)
+* Collection of trustlits to find certificates for validating DCC available for example [here.](https://github.com/section42/hcert-trustlist-mirror)
+
+##### Task 2.3.2. Creating your own DCCs
 
 Primary signature algorithm in DCC is Elliptic Curve Signature Algorithm (ECDSA), by using P-256 parameters with combination of SHA256 hashing algorithm, as defined in the [HCERT specification(Electronic Health Certificate).](https://github.com/ehn-dcc-development/hcert-spec/blob/main/hcert_spec.md#332-signature-algorithm)
 In the previous task we already generated suitable keys for this, by using *secp256r1* curve, which is [alias for NIST P-256/prime256v1.](https://tools.ietf.org/search/rfc4492#appendix-A)
-
-
-
-
-You can also take a look on the sample implementation of eHN-S protocol which is available [here.](https://github.com/ehn-dcc-development/ehn-sign-verify-python-trivial)
-
-
-Format:
-base45-encoded QR code and decoding CBOR to JSON
-Base45 for QR required
 
 Spec : https://github.com/ehn-dcc-development/hcert-spec
 Finland test data: https://github.com/eu-digital-green-certificates/dgc-testdata/tree/main/FI
 
 
-More information
-
-* Sample in [kanta.fi](https://www.kanta.fi/documents/20143/120102/mallitodistus_eu-rokotustodistus.pdf/f107fdfc-bfbc-6e0f-0bac-da56fbe01722?t=1624341191059)
-* Collection of trustlits to find certificates for validating DCC available for example [here.](https://github.com/section42/hcert-trustlist-mirror)
 
 
-## Task 3: Forged cipher (option 2 for grade 3)
+## Task 3: Forged cipher (option 2, make this task instead of 2.2 and 2.3 for grade 3)
 
 In this task you will do a similar attack as in Week 1 Task 1, but against a real world secure encryption scheme. The message below is encrypted with AES (a secure standard for symmetric encryption) using a provably secure mode of operation. Yet, you should be able to modify the message according to the task below.
 
