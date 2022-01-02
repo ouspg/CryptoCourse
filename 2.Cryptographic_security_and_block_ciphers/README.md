@@ -51,7 +51,7 @@ Just recently, there has been a lot of discussion and usage of the COVID-19 Pass
 But how does it work? In this exercise, we will take a brief look on practical public-key cryptography and its usage on certificate generation and use cases. 
 Finally, we demonstrate a simple application of DCC and how one simple implementation works. 
 
-Note also that for example TLS certificates on your browser work by using same principles.
+Note also that for example TLS certificates on your browser work by using similar principles.
 
 ### Task 2.1. Public and private key generation
 
@@ -59,8 +59,8 @@ The main advantage of public key cryptography was the requirement of two differe
 Public key can be derived from the private key but not the other way around (at least with the current state-of-the-art algorithms).
 Hence, you can share the public key for everyone to secure the data, but only the owner of the private key can access it.
 
-Public-key cryptography is not only limited for encryption; authentication is an another important concept.
-Private keys can be used for creating *digital certificate* for the data; with purpose of verifying the entity behind authentication (ownership) by using corresponding public key.
+Public-key cryptography is not only limited for the encryption; authentication is an another important concept.
+Private keys can be used for creating *the digital certificate* for the data; with purpose of verifying the entity behind the authentication (ownership) by using the corresponding public key.
 Compare with *digital signature*: it verifies the authenticity of the data but not always the entity behind the data.
 
 Your first task is to create different kind of public-private (also called asymmetric) key-pairs, by using different cryptographic algorithms.
@@ -145,7 +145,7 @@ By using command line, we can download public trust list of EU countries as foll
 curl https://dgcg.covidbevis.se/tp/trust-list | jq -R 'split(".") | .[0],.[1] | @base64d | fromjson' <<< $(cat "${JWT}") > trustlist.json
 ```
 Trust list is in [JWT format](https://jwt.io/), which is correctly parsed with above command and actual JSON is generated into file `trustlist.json`.
-We'll pass signature verification, but you can do it if you want.
+We'll pass signature verification at this time, but you can do it if you want. JWT header contains algorithm information and the signature could be found from the final section.
 
 Further, we can extract public certificate information of the Finland as following
 ```console
@@ -184,7 +184,7 @@ Following image showcases the high level data structure. (Source: HCERT spec)
 
 The health data is signed with the certificate, which is issued by Kela and was downloaded from the Swedish trust list.
 
-Primary signature algorithm in DCC is Elliptic Curve Signature Algorithm (ECDSA), by using P-256 parameters withcombination of SHA256 hashing algorithm, as defined in the [HCERT specification(Electronic Health Certificate).](https://github.com/ehn-dcc-development/hcert-spec/blob/main/hcert_spec.md#332-signature-algorithm)
+Primary signature algorithm in DCC is Elliptic Curve Signature Algorithm (ECDSA), by using P-256 parameters with combination of SHA256 hashing algorithm, as defined in the [HCERT specification(Electronic Health Certificate).](https://github.com/ehn-dcc-development/hcert-spec/blob/main/hcert_spec.md#332-signature-algorithm)
 In the previous task we already generated suitable keys for this, by using *secp256r1* curve, which is [alias for NIST P-256/prime256v1.](https://tools.ietf.org/search/rfc4492#appendix-A)
 
 
