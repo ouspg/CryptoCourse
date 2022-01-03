@@ -1,6 +1,6 @@
 # Cryptographic systems and their weaknesses 521254S
 
-Exercises for the course Cryptographic systems and their weaknesses 521149S
+Exercises for the course Cryptographic systems and their weaknesses 521254S
 
 ## Contents
 
