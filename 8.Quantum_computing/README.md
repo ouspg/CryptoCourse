@@ -1,4 +1,4 @@
-# Quantum computing 
+# Week 8: Quantum computing 
 
 This week’s exercises focus on quantum computing, post-quantum cryptography and feedback on the course.
 
