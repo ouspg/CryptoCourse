@@ -8,7 +8,7 @@ Theory of the exercises are based mainly on the book [Serious Cryptography](http
 
 ## Environment
 
-You should have access into Linux/Unix environment to be able to complete Task 3.
+You should have access to the Linux/Unix environment to be able to complete Task 3.
 
 The course virtual machine is suitable.
 
@@ -112,7 +112,7 @@ Using new [CNG API](https://docs.microsoft.com/en-us/windows/win32/seccng/cng-po
 
 **Task 3.2** Generate randomness into different files using different methods that you have access to or manually (dice, smashing keyboard maybe?) You are not limited to a given list from above. **Use at least four** different methods. For non-manual methods, generate at least 1 megabyte of randomness.
 
-**Task 3.3** Analyse those files with [dieharder](https://linux.die.net/man/1/dieharder). Report your findings. However, *it is recommended to use generators (e.g. /dev/urandom) directly if possible instead of previously generated files!* Otherwise, we might not have enough data to evaluate them properly.
+**Task 3.3** Analyse those files with [dieharder](https://linux.die.net/man/1/dieharder). Report your findings. However, *it is recommended to use generators (e.g. /dev/urandom) directly if possible instead of previously generated files!* Otherwise, we might not have enough data to evaluate them properly. You can also use some alternative tools instead such as [gjrand](https://sourceforge.net/projects/gjrand/) or [pracrand](http://pracrand.sourceforge.net/) which are considered being more accurate even though dieharder is more popular tool. (Tool hosted on SourceForge != tool is bad)!
 
 To analyse manual methods, you might need to use the ASCII formatted presentation. ( Take a look at `man dieharder`)
 
