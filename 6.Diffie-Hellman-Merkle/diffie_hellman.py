@@ -41,7 +41,7 @@ class SingleParty:
 
     # TODO Choose public values, however it might be that some values are better than others
     g: int = 0
-    p_modulus: int = 0  # prime, usually 2048 bits to provide enough security
+    p_modulus: int = 0  # prime, usually 2048 bits to provide enough security, SAFE PRIME
 
     _G: int = None  # Shared secret, calculated later
 
@@ -57,7 +57,7 @@ class SingleParty:
 # Define private exponents for Bob, Alice and Eve
 # Check how to get primes https://pycryptodome.readthedocs.io/en/latest/src/util/util.html#module-Crypto.Util.number
 
-# Select a prime p where (p – 1) / 2 is also prime and that p is large enough
+# Select a prime which is large enough
 
 
 class Alice(SingleParty):
