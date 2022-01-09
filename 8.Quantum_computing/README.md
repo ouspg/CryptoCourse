@@ -4,7 +4,7 @@ This week’s exercises focus on quantum computing, post-quantum cryptography an
 
 ## Grading
 
-You are eligible for following points from the exercise. Previous task(s) should be completed before going further.
+You are eligible for the following points from the exercise. Previous task(s) should be completed before going further.
 
 Task #|Grade|Description|
 -----|:---:|-----------|
@@ -15,7 +15,7 @@ Task 3.3 | 4 | Post-quantum Cryptography
 Task 3 alt. | 3-4 | Security level analysis of your favorite application
 
 ## Task 1: Feedback on the course ##
-Now in the final week we'd like to get your feedback on the course. Please answer the questions below. **Note that you can give also anonymous feedback through the University official [feedback pages](http://palaute.oulu.fi/).**
+Now in the final week we'd like to get your feedback on the course. Please answer the questions below. **Note that you can also give anonymous feedback through the University official [feedback pages](http://palaute.oulu.fi/).**
 
 * What did you like about the lectures?
 * What would you improve on the lectures?
@@ -39,7 +39,7 @@ In this task you wil try out some quantum computing yourself. Go to [the IBM qua
 
 ## Task 3: 
 
-In this week, you have two options for the final assignment. They are equal for acquiring the maximum grade.
+This week, you have two options for the final assignment. They are equal for acquiring the maximum grade.
 
 ### Post-quantum Cryptography (Option 1)
 In this task you will learn more about post-quantum cryptography. 
@@ -48,13 +48,13 @@ Go to the [NIST PQC website](https://csrc.nist.gov/projects/post-quantum-cryptog
 **3.1** Answer the following questions:
 * What hard problems are the candidates based on?
 * What security levels are the candidates aiming for? (NIST has specified [five](https://csrc.nist.gov/CSRC/media/Projects/Post-Quantum-Cryptography/documents/call-for-proposals-final-dec-2016.pdf) pages 16-17)
-* What parameters sizes do the candidates have? Key size, signature size, key generation time, signature generation time, verification time etc?
+* What parameter sizes do the candidates have? Key size, signature size, key generation time, signature generation time, verification time etc?
 
 **3.2** Look for any implementations of the finalists e.g. via Google. What systems/libraries/applications support these? Can you find a rationale for the decision to support a specific method?
 
-**3.3** Pick a finalist candidate. Do a search on [Google Scholar](scholar.google.com) with the candidate name and some additional suitable search terms (e.g. 'post-quantum cryptography'). How many results can you find? Are there any attacks on or weaknessess in the proposed scheme? If there are, explain these very briefly.
+**3.3** Pick a finalist candidate. Do a search on [Google Scholar](scholar.google.com) with the candidate name and some additional suitable search terms (e.g. 'post-quantum cryptography'). How many results can you find? Are there any attacks on or weaknesses in the proposed scheme? If there are, explain these very briefly.
 
-> Answer the questions above. Reference any outseide sources. For task 3.3 please list your query terms.  
+> Answer the questions above. Reference any outside sources. For task 3.3 please list your query terms.  
 
 ### Security level analysis of your favorite application (Option 2)
 
@@ -79,6 +79,6 @@ An example structure for this type of document could be
     * Are there any gaps and/or discrepancies between different cryptographic primitives?
     * (optional) How could the security of the cryptography be improved?
 4. References
-    * Give a list of all the reference material that you have used. Please reference these also in the text so that we can see, where each bit of information has been collected.
+    * Give a list of all the reference material that you have used. Please reference these also in the text so that we can see where each bit of information has been collected.
 
-> You can also make a separate PDF document, and upload it into your repository, if you want. Remember to reference for it.
+> You can also make a separate PDF document, and upload it into your repository, if you want. Remember to reference it.
