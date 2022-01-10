@@ -14,7 +14,7 @@ Task #|Grade|Description|
 Task 1 | 1 | RSA encryption and signatures with OpenSSL 
 Task 2 | 2 | Message and signature verification
 Task 3 | 3 | Textbook RSA signature forgery
-Task 4 | 3 | Roll your own public key cryptosystem
+Task 4 | 4 | Roll your own public key cryptosystem
 
 ## Task 1: RSA encryption and signatures with OpenSSL ##
 
