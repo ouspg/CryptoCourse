@@ -224,6 +224,7 @@ For this assignment, we need to use a test certificate, which was included in th
 
 For actual validation, we will use the sample implementation in Python of eHN-Simplified protocol which is available [here.](https://github.com/ehn-dcc-development/ehn-sign-verify-python-trivial) It handles the most data conversions which go out of the scope of this course.
 You should verify the test Digital Covid Certificate against the test certificate with this sample implementation.
+**Use commit `72f3e5e` from the program, it is confirmed to work properly!**
 
 Clone the repository on your machine and install required dependencies. The tool is a command-line utility with few arguments.
 
