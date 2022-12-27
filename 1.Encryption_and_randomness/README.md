@@ -63,6 +63,8 @@ Note `0x` prefix in the string and lowercase format. `-n` flag prevents appendin
 
 Correct hash for the key is `0de7672884e0d76c02387ef14360770ec923fd34f87d3303d082ec2da7a8741e`
 
+> **EXTRA:** If you know Finnish, we have an additional and complete tutorial available about this task in [here.](https://shakinguptech.ouspg.org/harjoitus1/)
+
 ## Task 2: Vigenere cipher
 
 The following text is an English text that has been encrypted by using an unknown key with a Vigenere cipher. All punctuation and whitespaces have been removed from the text before encryption.
@@ -108,7 +110,11 @@ Using new [CNG API](https://docs.microsoft.com/en-us/windows/win32/seccng/cng-po
   * [.NET cryptography model](https://docs.microsoft.com/en-us/dotnet/standard/security/cryptography-model)
   * [Cross-Platform Cryptography in .NET Core and .NET 5](https://docs.microsoft.com/en-us/dotnet/standard/security/cross-platform-cryptography)
 
-**Task 3.1** What is the difference between `/dev/urandom` and `/dev/random` devices? Note also the [recent change on Kernel.](https://lore.kernel.org/lkml/20200131204924.GA455123@mit.edu/)
+**Task 3.1** What is the difference between `/dev/urandom` and `/dev/random` devices? Note also the recent changes on Kernel.
+
+  * https://lore.kernel.org/lkml/20200131204924.GA455123@mit.edu/
+  * https://lwn.net/Articles/884875/
+  * https://lore.kernel.org/lkml/20220729145525.1729066-1-Jason@zx2c4.com/
 
 **Task 3.2** Generate randomness into different files using different methods that you have access to or manually (dice, smashing keyboard maybe?) You are not limited to a given list from above. **Use at least four** different methods. For non-manual methods, generate at least 1 megabyte of randomness.
 

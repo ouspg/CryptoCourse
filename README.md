@@ -6,7 +6,7 @@ Exercises for the course Cryptographic systems and their weaknesses 521254S
 
 Course will go through basic concepts of cryptography, definitions and concepts of cryptographic security and testing these through programming. Showing different cryptographic weaknesses and demonstrating different implementations of these through programming. Basics of quantum computing and post-quantum cryptography.
 
-You can find the course from [Moodle.](https://moodle.oulu.fi/course/view.php?id=11126) 
+You can find the course from [Moodle.](https://moodle.oulu.fi/course/view.php?id=16618) 
 
 ## Exercise requirements
 
@@ -34,11 +34,11 @@ Some additional software requirements might appear during the course.
 
 ### Provided virtual machine
 
-Download urls for pre-configured virtual machines with Ubuntu 20 LTS can be found from the Moodle page.
+Download urls for pre-configured virtual machines with Ubuntu can be found from the Moodle page.
 
-There are two different versions; for VMware and Virtualbox. Download suitable for your needs. If you don't know which one, use VMware one which might bring better performance.
+There are two different versions; for VMware and Virtualbox. Download suitable for your needs. If you don't know which one, use VMware one which might offer better performance.
 
-You can download VMware Player from [here.](https://my.vmware.com/en/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_workstation_player/16_0)
+You can download VMware Player from [here.](https://my.vmware.com/en/web/vmware/downloads/info/slug/desktop_end_user_computing/vmware_workstation_player/17_0)
 
 Following credentials are used for the virtual machine:
 
@@ -55,7 +55,7 @@ You need to create a private GitHub repository **from the url in the Moodle page
 
 Repository will be the place for your work, and you should commit changes on there for the corresponding folders.
 
-*If you lost your repository, you can find it under organization [CryptoCourse-2022](https://github.com/CryptoCourse-2022) once logged in.*
+*If you lost your repository, you can find it under organization [CryptoCourse-2023](https://github.com/CryptoCourse-2023) once logged in.*
 
 Every week you need to return only the URL of your repository for the assignment return box, unless otherwise stated. Remember that there are also mandatory questionnaires.
 
