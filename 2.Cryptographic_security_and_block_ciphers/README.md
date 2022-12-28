@@ -46,13 +46,14 @@ Explain also shortly the purpose of the nonce and possible salt in this case. Ar
 
 ## Task 2: Digital COVID Certificate (DCC)
 
-COVID-19 has been a nuisance for the past two years. 
-Just recently, there has been a lot of discussion and usage of the COVID-19 Passport (or more precisely, The European Digital Covid Certificate (DCC)) on verification of the vaccine status, confirmation of recent Rapid Antigen Test (RAT) or Nucleic acid amplification test (NAAT) and confirmed recovery status.
+COVID-19 has been a nuisance for the past years. 
+In last year, there had a lot of discussion and usage of the COVID-19 Passport (or more precisely, The European Digital Covid Certificate (DCC)) on verification of the vaccine status, confirmation of recent Rapid Antigen Test (RAT) or Nucleic acid amplification test (NAAT) and confirmed recovery status.
 
 But how does it work? In this exercise, we will take a brief look at practical public-key cryptography and its usage on certificate generation and use cases. 
 Finally, we demonstrate a simple application of DCC and how one simple implementation works. 
 
 Note also that for example TLS certificates on your browser work by using similar principles.
+Also, the new digital degree certificate on graduation uses same principles on validating its authenticity.
 
 ### Task 2.1. Public and private key generation
 
@@ -259,7 +260,7 @@ More information
 #### Task 2.3.2. Creating your own DCCs (Not valid...)
 
 Primary signature algorithm in DCC is Elliptic Curve Signature Algorithm (ECDSA), by using P-256 parameters with combination of SHA256 hashing algorithm, as defined in the [HCERT specification(Electronic Health Certificate).](https://github.com/ehn-dcc-development/hcert-spec/blob/main/hcert_spec.md#332-signature-algorithm)
-In the first part of this task we already generated suitable keys and certificate for this, by using *secp256r1* curve, which is [alias for NIST P-256/prime256v1.](https://tools.ietf.org/search/rfc4492#appendix-A)
+In the first part of this task we already generated suitable keys and certificate for this, by using *secp256r1* curve, which is [alias for NIST P-256/prime256v1.](https://www.rfc-editor.org/rfc/rfc4492.html#appendix-A)
 
 Use this corresponding key to sign some arbitrary data with the `hc1_sign.py` program in a sample implementation. Include certificate information. The output is base45 encoded data, same as QR code can contain. You can verify this again, by using `hc1_verify.py`, similarly to what you have done earlier. Take a look for possible arguments of the program.
 
