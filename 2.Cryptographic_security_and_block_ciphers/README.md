@@ -139,7 +139,7 @@ If you are curious how DCC works in Finland:
    
   * DCC:s in Finland are issued by Kela (kanta.fi), which is the final DSC issuer. More details available [here.](https://www.kanta.fi/en/system-developers/eu-koronatodistuksen-verifiointi)
 
-Finnish DCC public certificate (Kela/kanta.fi cert) can be found from the international public list provided by Sweden, which is available [here.](https://dgcg.covidbevis.se/tp/)
+Finnish DCC public certificate (Kela/kanta.fi cert) can be found from the international public list provided by Sweden, which is available [here.](https://raw.githubusercontent.com/ouspg/CryptoCourse/main/2.Cryptographic_security_and_block_ciphers/files/trustlist.json)
 Finland does not maintain similar public service themselves, according to kanta.fi technical support.
 
 We will use that as an example.
