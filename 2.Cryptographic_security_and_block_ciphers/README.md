@@ -146,7 +146,7 @@ We will use that as an example.
 
 By using the command line, we can download the public trust list of EU countries as following:
 ```console
-curl [https://dgcg.covidbevis.se/tp/trust-list](https://raw.githubusercontent.com/ouspg/CryptoCourse/main/2.Cryptographic_security_and_block_ciphers/files/trustlist.json) | jq -R 'split(".") | .[0],.[1] | @base64d | fromjson' <<< '$(cat "${JWT}")' > trustlist.json
+curl https://raw.githubusercontent.com/ouspg/CryptoCourse/main/2.Cryptographic_security_and_block_ciphers/files/trustlist.json | jq -R 'split(".") | .[0],.[1] | @base64d | fromjson' <<< '$(cat "${JWT}")' > trustlist.json
 ```
 Trust list is in [JWT format](https://jwt.io/), which is correctly parsed with the above command and actual JSON is generated into file `trustlist.json`.
 We'll pass signature verification at this time, but you can do it if you want. The JWT header contains algorithm information and the signature could be found from the final section. Sections were separated with dots.
