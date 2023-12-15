@@ -45,7 +45,7 @@ Explain also shortly the purpose of the nonce and possible salt in this case. Ar
 
 ## Task 2: Key generation
 
-Key generation plays a fundamental role in modern cryptographic systems, providing the foundation for secure communication and data protection. In this task we generate public and private keys using current and legacy functionalities of openssl.
+Let's have a look at how private and public keys are generated using OpenSSL.
 
 
 ### Task 2.1. Public and private key generation
