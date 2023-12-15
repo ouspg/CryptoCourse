@@ -19,8 +19,7 @@ You are eligible for the following points from the exercise. Previous task(s) sh
 [Task](Task) #|Grade|Description|
 -----|:---:|-----------|
 Task 1 | 1 | Modes of operation
-Task 2.1. | 2 | Digital COVID Certificate - key generation
-Task 2.2-2.3 | 3 | Digital COVID Certificate - certificate chains and validation
+Task 2 | 2 | Key generation
 Task 3 | 3 | Forged cipher (alternative for 2.2 and 2.3)
 Task 4 | 4 | Padding oracle
 
