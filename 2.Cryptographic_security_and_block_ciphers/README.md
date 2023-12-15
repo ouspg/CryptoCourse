@@ -43,16 +43,10 @@ Explain also shortly the purpose of the nonce and possible salt in this case. Ar
 
 > Include source code and answer the questions. You can highlight interesting comparison results with screenshots for example.
 
-## Task 2: Digital COVID Certificate (DCC)
+## Task 2: Key generation
 
-COVID-19 has been a nuisance for the past years. 
-In last year, there had a lot of discussion and usage of the COVID-19 Passport (or more precisely, The European Digital Covid Certificate (DCC)) on verification of the vaccine status, confirmation of recent Rapid Antigen Test (RAT) or Nucleic acid amplification test (NAAT) and confirmed recovery status.
+Key generation plays a fundamental role in modern cryptographic systems, providing the foundation for secure communication and data protection. In this task we generate public and private keys using current and legacy functionalities of openssl.
 
-But how does it work? In this exercise, we will take a brief look at practical public-key cryptography and its usage on certificate generation and use cases. 
-Finally, we demonstrate a simple application of DCC and how one simple implementation works. 
-
-Note also that for example TLS certificates on your browser work by using similar principles.
-Also, the new digital degree certificate on graduation uses same principles on validating its authenticity.
 
 ### Task 2.1. Public and private key generation
 
