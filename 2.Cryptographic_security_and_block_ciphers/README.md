@@ -20,7 +20,7 @@ You are eligible for the following points from the exercise. Previous task(s) sh
 -----|:---:|-----------|
 Task 1 | 1 | Modes of operation
 Task 2 | 2 | Key generation
-Task 3 | 3 | Forged cipher (alternative for 2.2 and 2.3)
+Task 3 | 3 | Forged cipher
 Task 4 | 4 | Padding oracle
 
 ## Task 1: Modes of operations in block ciphers
