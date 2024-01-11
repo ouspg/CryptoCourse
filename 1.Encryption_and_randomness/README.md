@@ -126,11 +126,6 @@ To analyse manual methods, you might need to use the ASCII formatted presentatio
 
  What is the meaning of p-value and null hypothesis in this context? Can you describe why tests are passed/not passed? Which methods seem to provide randomness with high entropy? If you have been using generic software libraries, results might not be good and can be very similar. What could be the reason?
 
-For Arch based Linux, you can install dieharder as :
-```shell
-yay -Sy dieharder
-```
-
 For Debian based Linux, you can install dieharder as :
 ```shell
 apt-get update && apt-get install dieharder
