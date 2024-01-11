@@ -131,6 +131,19 @@ For Debian based Linux, you can install dieharder as :
 apt-get update && apt-get install dieharder
 ```
 
+If for some reason dieharder doesn't work on arch, it can be installed as follows:
+
+```shell
+git clone git@github.com:eddelbuettel/dieharder.git
+cd dieharder                                                                                                                                                                                                  
+./autogen.sh
+./configure
+make
+make check
+make distcheck
+sudo make install
+```
+
 
 More theoretical manual of dieharder can be found [here.](https://rurban.github.io/dieharder/manual/dieharder.pdf)
 
