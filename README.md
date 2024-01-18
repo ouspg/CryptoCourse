@@ -55,7 +55,7 @@ You need to create a private GitHub repository **from the url in the Moodle page
 
 Repository will be the place for your work, and you should commit changes on there for the corresponding folders.
 
-*If you lost your repository, you can find it under organization [CryptoCourse-2023](https://github.com/CryptoCourse-2023) once logged in.*
+*If you lost your repository, you can find it under organization (https://github.com/CryptoCourse-2024) once logged in.*
 
 Every week you need to return only the URL of your repository for the assignment return box, unless otherwise stated. Remember that there are also mandatory questionnaires.
 
