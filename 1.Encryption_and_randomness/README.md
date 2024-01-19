@@ -134,6 +134,7 @@ apt-get update && apt-get install dieharder
 If for some reason dieharder doesn't work on arch, it can be installed as follows:
 
 ```shell
+sudo pacman -S gsl
 git clone git@github.com:eddelbuettel/dieharder.git
 cd dieharder                                                                                                                                                                                                  
 ./autogen.sh
