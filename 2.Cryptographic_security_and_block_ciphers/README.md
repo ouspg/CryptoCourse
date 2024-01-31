@@ -61,7 +61,6 @@ Compare with *digital signature*: it verifies the authenticity of the data but n
 We will go more in details about public-private key cryptography later on the course.
 
 Your first task is to create different kinds of public-private (also called asymmetric) key-pairs, by using different cryptographic algorithms.
-Later some of these keys are used for creating the digital certificate.
 
 #### Task 2.1.1 Generate RSA, ECDSA and EdDSA keys with OpenSSL. Both public and private keys are required.
 
