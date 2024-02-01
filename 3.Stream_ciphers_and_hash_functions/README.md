@@ -57,11 +57,11 @@ Following things are known:
 * Message content
   * Message has 8-bit ASCII encoding(ASCII is 7-bit encoding but it happens to be easier to handle full bytes and it does not matter in this task so an easier way is taken).
   * The message can contain all lowercase letters and spaces. No other characters or special characters are used.
-  * Alice has cutten text to pieces as-it-is for example without caring to keep words uncutted
+  * Alice has cut the text to pieces as-it-is for example without caring to keep words uncut
   * Language of message is english
 * Encryption
   * Alice uses a secure stream cipher with a randomly selected nonce and a key only known by her and Bob. Bruteforcing messages by guessing nonce and key to get the correct keystream is not possible.
-  * Usually a nonce is attached to a sent message but we have cutten it out from the material. You shall survive without it.
+  * Usually a nonce is attached to a sent message but we have cut it out from the material. You shall survive without it.
   * Encryption is made by a basic way of XORing keystream and plaintext. As we have 8-bit characters, encrypted text will be nice hexadecimal numbers, each byte in plaintext corresponding byte in ciphertext, for example 'abcd' => *encryption* => '1f2e3d4c'
 
 Your task is to find out what Alice has sent to Bob. Good luck!
