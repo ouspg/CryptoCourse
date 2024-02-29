@@ -33,7 +33,7 @@ In this task you wil try out some quantum computing yourself. Go to [the IBM qua
 
 **2.1** Try out some quantum circuits (just fool around, attach a screenshot of your most artistic one. Make sure that the different probabilities are shown in the picture.) Explain shortly what the circuit does (to the best of your understanding). 
 
-**2.2** Go to the “Composer docs & tutorials” (left hand panel, lowest option) and find the model for Grover’s algorithm or alternatively copy it from this image ![image](https://github.com/ouspg/CryptoCourse/assets/55877332/a7b762be-1f62-4038-b7ad-2b58c04265be)
+**2.2** Go to the “Composer docs & tutorials” (left hand panel, lowest option) and find the model for Grover’s algorithm or alternatively copy it from the image below ![image](https://github.com/ouspg/CryptoCourse/assets/55877332/a7b762be-1f62-4038-b7ad-2b58c04265be)
 
 . Modify the given circuit in such a way that the circuit will find the other alternatives (the example finds 00, you should find 10, 01 and 11). Explain how you modified the circuit.
 
