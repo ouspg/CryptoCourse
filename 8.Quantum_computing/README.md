@@ -15,7 +15,7 @@ Task 3.3 | 4 | Post-quantum Cryptography
 Task 3 alt. | 3-4 | Security level analysis of your favorite application
 
 ## Task 1: Feedback on the course ##
-Now in the final week we'd like to get your feedback on the course. Please answer the questions below. **Note that you can also give anonymous feedback through the University official [feedback pages](http://palaute.oulu.fi/).**
+Now in the final week we'd like to get your feedback on the course. Please answer the questions below. **Note that you can also give anonymous feedback through Peppi**
 
 * What did you like about the lectures?
 * What would you improve on the lectures?
