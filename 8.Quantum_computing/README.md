@@ -45,7 +45,7 @@ This week, you have two options for the final assignment. They are equal for acq
 
 ### Post-quantum Cryptography (Option 1)
 In this task you will learn more about post-quantum cryptography. 
-Go to the [NIST PQC website](https://csrc.nist.gov/projects/post-quantum-cryptography) and look at the finalists of the PQC standardisation (Round 3 finalist candidates, not alternate candidates). 
+Go to the [NIST PQC website](https://csrc.nist.gov/projects/post-quantum-cryptography) and look at the round 4 canditates. 
 
 **3.1** Answer the following questions:
 * What hard problems are the candidates based on?
