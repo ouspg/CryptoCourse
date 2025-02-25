@@ -39,6 +39,8 @@ Feel free to expand the table from Task 1 with the information from this task.
 
 ## Task 3: Testing TLS connections with OpenSSL ##
 
+> NOTICE: test server provided for tasks 3 & 4  is currently getting replaced, those who want to do these tasks can get extra time to do them once the new one is up!
+
 In this task you are to test a website of your choosing with the help of OpenSSL. The OpenSSL Cookbook section 2: [Testing TLS with OpenSSL](https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html) will be **very helpful** in this task. 
 
 You can also use `nmap` and suitable scripts like [this](https://nmap.org/nsedoc/scripts/ssl-enum-ciphers.html). Yet another great tool is [testssl.sh](https://github.com/drwetter/testssl.sh) for this kind of testing. If you know more helpful tools, you are allowed to use them. Document their usage.
