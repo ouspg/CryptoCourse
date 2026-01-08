@@ -130,12 +130,16 @@ For Debian based Linux, you can install dieharder as :
 ```shell
 apt-get update && apt-get install dieharder
 ```
+On arch you can install dieharder using AUR helper of your choice, for example [yay](https://github.com/Jguer/yay)
+```shell
+yay -Sy dieharder
+```
 
-If for some reason dieharder doesn't work on arch, it can be installed as follows:
+Or if AUR version is not working or you don't have helper installed, it can also be installed as follows:
 
 ```shell
 sudo pacman -S gsl
-git clone git@github.com:eddelbuettel/dieharder.git
+git clone https://github.com/eddelbuettel/dieharder.git
 cd dieharder                                                                                                                                                                                                  
 ./autogen.sh
 ./configure
