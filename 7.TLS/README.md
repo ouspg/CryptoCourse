@@ -39,15 +39,13 @@ Feel free to expand the table from Task 1 with the information from this task.
 
 ## Task 3: Testing TLS connections with OpenSSL ##
 
-> NOTICE: test server provided for tasks 3 & 4  is currently getting replaced, those who want to do these tasks can get extra time to do them once the new one is up!
-
 In this task you are to test a website of your choosing with the help of OpenSSL. The OpenSSL Cookbook section 2: [Testing TLS with OpenSSL](https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html) will be **very helpful** in this task. 
 
 You can also use `nmap` and suitable scripts like [this](https://nmap.org/nsedoc/scripts/ssl-enum-ciphers.html). Yet another great tool is [testssl.sh](https://github.com/drwetter/testssl.sh) for this kind of testing. If you know more helpful tools, you are allowed to use them. Document their usage.
 
 **Be mindful that some methods of testing may be invasive and may be considered 'hostile' by the server. If you choose to use such tools, please test only sites that approve of this type of testing e.g. have an active bug bounty program**. You can always ask the course staff for advice, if you need any assistance.
 
-We have provided one website for you that you can test without any limits: https://tlstest.rahtiapp.fi
+We have provided one website for you that you can test without any limits: https://tlstest.ouspg.org/
 
 **3.1** Choose a website that supports HTTPS/TLS. What versions of TLS are supported? What ciphersuites are supported? Are there any preferences set by the website? (e.g. in what order are ciphers selected?)
 
@@ -145,7 +143,7 @@ You can further modify proxy code to only alter the target server traffic.
 
 #### Target
 
-Use server https://tlstest.rahtiapp.fi as your target. What is the lowest supported TLS/SSL version?
+Use server https://tlstest.ouspg.org/ as your target. What is the lowest supported TLS/SSL version?
 
 Server does not use the `TLS_FALLBACK_SCSV` mechanism to prevent downgrading. However, you might need to use a specific client anyway to be able to accept TLSv1 connections. Virtual machine has Docker installed, if you need some really old versions for some cases.
 
