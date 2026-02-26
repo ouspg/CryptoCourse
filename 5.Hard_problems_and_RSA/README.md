@@ -68,7 +68,7 @@ Mallory wants the highest grade from the Cryptology University course. To get th
 
 **Read pages 188-189 from the course book.** You might want to find out more from external sources also, it is quite simplified in the book.
 
-**Task 1.1.** Forging the valid signature
+**Task 3.1.** Forging the valid signature
 
 Use  binary (from [files](files) folder) of this task to make Alice "sign" some neutral, negative or other kind of message (does not matter if it is little "gibberish" text, Alice will happily sign quite lot of things, until certain limit: the message content must have `_n` prefix (ASCII encoded) to describe neutral/negative clause of the message.
 
@@ -80,7 +80,7 @@ Forge a valid signature for that message (obviously you cannot ask that from the
 
 In the end, you can easily check with the public key that your answer is correct.
 
-**Task 1.2.** We required only two bytes of real information. What if we need to provide a valid and understandable message in whole for Alice to sign at first? How does this and the length of the message affect the difficulty of the process?
+**Task 3.2.** We required only two bytes of real information. What if we need to provide a valid and understandable message in whole for Alice to sign at first? How does this and the length of the message affect the difficulty of the process?
 
 > Describe the process shortly and include any code, forged message and signature in your answer. Remember to reference any external sources used on your solution!
 
